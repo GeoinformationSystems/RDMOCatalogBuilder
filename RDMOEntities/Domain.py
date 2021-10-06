@@ -7,7 +7,14 @@ from RDMOEntities.RDMOEntities import RDMOEntities
 
 
 class Attribute(RDMOEntities):
-    def __init__(self, ns="{}", uri=None, uri_prefix=None, key=None, path=None, comment=None, parent=None):
+    def __init__(self,
+                 ns="{}",
+                 uri=None,
+                 uri_prefix=None,
+                 key=None,
+                 path=None,
+                 comment=None,
+                 parent=None):
         self.ns = ns
         self.uri = uri
         self.uri_prefix = uri_prefix
@@ -17,15 +24,16 @@ class Attribute(RDMOEntities):
         self.parent = parent
 
     def make_element(self):
-        catalog = etree.Element("catalog")
+        attribute = etree.Element("attribute")
         if self.uri:
-            catalog.set(self.ns + "uri", self.uri)
-        etree.SubElement(catalog, "uri_prefix").text = self.uri_prefix
-        etree.SubElement(catalog, "key").text = self.key
-        etree.SubElement(catalog, "comment").text = self.comment
-        etree.SubElement(catalog, "order").text = self.order
-        if self.title:
-            for i in self.title:
-                etree.SubElement(catalog, "title", lang=i).text = self.title[i]
+            attribute.set(self.ns + "uri", self.uri)
+        etree.SubElement(attribute, "uri_prefix").text = self.uri_prefix
+        etree.SubElement(attribute, "key").text = self.key
+        etree.SubElement(attribute, "path").text = self.path
+        etree.SubElement(attribute, self.ns + "comment").text = self.comment
+        if self.parent:
+            etree.SubElement(attribute, "parent", {self.ns + "uri": self.parent})
+        else:
+            etree.SubElement(attribute, "parent")
 
-        return catalog
+        return attribute

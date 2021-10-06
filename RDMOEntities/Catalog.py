@@ -4,16 +4,25 @@
 
 from lxml import etree
 
+from RDMOEntities.RDMOEntities import RDMOEntities
 
-class Catalog:
-    def __init__(self, ns="{}", uri=None, uri_prefix=None, key=None, comment=None, order=None, title=None):
+
+class Catalog(RDMOEntities):
+    def __init__(self,
+                 ns="{}",
+                 uri=None,
+                 uri_prefix=None,
+                 key=None,
+                 comment=None,
+                 order=None,
+                 title_dict=None):
         self.ns = ns
         self.uri = uri
         self.uri_prefix = uri_prefix
         self.key = key
         self.comment = comment
         self.order = order
-        self.title = title
+        self.title_dict = title_dict
 
     def make_element(self):
         catalog = etree.Element("catalog")
@@ -21,18 +30,26 @@ class Catalog:
             catalog.set(self.ns + "uri", self.uri)
         etree.SubElement(catalog, "uri_prefix").text = self.uri_prefix
         etree.SubElement(catalog, "key").text = self.key
-        etree.SubElement(catalog, "comment").text = self.comment
+        etree.SubElement(catalog, self.ns + "comment").text = self.comment
         etree.SubElement(catalog, "order").text = self.order
-        if self.title:
-            for i in self.title:
-                etree.SubElement(catalog, "title", lang=i).text = self.title[i]
+        if self.title_dict:
+            for lang in self.title_dict:
+                etree.SubElement(catalog, "title", lang=lang).text = self.title_dict[lang]
 
         return catalog
 
 
-class Section:
-    def __init__(self, ns="{}", uri=None, uri_prefix=None, key=None, path=None, comment=None, catalog=None, order=None
-                 , title=None):
+class Section(RDMOEntities):
+    def __init__(self,
+                 ns="{}",
+                 uri=None,
+                 uri_prefix=None,
+                 key=None,
+                 path=None,
+                 comment=None,
+                 catalog=None,
+                 order=None,
+                 title_dict=None):
         self.ns = ns
         self.uri = uri
         self.uri_prefix = uri_prefix
@@ -41,7 +58,7 @@ class Section:
         self.comment = comment
         self.catalog = catalog
         self.order = order
-        self.title = title
+        self.title_dict = title_dict
 
     def make_element(self):
         section = etree.Element("section")
@@ -50,19 +67,36 @@ class Section:
         etree.SubElement(section, "uri_prefix").text = self.uri_prefix
         etree.SubElement(section, "key").text = self.key
         etree.SubElement(section, "path").text = self.path
-        etree.SubElement(section, "comment").text = self.comment
-        etree.SubElement(section, "catalog").text = self.catalog
+        etree.SubElement(section, self.ns + "comment").text = self.comment
+        if self.catalog:
+            etree.SubElement(section, "catalog", {self.ns + "uri": self.catalog})
+        else:
+            etree.SubElement(section, "catalog")
         etree.SubElement(section, "order").text = self.order
-        if self.title:
-            for i in self.title:
-                etree.SubElement(section, "title", lang=i).text = self.title[i]
+        if self.title_dict:
+            for lang in self.title_dict:
+                etree.SubElement(section, "title", lang=lang).text = self.title_dict[lang]
 
         return section
 
 
-class Questionset:
-    def __init__(self, ns="{}", uri=None, uri_prefix=None, key=None, path=None, comment=None, attribute=None
-                 , section=None, is_collection=None, order=None, title_explanation=None, conditions=None):
+class Questionset(RDMOEntities):
+    def __init__(self,
+                 ns="{}",
+                 uri=None,
+                 uri_prefix=None,
+                 key=None,
+                 path=None,
+                 comment=None,
+                 attribute=None,
+                 section=None,
+                 is_collection=None,
+                 order=None,
+                 title_dict=None,
+                 help_dict=None,
+                 verbose_name_dict=None,
+                 verbose_name_plural_dict=None,
+                 conditions=None):
         self.ns = ns
         self.uri = uri
         self.uri_prefix = uri_prefix
@@ -73,7 +107,10 @@ class Questionset:
         self.section = section
         self.is_collection = is_collection
         self.order = order
-        self.title_explanation = title_explanation
+        self.title_dict = title_dict
+        self.help_dict = help_dict
+        self.verbose_name_dict = verbose_name_dict
+        self.verbose_name_plural_dict = verbose_name_plural_dict
         self.conditions = conditions
 
     def make_element(self):
@@ -84,30 +121,76 @@ class Questionset:
         etree.SubElement(questionset, "key").text = self.key
         etree.SubElement(questionset, "path").text = self.path
         etree.SubElement(questionset, self.ns + "comment").text = self.comment
-        etree.SubElement(questionset, "attribute").text = self.attribute
-        etree.SubElement(questionset, self.ns + "uri", self.section)
+        if self.attribute:
+            etree.SubElement(questionset, "attribute", {self.ns + "uri": self.attribute})
+        else:
+            etree.SubElement(questionset, "attribute")
+        if self.section:
+            etree.SubElement(questionset, "section", {self.ns + "uri": self.section})
+        else:
+            etree.SubElement(questionset, "section")
         etree.SubElement(questionset, "is_collection").text = self.is_collection
         etree.SubElement(questionset, "order").text = self.order
-        if self.title_explanation:
-            title_explanation_keys = list(self.title_explanation.keys())
-            for i in range(len(title_explanation_keys)):
-                title_explanation_act = self.title_explanation[title_explanation_keys[i]]
-                if "title" in title_explanation_act:
-                    etree.SubElement(questionset, "title", lang=title_explanation_keys[i]).text = title_explanation_act["title"]
-                if "help" in title_explanation_act:
-                    etree.SubElement(questionset, "help", lang=title_explanation_keys[i]).text = title_explanation_act["help"]
-                if "verbose_name" in title_explanation_act:
-                    etree.SubElement(questionset, "verbose_name", lang=title_explanation_keys[i]).text = title_explanation_act["verbose_name"]
-                if "verbose_name_plural" in title_explanation_act:
-                    etree.SubElement(questionset, "verbose_name_plural", lang=title_explanation_keys[i]).text = title_explanation_act["verbose_name_plural"]
+        # get languages in title, help, verbose_name and verbose_name_plural
+        lang = list()
+        if self.title_dict:
+            lang.extend(list(self.title_dict.keys()))
+        if self.help_dict:
+            lang.extend(list(self.help_dict.keys()))
+        if self.verbose_name_dict:
+            lang.extend(list(self.verbose_name_dict.keys()))
+        if self.verbose_name_plural_dict:
+            lang.extend(list(self.verbose_name_plural_dict.keys()))
+        lang = list(set(lang))  # get unique list members
+        if len(lang) > 0:
+            # languages available
+            for langAct in lang:
+                if self.title_dict and langAct in self.title_dict:
+                    etree.SubElement(questionset, "title", lang=langAct).text = self.title_dict[langAct]
+                else:
+                    etree.SubElement(questionset, "title", lang=langAct)
+                if self.help_dict and langAct in self.help_dict:
+                    etree.SubElement(questionset, "help", lang=langAct).text = self.help_dict[langAct]
+                else:
+                    etree.SubElement(questionset, "help", lang=langAct)
+                if self.verbose_name_dict and langAct in self.verbose_name_dict:
+                    etree.SubElement(questionset, "verbose_name", lang=langAct).text = self.verbose_name_dict[langAct]
+                else:
+                    etree.SubElement(questionset, "verbose_name", lang=langAct)
+                if self.verbose_name_plural_dict and langAct in self.verbose_name_plural_dict:
+                    etree.SubElement(questionset, "verbose_name_plural", lang=langAct) \
+                        .text = self.verbose_name_plural_dict[langAct]
+                else:
+                    etree.SubElement(questionset, "verbose_name_plural", lang=langAct)
+        etree.SubElement(questionset, "conditions").text = self.conditions
 
         return questionset
 
 
-class Question:
-    def __init__(self, ns="{}", uri=None, uri_prefix=None, key=None, path=None, comment=None, attribute=None
-                 , questionset=None, is_collection=False, order=None, explanation=None, widget_type=None
-                 , value_type=None, maximum=None, minimum=None, step=None, unit=None, optionsets=None, conditions=None):
+class Question(RDMOEntities):
+    def __init__(self,
+                 ns="{}",
+                 uri=None,
+                 uri_prefix=None,
+                 key=None,
+                 path=None,
+                 comment=None,
+                 attribute=None,
+                 questionset=None,
+                 is_collection=False,
+                 order=None,
+                 help_dict=None,
+                 text_dict=None,
+                 verbose_name_dict=None,
+                 verbose_name_plural_dict=None,
+                 widget_type=None,
+                 value_type=None,
+                 maximum=None,
+                 minimum=None,
+                 step=None,
+                 unit=None,
+                 optionsets=None,
+                 conditions=None):
         self.ns = ns
         self.uri = uri
         self.uri_prefix = uri_prefix
@@ -121,7 +204,10 @@ class Question:
             self.order = str(order)
         else:
             self.order = order
-        self.explanation = explanation
+        self.help_dict = help_dict
+        self.text_dict = text_dict
+        self.verbose_name_dict = verbose_name_dict
+        self.verbose_name_plural_dict = verbose_name_plural_dict
         self.widget_type = widget_type
         self.value_type = value_type
         self.maximum = maximum
@@ -139,24 +225,47 @@ class Question:
         etree.SubElement(question, "key").text = self.key
         etree.SubElement(question, "path").text = self.path
         etree.SubElement(question, self.ns + "comment").text = self.comment
-        etree.SubElement(question, "attribute").text = self.attribute
-        etree.SubElement(question, "questionset").text = self.questionset
+        if self.attribute:
+            etree.SubElement(question, "attribute", {self.ns + "uri": self.attribute})
+        else:
+            etree.SubElement(question, "attribute")
+        if self.questionset:
+            etree.SubElement(question, "questionset", {self.ns + "uri": self.questionset})
+        else:
+            etree.SubElement(question, "questionset")
         etree.SubElement(question, "is_collection").text = self.is_collection
         etree.SubElement(question, "order").text = self.order
-        if self.explanation:
-            explanation_keys = list(self.explanation.keys())
-            for i in range(len(explanation_keys)):
-                explanation_act = self.explanation[explanation_keys[i]]
-                if "help" in explanation_act:
-                    etree.SubElement(question, "help", lang=explanation_keys[i]).text = explanation_act["help"]
-                if "text" in explanation_act:
-                    etree.SubElement(question, "text", lang=explanation_keys[i]).text = explanation_act["text"]
-                if "verbose_name" in explanation_act:
-                    etree.SubElement(question, "verbose_name", lang=explanation_keys[i]).text \
-                        = explanation_act["verbose_name"]
-                if "verbose_name_plural" in explanation_act:
-                    etree.SubElement(question, "verbose_name_plural", lang=explanation_keys[i]).text \
-                        = explanation_act["verbose_name_plural"]
+        # get languages in help, text, verbose_name and verbose_name_plural
+        lang = list()
+        if self.help_dict:
+            lang.extend(list(self.help_dict.keys()))
+        if self.text_dict:
+            lang.extend(list(self.text_dict.keys()))
+        if self.verbose_name_dict:
+            lang.extend(list(self.verbose_name_dict.keys()))
+        if self.verbose_name_plural_dict:
+            lang.extend(list(self.verbose_name_plural_dict.keys()))
+        lang = list(set(lang))  # get unique list members
+        if len(lang) > 0:
+            # languages available
+            for langAct in lang:
+                if self.help_dict and langAct in self.help_dict:
+                    etree.SubElement(question, "help", lang=langAct).text = self.help_dict[langAct]
+                else:
+                    etree.SubElement(question, "help", lang=langAct)
+                if self.text_dict and langAct in self.text_dict:
+                    etree.SubElement(question, "text", lang=langAct).text = self.text_dict[langAct]
+                else:
+                    etree.SubElement(question, "text", lang=langAct)
+                if self.verbose_name_dict and langAct in self.verbose_name_dict:
+                    etree.SubElement(question, "verbose_name", lang=langAct).text = self.verbose_name_dict[langAct]
+                else:
+                    etree.SubElement(question, "verbose_name", lang=langAct)
+                if self.verbose_name_plural_dict and langAct in self.verbose_name_plural_dict:
+                    etree.SubElement(question, "verbose_name_plural", lang=langAct) \
+                        .text = self.verbose_name_plural_dict[langAct]
+                else:
+                    etree.SubElement(question, "verbose_name_plural", lang=langAct)
         etree.SubElement(question, "widget_type").text = self.widget_type
         etree.SubElement(question, "value_type").text = self.value_type
         etree.SubElement(question, "maximum").text = self.maximum

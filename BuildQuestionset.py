@@ -17,44 +17,35 @@ def create_catalog():
     dc = f"{{{ns['dc']}}}"
 
     root_questions = etree.Element("rdmo", nsmap=ns)
-    root_questions.append(Catalog.Question(ns=dc,
-                                           uri="https://geokur.geo.tu-dresden.de/terms/questions/qa/prerequisites"
-                                               "/data_provider_definitions/dq4usage",
-                                           uri_prefix="https://geokur.geo.tu-dresden.de/terms",
-                                           key="dq4usage",
-                                           path="qa/prerequisites/data_provider_definitions/dq4usage")
-                          .make_element())
-
-    root_questions.append(Catalog.Question(ns=dc,
-                                           uri="https://geokur.geo.tu-dresden.de/terms/questions/qa/prerequisites"
-                                               "/data_provider_definitions/open4usage",
-                                           uri_prefix="https://geokur.geo.tu-dresden.de/terms",
-                                           key="open4usage",
-                                           path="qa/prerequisites/data_provider_definitions/open4usage")
-                          .make_element())
-    explanation = {
-        "en": {
-            "help": "A testhelp in english",
-            "text": "A testtext in english",
-            "verbose_name": "A test verbose name in english",
-            "verbose_name_plural": "A test plural verbose name in english"
-        },
-        "de": {
-            "help": "A testhelp in deutsch",
-            "text": "A testtext in deutsch",
-            "verbose_name": "A test verbose name in deutsch",
-            "verbose_name_plural": "A test plural verbose name in deutsch"
-        },
-        "fr": {
-            "help": "help en francais"
-        }
-    }
-    root_questions.append(Catalog.Question(ns=dc,
-                                           comment="123",
-                                           is_collection=True,
-                                           explanation=explanation,
-                                           path="qa/prerequisites/data_provider_definitions/test4usage",
-                                           order=2)
+    # root_questions.append(Catalog.Question(ns=dc,
+    #                                        uri="https://geokur.geo.tu-dresden.de/terms/questions/qa/prerequisites"
+    #                                            "/data_provider_definitions/dq4usage",
+    #                                        uri_prefix="https://geokur.geo.tu-dresden.de/terms",
+    #                                        key="dq4usage",
+    #                                        path="qa/prerequisites/data_provider_definitions/dq4usage")
+    #                       .make_element())
+    #
+    # root_questions.append(Catalog.Question(ns=dc,
+    #                                        uri="https://geokur.geo.tu-dresden.de/terms/questions/qa/prerequisites"
+    #                                            "/data_provider_definitions/open4usage",
+    #                                        uri_prefix="https://geokur.geo.tu-dresden.de/terms",
+    #                                        key="open4usage",
+    #                                        path="qa/prerequisites/data_provider_definitions/open4usage")
+    #                       .make_element())
+    # root_questions.append(Catalog.Question(ns=dc,
+    #                                        comment="123",
+    #                                        is_collection=True,
+    #                                        help_dict={"en": "A testhelp in english", "de": "A testhelp in deutsch", "fr": "help en francais"},
+    #                                        text_dict={"en": "A testtext in english", "de": "A testtext in deutsch"},
+    #                                        verbose_name_dict={"en": "A test verbose name in english", "de": "A test verbose name in deutsch"},
+    #                                        verbose_name_plural_dict={"en": "A test plural verbose name in english", "de": "A test plural verbose name in deutsch"},
+    #                                        path="qa/prerequisites/data_provider_definitions/test4usage",
+    #                                        order=2)
+    #                       .make_element())
+    root_questions.append(Catalog.Questionset(ns=dc,
+                                              comment="TestComment",
+                                              title_dict={"en": "title en", "fr": "title fr"},
+                                              verbose_name_dict={"en": "verbose name en"})
                           .make_element())
 
     # objectify.deannotate(rdmo_root)
