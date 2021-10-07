@@ -1,0 +1,95 @@
+{
+  "uri_prefix": "https://geokur.geo.tu-dresden.de/terms",
+  "namespace": {
+    "prefix": "dc",
+    "url":"http://purl.org/dc/elements/1.1/"
+  },
+  "catalog": {
+    "key": "qa",
+    "title": {
+      "en": "Quality Assurance",
+      "de": "Qualitätssicherung"
+    },
+    "section": [
+      {
+        "key": "prerequisites",
+        "title": {
+          "en": "Prerequisites",
+          "de": "Vorbedingungen"
+        },
+        "questionset": [
+          {
+            "key": "data_provider_definitions",
+            "title": {
+              "en": "Data Provider",
+              "de": "Datenlieferant"
+            },
+            "question": [
+              {
+                "key": "dq4usage",
+                "help": {
+                  "en": "Define the data quality (DQ) level/thresholds for usage of collected input datasets.",
+                  "de": "Bitte definieren Sie die Level/Schwellwerte der Datenqualität zur Nutzung gesammelter Inputdatensätze."
+                },
+                "text": {
+                  "en": "Define DQ4usage",
+                  "de": "Definieren Sie DQ4usage"
+                },
+                "widget_type": "textarea",
+                "value_type": "text"
+              },
+              {
+                "key": "open4usage",
+                "help": {
+                  "en": "Define the required openness of collected input datasets for further usage.",
+                  "de": "Bitte definieren Sie die geforderte Offenheit von gesammelten Inputdatensätzen für deren weitere Nutzung."
+                },
+                "text": {
+                  "en": "Define Open4usage",
+                  "de": "Definieren Sie Open4usage"
+                },
+                "widget_type": "textarea",
+                "value_type": "text"
+              }
+            ]
+          },
+          {
+            "key": "data_curator_definitions/general",
+            "title": {
+              "en": "Data Curator",
+              "de": "Datenkurator"
+            },
+            "question": [
+              {
+                "key": "dm4processing_yesno",
+                "help": {
+                  "en": "Do you want to change properties of the data maturity (DM) for processing of datasets from standard?",
+                  "de": "Möchten Sie die Eigenschaften der Datenreife zur Prozessierung von Datensätzen gegenüber dem Standard ändern?"
+                },
+                "text": {
+                  "en": "Change properties of DM4processing",
+                  "de": "Ändern der Eigenschaften von DM4processing"
+                },
+                "widget_type": "yesno",
+                "value_type": "boolean"
+              },
+              {
+                "key": "dq4processing",
+                "help": {
+                  "en": "Define the data quality (DQ) level/thresholds for processing of datasets.",
+                  "de": "Bitte definieren Sie die Level/Schwellwerte der Datenqualität zur Verarbeitung von Datensätzen."
+                },
+                "text": {
+                  "en": "Define DQ4processing",
+                  "de": "Definieren Sie DQ4processing"
+                },
+                "widget_type": "textarea",
+                "value_type": "text"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

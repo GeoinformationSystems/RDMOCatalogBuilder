@@ -31,7 +31,10 @@ class Catalog(RDMOEntities):
         etree.SubElement(catalog, "uri_prefix").text = self.uri_prefix
         etree.SubElement(catalog, "key").text = self.key
         etree.SubElement(catalog, self.ns + "comment").text = self.comment
-        etree.SubElement(catalog, "order").text = self.order
+        if self.order is not None:
+            etree.SubElement(catalog, "order").text = str(self.order)
+        else:
+            etree.SubElement(catalog, "order")
         if self.title_dict:
             for lang in self.title_dict:
                 etree.SubElement(catalog, "title", lang=lang).text = self.title_dict[lang]
@@ -72,7 +75,10 @@ class Section(RDMOEntities):
             etree.SubElement(section, "catalog", {self.ns + "uri": self.catalog})
         else:
             etree.SubElement(section, "catalog")
-        etree.SubElement(section, "order").text = self.order
+        if self.order is not None:
+            etree.SubElement(section, "order").text = str(self.order)
+        else:
+            etree.SubElement(section, "order")
         if self.title_dict:
             for lang in self.title_dict:
                 etree.SubElement(section, "title", lang=lang).text = self.title_dict[lang]
@@ -130,7 +136,10 @@ class Questionset(RDMOEntities):
         else:
             etree.SubElement(questionset, "section")
         etree.SubElement(questionset, "is_collection").text = self.is_collection
-        etree.SubElement(questionset, "order").text = self.order
+        if self.order is not None:
+            etree.SubElement(questionset, "order").text = str(self.order)
+        else:
+            etree.SubElement(questionset, "order")
         # get languages in title, help, verbose_name and verbose_name_plural
         lang = list()
         if self.title_dict:
@@ -234,7 +243,10 @@ class Question(RDMOEntities):
         else:
             etree.SubElement(question, "questionset")
         etree.SubElement(question, "is_collection").text = self.is_collection
-        etree.SubElement(question, "order").text = self.order
+        if self.order is not None:
+            etree.SubElement(question, "order").text = str(self.order)
+        else:
+            etree.SubElement(question, "order")
         # get languages in help, text, verbose_name and verbose_name_plural
         lang = list()
         if self.help_dict:
