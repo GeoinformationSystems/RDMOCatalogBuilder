@@ -1,0 +1,80 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<rdmo xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <attribute dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa">
+    <uri_prefix>https://geokur.geo.tu-dresden.de/terms</uri_prefix>
+    <key>qa</key>
+    <path>qa</path>
+    <dc:comment/>
+    <parent/>
+  </attribute>
+  <attribute dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/prerequisites">
+    <uri_prefix>https://geokur.geo.tu-dresden.de/terms</uri_prefix>
+    <key>prerequisites</key>
+    <path>qa/prerequisites</path>
+    <dc:comment/>
+    <parent dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa"/>
+  </attribute>
+  <attribute dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/prerequisites/data_provider_definitions">
+    <uri_prefix>https://geokur.geo.tu-dresden.de/terms</uri_prefix>
+    <key>data_provider_definitions</key>
+    <path>qa/prerequisites/data_provider_definitions</path>
+    <dc:comment/>
+    <parent dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/prerequisites"/>
+  </attribute>
+  <attribute dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/prerequisites/data_provider_definitions/dq4usage">
+    <uri_prefix>https://geokur.geo.tu-dresden.de/terms</uri_prefix>
+    <key>dq4usage</key>
+    <path>qa/prerequisites/data_provider_definitions/dq4usage</path>
+    <dc:comment/>
+    <parent dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/prerequisites/data_provider_definitions"/>
+  </attribute>
+  <attribute dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/prerequisites/data_provider_definitions/open4usage">
+    <uri_prefix>https://geokur.geo.tu-dresden.de/terms</uri_prefix>
+    <key>open4usage</key>
+    <path>qa/prerequisites/data_provider_definitions/open4usage</path>
+    <dc:comment/>
+    <parent dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/prerequisites/data_provider_definitions"/>
+  </attribute>
+  <attribute dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/prerequisites/data_curator_definitions/general">
+    <uri_prefix>https://geokur.geo.tu-dresden.de/terms</uri_prefix>
+    <key>data_curator_definitions/general</key>
+    <path>qa/prerequisites/data_curator_definitions/general</path>
+    <dc:comment/>
+    <parent dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/prerequisites"/>
+  </attribute>
+  <attribute dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/prerequisites/data_curator_definitions/general/dm4processing_yesno">
+    <uri_prefix>https://geokur.geo.tu-dresden.de/terms</uri_prefix>
+    <key>dm4processing_yesno</key>
+    <path>qa/prerequisites/data_curator_definitions/general/dm4processing_yesno</path>
+    <dc:comment/>
+    <parent dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/prerequisites/data_curator_definitions/general"/>
+  </attribute>
+  <attribute dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/prerequisites/data_curator_definitions/general/dq4processing">
+    <uri_prefix>https://geokur.geo.tu-dresden.de/terms</uri_prefix>
+    <key>dq4processing</key>
+    <path>qa/prerequisites/data_curator_definitions/general/dq4processing</path>
+    <dc:comment/>
+    <parent dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/prerequisites/data_curator_definitions/general"/>
+  </attribute>
+  <attribute dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/prerequisites/data_curator_definitions/dm4processing">
+    <uri_prefix>https://geokur.geo.tu-dresden.de/terms</uri_prefix>
+    <key>data_curator_definitions/dm4processing</key>
+    <path>qa/prerequisites/data_curator_definitions/dm4processing</path>
+    <dc:comment/>
+    <parent dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/prerequisites"/>
+  </attribute>
+  <attribute dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/prerequisites/data_curator_definitions/dm4processing/data_format_1">
+    <uri_prefix>https://geokur.geo.tu-dresden.de/terms</uri_prefix>
+    <key>data_format_1</key>
+    <path>qa/prerequisites/data_curator_definitions/dm4processing/data_format_1</path>
+    <dc:comment/>
+    <parent dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/prerequisites/data_curator_definitions/dm4processing"/>
+  </attribute>
+  <attribute dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/prerequisites/data_curator_definitions/dm4processing/data_format_2">
+    <uri_prefix>https://geokur.geo.tu-dresden.de/terms</uri_prefix>
+    <key>data_format_2</key>
+    <path>qa/prerequisites/data_curator_definitions/dm4processing/data_format_2</path>
+    <dc:comment/>
+    <parent dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/prerequisites/data_curator_definitions/dm4processing"/>
+  </attribute>
+</rdmo>

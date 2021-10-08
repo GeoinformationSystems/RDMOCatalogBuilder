@@ -9,6 +9,10 @@ import json
 
 
 class RDMOElementSet:
+    """
+    RDMOElementSet is a class with etree elements for catalog, domain, options, conditions, and tasks
+    """
+
     def __init__(self,
                  catalog_root,
                  domain_root,
@@ -19,6 +23,16 @@ class RDMOElementSet:
 
 
 def create_options(options_root, optionset, ns, uri_prefix):
+    """
+    Append optionsets to already existing optionsets (if any). This function will append new optionset and option
+    parameters to the predefined root element.
+
+    :param options_root: Root elements for optionsets and options
+    :param optionset: Optionset element with all content of current optionset
+    :param ns: Namespace url
+    :param uri_prefix: Used uri prefix for RDMO catalog
+    :return: Extended options_root
+    """
 
     # optionset element
     optionset_key = optionset["key"]
@@ -94,18 +108,14 @@ def create_catalog(catalog_file):
     domain_root = etree.Element("rdmo", nsmap=ns_map)
     options_root = etree.Element("rdmo", nsmap=ns_map)
 
+    # catalog element
     catalog = content["catalog"]
     catalog_key = catalog["key"]
     catalog_uri = uri_prefix + "/questions/" + catalog_key
-
-    # catalog element
-    catalog_root.append(Catalog.Catalog(ns=ns,
-                                        uri=catalog_uri,
-                                        uri_prefix=uri_prefix,
-                                        key=catalog_key,
-                                        order=0,
-                                        title_dict=catalog["title"])
-                        .make_element())
+    if "comment" in catalog:
+        catalog_comment = catalog["comment"]
+    else:
+        catalog_comment = None
 
     catalog_attribute_key = catalog_key
     catalog_attribute_uri = uri_prefix + "/domain/" + catalog_attribute_key
@@ -117,6 +127,15 @@ def create_catalog(catalog_file):
                                         path=catalog_attribute_path)
                        .make_element())
 
+    catalog_root.append(Catalog.Catalog(ns=ns,
+                                        uri=catalog_uri,
+                                        uri_prefix=uri_prefix,
+                                        key=catalog_key,
+                                        comment=catalog_comment,
+                                        order=0,
+                                        title_dict=catalog["title"])
+                        .make_element())
+
     # section elements
     ct_section = -1
     sections = catalog["section"]
@@ -125,15 +144,10 @@ def create_catalog(catalog_file):
         section_key = section["key"]
         section_uri = catalog_uri + "/" + section_key
         section_path = catalog_key + "/" + section_key
-        catalog_root.append(Catalog.Section(ns=ns,
-                                            uri=section_uri,
-                                            uri_prefix=uri_prefix,
-                                            key=section_key,
-                                            path=section_path,
-                                            catalog=catalog_uri,
-                                            order=ct_section,
-                                            title_dict=section["title"])
-                            .make_element())
+        if "comment" in section:
+            section_comment = section["comment"]
+        else:
+            section_comment = None
 
         section_attribute_key = section_key
         section_attribute_uri = catalog_attribute_uri + "/" + section_attribute_key
@@ -146,6 +160,17 @@ def create_catalog(catalog_file):
                                             parent=catalog_attribute_uri)
                            .make_element())
 
+        catalog_root.append(Catalog.Section(ns=ns,
+                                            uri=section_uri,
+                                            uri_prefix=uri_prefix,
+                                            key=section_key,
+                                            path=section_path,
+                                            comment=section_comment,
+                                            catalog=catalog_uri,
+                                            order=ct_section,
+                                            title_dict=section["title"])
+                            .make_element())
+
         # questionset elements
         ct_questionset = -1
         questionsets = section["questionset"]
@@ -154,6 +179,10 @@ def create_catalog(catalog_file):
             questionset_key = questionset["key"]
             questionset_uri = section_uri + "/" + questionset_key
             questionset_path = section_path + "/" + questionset_key
+            if "comment" in questionset:
+                questionset_comment = questionset["comment"]
+            else:
+                questionset_comment = None
             if "title" in questionset:
                 questionset_title = questionset["title"]
             else:
@@ -170,18 +199,6 @@ def create_catalog(catalog_file):
                 questionset_verbose_name_plural = questionset["verbose_name_plural"]
             else:
                 questionset_verbose_name_plural = None
-            catalog_root.append(Catalog.Questionset(ns=ns,
-                                                    uri=questionset_uri,
-                                                    uri_prefix=uri_prefix,
-                                                    key=questionset_key,
-                                                    path=questionset_path,
-                                                    section=section_uri,
-                                                    order=ct_questionset,
-                                                    title_dict=questionset_title,
-                                                    help_dict=questionset_help,
-                                                    verbose_name_dict=questionset_verbose_name,
-                                                    verbose_name_plural_dict=questionset_verbose_name_plural)
-                                .make_element())
 
             questionset_attribute_key = questionset_key
             questionset_attribute_uri = section_attribute_uri + "/" + questionset_attribute_key
@@ -194,6 +211,20 @@ def create_catalog(catalog_file):
                                                 parent=section_attribute_uri)
                                .make_element())
 
+            catalog_root.append(Catalog.Questionset(ns=ns,
+                                                    uri=questionset_uri,
+                                                    uri_prefix=uri_prefix,
+                                                    key=questionset_key,
+                                                    path=questionset_path,
+                                                    comment=questionset_comment,
+                                                    section=section_uri,
+                                                    order=ct_questionset,
+                                                    title_dict=questionset_title,
+                                                    help_dict=questionset_help,
+                                                    verbose_name_dict=questionset_verbose_name,
+                                                    verbose_name_plural_dict=questionset_verbose_name_plural)
+                                .make_element())
+
             # question elements
             ct_question = -1
             questions = questionset["question"]
@@ -202,6 +233,10 @@ def create_catalog(catalog_file):
                 question_key = question["key"]
                 question_uri = questionset_uri + "/" + question_key
                 question_path = questionset_path + "/" + question_key
+                if "comment" in question:
+                    question_comment = question["comment"]
+                else:
+                    question_comment = None
                 if "is_collection" in question:
                     question_is_collection = question["is_collection"]
                 else:
@@ -222,6 +257,22 @@ def create_catalog(catalog_file):
                     question_verbose_name_plural = question["verbose_name_plural"]
                 else:
                     question_verbose_name_plural = None
+                if "maximum" in question:
+                    question_maximum = question["maximum"]
+                else:
+                    question_maximum = None
+                if "minimum" in question:
+                    question_minimum = question["minimum"]
+                else:
+                    question_minimum = None
+                if "step" in question:
+                    question_step = question["step"]
+                else:
+                    question_step = None
+                if "unit" in question:
+                    question_unit = question["minimum"]
+                else:
+                    question_unit = None
                 if "optionset" in question:
                     # options_root.append
                     optionset = question["optionset"]
@@ -232,22 +283,6 @@ def create_catalog(catalog_file):
                                                   uri_prefix=uri_prefix)
                 else:
                     optionset_uri = None
-                catalog_root.append(Catalog.Question(ns=ns,
-                                                     uri=question_uri,
-                                                     uri_prefix=uri_prefix,
-                                                     key=question_key,
-                                                     path=question_path,
-                                                     questionset=questionset_uri,
-                                                     is_collection=question_is_collection,
-                                                     order=ct_question,
-                                                     help_dict=question_help,
-                                                     text_dict=question_text,
-                                                     verbose_name_dict=question_verbose_name,
-                                                     verbose_name_plural_dict=question_verbose_name_plural,
-                                                     widget_type=question["widget_type"],
-                                                     value_type=question["value_type"],
-                                                     optionsets=optionset_uri)
-                                    .make_element())
 
                 question_attribute_key = question_key
                 question_attribute_uri = questionset_attribute_uri + "/" + question_attribute_key
@@ -259,6 +294,29 @@ def create_catalog(catalog_file):
                                                     path=question_attribute_path,
                                                     parent=questionset_attribute_uri)
                                    .make_element())
+
+                catalog_root.append(Catalog.Question(ns=ns,
+                                                     uri=question_uri,
+                                                     uri_prefix=uri_prefix,
+                                                     key=question_key,
+                                                     path=question_path,
+                                                     comment=question_comment,
+                                                     attribute=question_attribute_uri,
+                                                     questionset=questionset_uri,
+                                                     is_collection=question_is_collection,
+                                                     order=ct_question,
+                                                     help_dict=question_help,
+                                                     text_dict=question_text,
+                                                     verbose_name_dict=question_verbose_name,
+                                                     verbose_name_plural_dict=question_verbose_name_plural,
+                                                     widget_type=question["widget_type"],
+                                                     value_type=question["value_type"],
+                                                     maximum=question_maximum,
+                                                     minimum=question_minimum,
+                                                     step=question_step,
+                                                     unit=question_unit,
+                                                     optionsets=optionset_uri)
+                                    .make_element())
 
     # objectify.deannotate(catalog_root)
     etree.cleanup_namespaces(catalog_root)
@@ -318,28 +376,14 @@ def control_create_catalog(catalog_file, prefix_outfile):
     except IOError:
         pass
 
-
+    # write conditions
     file_conditions_out = prefix_outfile + "_conditions.xml"
+
+    # write tasks
     file_tasks_out = prefix_outfile + "_tasks.xml"
 
 
-
-
 if __name__ == '__main__':
-    # catalog = create_catalog("questionaire.json")
     control_create_catalog("questionaire.json", "qa")
-
-    # parser = etree.XMLParser(remove_blank_text=True)
-    # file_obj = BytesIO(etree.tostring(catalog))
-    # tree = etree.parse(file_obj, parser)
-
-    # print()
-    # print(etree.tostring(root, pretty_print=True, encoding="unicode", inclusive_ns_prefixes=True))
-
-    # try:
-    #     with open("example.xml", "wb") as xml_writer:
-    #         tree.write(xml_writer, pretty_print=True, xml_declaration=True, encoding="UTF-8")
-    # except IOError:
-    #     pass
 
     # https://www.blog.pythonlibrary.org/2014/03/26/python-creating-xml-with-lxml-objectify/
