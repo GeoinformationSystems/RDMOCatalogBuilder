@@ -3,56 +3,17 @@
 #  @contact: michael.wagner@tu-dresden.de
 
 from lxml import etree
-# from lxml import objectify
 from io import BytesIO
-from RDMOEntities import Catalog
+from RDMOEntities import Catalog, Domain
 import json
 
 
-def create_catalog_test():
-    ns = {
-        "dc": "http://purl.org/dc/elements/1.1/"
-    }
-    # dc = "{%s}" % ns["dc"]
-    # dc = "{" + ns["dc"] + "}"
-    dc = f"{{{ns['dc']}}}"
-
-    root_questions = etree.Element("rdmo", nsmap=ns)
-    root_questions.append(Catalog.Question(ns=dc,
-                                           uri="https://geokur.geo.tu-dresden.de/terms/questions/qa/prerequisites"
-                                               "/data_provider_definitions/dq4usage",
-                                           uri_prefix="https://geokur.geo.tu-dresden.de/terms",
-                                           key="dq4usage",
-                                           path="qa/prerequisites/data_provider_definitions/dq4usage")
-                          .make_element())
-
-    root_questions.append(Catalog.Question(ns=dc,
-                                           uri="https://geokur.geo.tu-dresden.de/terms/questions/qa/prerequisites"
-                                               "/data_provider_definitions/open4usage",
-                                           uri_prefix="https://geokur.geo.tu-dresden.de/terms",
-                                           key="open4usage",
-                                           path="qa/prerequisites/data_provider_definitions/open4usage")
-                          .make_element())
-    root_questions.append(Catalog.Question(ns=dc,
-                                           comment="123",
-                                           is_collection=True,
-                                           help_dict={"en": "A testhelp in english", "de": "A testhelp in deutsch", "fr": "help en francais"},
-                                           text_dict={"en": "A testtext in english", "de": "A testtext in deutsch"},
-                                           verbose_name_dict={"en": "A test verbose name in english", "de": "A test verbose name in deutsch"},
-                                           verbose_name_plural_dict={"en": "A test plural verbose name in english", "de": "A test plural verbose name in deutsch"},
-                                           path="qa/prerequisites/data_provider_definitions/test4usage",
-                                           order=2)
-                          .make_element())
-    root_questions.append(Catalog.Questionset(ns=dc,
-                                              comment="TestComment",
-                                              title_dict={"en": "title en", "fr": "title fr"},
-                                              verbose_name_dict={"en": "verbose name en"})
-                          .make_element())
-
-    # objectify.deannotate(rdmo_root)
-    etree.cleanup_namespaces(root_questions)
-
-    return root_questions
+class RDMOElementSet:
+    def __init__(self,
+                 catalog_root,
+                 domain_root):
+        self.catalog_root = catalog_root
+        self.domain_root = domain_root
 
 
 def create_catalog(catalog_file):
@@ -70,11 +31,13 @@ def create_catalog(catalog_file):
     fid.close()
 
     # build catalog
+    # included are catalog, domain, options, conditions, tasks
     uri_prefix = content["uri_prefix"]
     ns_map = {content["namespace"]["prefix"]: content["namespace"]["url"]}
     ns = f"{{{ns_map[content['namespace']['prefix']]}}}"
 
     catalog_root = etree.Element("rdmo", nsmap=ns_map)
+    domain_root = etree.Element("rdmo", nsmap=ns_map)
 
     catalog = content["catalog"]
     catalog_key = catalog["key"]
@@ -88,6 +51,16 @@ def create_catalog(catalog_file):
                                         order=0,
                                         title_dict=catalog["title"])
                         .make_element())
+
+    catalog_attribute_key = catalog_key
+    catalog_attribute_uri = uri_prefix + "/domain/" + catalog_attribute_key
+    catalog_attribute_path = catalog_attribute_key
+    domain_root.append(Domain.Attribute(ns=ns,
+                                        uri=catalog_attribute_uri,
+                                        uri_prefix=uri_prefix,
+                                        key=catalog_attribute_key,
+                                        path=catalog_attribute_path)
+                       .make_element())
 
     # section elements
     ct_section = -1
@@ -106,6 +79,17 @@ def create_catalog(catalog_file):
                                             order=ct_section,
                                             title_dict=section["title"])
                             .make_element())
+
+        section_attribute_key = section_key
+        section_attribute_uri = catalog_attribute_uri + "/" + section_attribute_key
+        section_attribute_path = catalog_attribute_path + "/" + section_attribute_key
+        domain_root.append(Domain.Attribute(ns=ns,
+                                            uri=section_attribute_uri,
+                                            uri_prefix=uri_prefix,
+                                            key=section_attribute_key,
+                                            path=section_attribute_path,
+                                            parent=catalog_attribute_uri)
+                           .make_element())
 
         # questionset elements
         ct_questionset = -1
@@ -143,6 +127,17 @@ def create_catalog(catalog_file):
                                                     verbose_name_dict=questionset_verbose_name,
                                                     verbose_name_plural_dict=questionset_verbose_name_plural)
                                 .make_element())
+
+            questionset_attribute_key = questionset_key
+            questionset_attribute_uri = section_attribute_uri + "/" + questionset_attribute_key
+            questionset_attribute_path = section_attribute_path + "/" + questionset_attribute_key
+            domain_root.append(Domain.Attribute(ns=ns,
+                                                uri=questionset_attribute_uri,
+                                                uri_prefix=uri_prefix,
+                                                key=questionset_attribute_key,
+                                                path=questionset_attribute_path,
+                                                parent=section_attribute_uri)
+                               .make_element())
 
             # question elements
             ct_question = -1
@@ -188,27 +183,81 @@ def create_catalog(catalog_file):
                                                      value_type=question["value_type"])
                                     .make_element())
 
+                question_attribute_key = question_key
+                question_attribute_uri = questionset_attribute_uri + "/" + question_attribute_key
+                question_attribute_path = questionset_attribute_path + "/" + question_attribute_key
+                domain_root.append(Domain.Attribute(ns=ns,
+                                                    uri=question_attribute_uri,
+                                                    uri_prefix=uri_prefix,
+                                                    key=question_attribute_key,
+                                                    path=question_attribute_path,
+                                                    parent=questionset_attribute_uri)
+                                   .make_element())
+
     # objectify.deannotate(catalog_root)
     etree.cleanup_namespaces(catalog_root)
+    etree.cleanup_namespaces(domain_root)
 
-    return catalog_root
+    rdmo_element_set = RDMOElementSet(catalog_root, domain_root)
+
+    return rdmo_element_set
 
 
-if __name__ == '__main__':
-    catalog = create_catalog("questionaire.json")
-    # catalog = create_catalog_test()
+def control_create_catalog(catalog_file, prefix_outfile):
+    rdmo_element_set = create_catalog(catalog_file)
+
+    # write catalog
+    catalog = rdmo_element_set.catalog_root
 
     parser = etree.XMLParser(remove_blank_text=True)
     file_obj = BytesIO(etree.tostring(catalog))
     tree = etree.parse(file_obj, parser)
 
-    # print()
-    # print(etree.tostring(root, pretty_print=True, encoding="unicode", inclusive_ns_prefixes=True))
+    file_catalog_out = prefix_outfile + "_questions.xml"
 
     try:
-        with open("example.xml", "wb") as xml_writer:
+        with open(file_catalog_out, "wb") as xml_writer:
             tree.write(xml_writer, pretty_print=True, xml_declaration=True, encoding="UTF-8")
     except IOError:
         pass
+
+    # write domain
+    domain = rdmo_element_set.domain_root
+
+    parser = etree.XMLParser(remove_blank_text=True)
+    file_obj = BytesIO(etree.tostring(domain))
+    tree = etree.parse(file_obj, parser)
+
+    file_domain_out = prefix_outfile + "_domain.xml"
+
+    try:
+        with open(file_domain_out, "wb") as xml_writer:
+            tree.write(xml_writer, pretty_print=True, xml_declaration=True, encoding="UTF-8")
+    except IOError:
+        pass
+
+    file_options_out = prefix_outfile + "_options.xml"
+    file_conditions_out = prefix_outfile + "_conditions.xml"
+    file_tasks_out = prefix_outfile + "_tasks.xml"
+
+
+
+
+if __name__ == '__main__':
+    # catalog = create_catalog("questionaire.json")
+    control_create_catalog("questionaire.json", "qa")
+
+    # parser = etree.XMLParser(remove_blank_text=True)
+    # file_obj = BytesIO(etree.tostring(catalog))
+    # tree = etree.parse(file_obj, parser)
+
+    # print()
+    # print(etree.tostring(root, pretty_print=True, encoding="unicode", inclusive_ns_prefixes=True))
+
+    # try:
+    #     with open("example.xml", "wb") as xml_writer:
+    #         tree.write(xml_writer, pretty_print=True, xml_declaration=True, encoding="UTF-8")
+    # except IOError:
+    #     pass
 
     # https://www.blog.pythonlibrary.org/2014/03/26/python-creating-xml-with-lxml-objectify/
