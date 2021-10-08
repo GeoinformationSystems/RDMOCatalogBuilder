@@ -87,6 +87,102 @@
                 "value_type": "text"
               }
             ]
+          },
+          {
+            "key": "data_curator_definitions/dm4processing",
+            "title": {
+              "en": "DM4processing",
+              "de": "DM4processing"
+            },
+            "question": [
+              {
+                "key": "data_format_1",
+                "help": {
+                  "en": "Properties of data formats part 1",
+                  "de": "Eigenschaften von Datenformaten Teil 1"
+                },
+                "text": {
+                  "en": "Technicality - data formats - part 1",
+                  "de": "Technisches - Datenformat - Teil 1"
+                },
+                "widget_type": "select",
+                "value_type": "text",
+                "optionset": {
+                  "key": "dm_data_formats_1",
+                  "comment": "Definition of data maturity aspects of data format, part 1",
+                  "option": [
+                    {
+                      "key": "1",
+                      "text": {
+                        "en": "none",
+                        "de": "nichts"
+                      }
+                    },
+                    {
+                      "key": "2",
+                      "text": {
+                        "en": "file extensions are consistent",
+                        "de": "Dateierweiterungen sind konsistent"
+                      }
+                    },
+                    {
+                      "key": "3",
+                      "text": {
+                        "en": "file extensions and sizes are consistent",
+                        "de": "Dateierweiterungen und -größen sind konsistent"
+                      }
+                    },
+                    {
+                      "key": "4",
+                      "text": {
+                        "en": "file extensions and sizes are consistent",
+                        "de": "Dateierweiterungen und -größen sind konsistent"
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "key": "data_format_2",
+                "help": {
+                  "en": "Properties of data formats part 2",
+                  "de": "Eigenschaften von Datenformaten Teil 2"
+                },
+                "text": {
+                  "en": "Technicality - data formats - part 2",
+                  "de": "Technisches - Datenformat - Teil 2"
+                },
+                "widget_type": "select",
+                "value_type": "text",
+                "optionset": {
+                  "key": "dm_data_formats_2",
+                  "comment": "Definition of data maturity aspects of data format, part 2",
+                  "option": [
+                    {
+                      "key": "1",
+                      "text": {
+                        "en": "none",
+                        "de": "nichts"
+                      }
+                    },
+                    {
+                      "key": "2",
+                      "text": {
+                        "en": "conform to well-defined rules, e.g. discipline-specific standards",
+                        "de": "entsprechen gut definierten Regeln, z.B. diszipline-spezifischen Standards"
+                      }
+                    },
+                    {
+                      "key": "3",
+                      "text": {
+                        "en": "conform to interdisciplinary standards",
+                        "de": "entsprechen interdisziplinären Standards"
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
           }
         ]
       }

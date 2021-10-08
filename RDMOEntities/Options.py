@@ -32,7 +32,6 @@ class Optionset(RDMOEntities):
         etree.SubElement(optionset, self.ns + "comment").text = self.comment
         etree.SubElement(optionset, "order").text = self.order
         etree.SubElement(optionset, "conditions").text = self.conditions
-        # TODO: what are conditions and how they are included?
 
         return optionset
 
@@ -72,7 +71,10 @@ class Option(RDMOEntities):
             etree.SubElement(option, "optionset", {self.ns + "uri": self.optionset})
         else:
             etree.SubElement(option, "optionset")
-        etree.SubElement(option, "order").text = self.order
+        if self.order is not None:
+            etree.SubElement(option, "order").text = str(self.order)
+        else:
+            etree.SubElement(option, "order")
         if self.text_dict:
             for lang in self.text_dict:
                 etree.SubElement(option, "text", lang=lang).text = self.text_dict[lang]

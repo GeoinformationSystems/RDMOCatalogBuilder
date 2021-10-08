@@ -284,7 +284,17 @@ class Question(RDMOEntities):
         etree.SubElement(question, "minimum").text = self.minimum
         etree.SubElement(question, "step").text = self.step
         etree.SubElement(question, "unit").text = self.unit
-        etree.SubElement(question, "optionsets").text = self.optionsets
-        etree.SubElement(question, "conditions").text = self.conditions
+        if self.optionsets:
+            optionsets = etree.Element("optionsets")
+            etree.SubElement(optionsets, "optionset", {self.ns + "uri": self.optionsets})
+            question.append(optionsets)
+        else:
+            etree.SubElement(question, "optionsets")
+        if self.conditions:
+            conditions = etree.Element("conditions")
+            etree.SubElement(conditions, "condition", {self.ns + "uri": self.conditions})
+            question.append(conditions)
+        else:
+            etree.SubElement(question, "conditions")
 
         return question
