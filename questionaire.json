@@ -71,7 +71,8 @@
                   "de": "Ändern der Eigenschaften von DM4processing"
                 },
                 "widget_type": "yesno",
-                "value_type": "boolean"
+                "value_type": "boolean",
+                "source_for_condition": "dm4processing_yesno"
               },
               {
                 "key": "dq4processing",
@@ -94,6 +95,14 @@
               "en": "DM4processing",
               "de": "DM4processing"
             },
+            "condition": [
+              {
+                "key": "dm4processing_yesno",
+                "comment": "Changes from standard DM4processing",
+                "relation": "eq",
+                "target_text": "1"
+              }
+            ],
             "question": [
               {
                 "key": "data_format_1",

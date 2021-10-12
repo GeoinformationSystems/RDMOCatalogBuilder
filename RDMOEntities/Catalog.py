@@ -171,7 +171,13 @@ class Questionset(RDMOEntities):
                         .text = self.verbose_name_plural_dict[langAct]
                 else:
                     etree.SubElement(questionset, "verbose_name_plural", lang=langAct)
-        etree.SubElement(questionset, "conditions").text = self.conditions
+        if self.conditions:
+            conditions = etree.Element("conditions")
+            for condition in self.conditions:
+                etree.SubElement(conditions, "condition", {self.ns + "uri": condition})
+            questionset.append(conditions)
+        else:
+            etree.SubElement(questionset, "conditions")
 
         return questionset
 

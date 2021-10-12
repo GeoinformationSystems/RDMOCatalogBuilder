@@ -177,7 +177,9 @@
     <help lang="en"/>
     <verbose_name lang="en"/>
     <verbose_name_plural lang="en"/>
-    <conditions/>
+    <conditions>
+      <condition dc:uri="https://geokur.geo.tu-dresden.de/terms/conditions/dm4processing_yesno"/>
+    </conditions>
   </questionset>
   <question dc:uri="https://geokur.geo.tu-dresden.de/terms/questions/qa/prerequisites/data_curator_definitions/dm4processing/data_format_1">
     <uri_prefix>https://geokur.geo.tu-dresden.de/terms</uri_prefix>

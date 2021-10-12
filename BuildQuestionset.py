@@ -4,7 +4,7 @@
 
 from lxml import etree
 from io import BytesIO
-from RDMOEntities import Catalog, Domain, Options
+from RDMOEntities import Catalog, Domain, Options, Conditions, Tasks
 import json
 
 
@@ -16,10 +16,12 @@ class RDMOElementSet:
     def __init__(self,
                  catalog_root,
                  domain_root,
-                 options_root):
+                 options_root,
+                 conditions_root):
         self.catalog_root = catalog_root
         self.domain_root = domain_root
         self.options_root = options_root
+        self.conditions_root = conditions_root
 
 
 def create_options(options_root, optionset, ns, uri_prefix):
@@ -84,6 +86,43 @@ def create_options(options_root, optionset, ns, uri_prefix):
     return options_root
 
 
+def create_conditions(conditions_root, conditions, ns, uri_prefix, source_question_for_condition):
+    # condition elements
+    for condition in conditions:
+        condition_key = condition["key"]
+        condition_uri = uri_prefix + "/conditions/" + condition_key
+        if "comment" in condition:
+            condition_comment = condition["comment"]
+        else:
+            condition_comment = None
+        condition_source = source_question_for_condition[condition_key]
+        condition_relation = condition["relation"]
+        if "target_text" not in condition and "target_option" not in condition:
+            # one target possibility has to be defined
+            raise Exception(f"Please add either target_text or target_option in condition {condition_key}")
+        else:
+            if "target_text" in condition:
+                condition_target_text = condition["target_text"]
+            else:
+                condition_target_text = None
+            if "target_option" in condition:
+                condition_target_option = condition["target_option"]
+            else:
+                condition_target_option = None
+        conditions_root.append(Conditions.Condition(ns=ns,
+                                                    uri=condition_uri,
+                                                    uri_prefix=uri_prefix,
+                                                    key=condition_key,
+                                                    comment=condition_comment,
+                                                    source=condition_source,
+                                                    relation=condition_relation,
+                                                    target_text=condition_target_text,
+                                                    target_option=condition_target_option)
+                               .make_element())
+
+    return conditions_root
+
+
 def create_catalog(catalog_file):
     """
     Create a question catalog in a tree form. The input file can only contain one catalog. The number of sections,
@@ -107,6 +146,10 @@ def create_catalog(catalog_file):
     catalog_root = etree.Element("rdmo", nsmap=ns_map)
     domain_root = etree.Element("rdmo", nsmap=ns_map)
     options_root = etree.Element("rdmo", nsmap=ns_map)
+    conditions_root = etree.Element("rdmo", nsmap=ns_map)
+
+    # prepare dict of source questions for conditions
+    source_questions_for_condition = {}
 
     # catalog element
     catalog = content["catalog"]
@@ -199,6 +242,15 @@ def create_catalog(catalog_file):
                 questionset_verbose_name_plural = questionset["verbose_name_plural"]
             else:
                 questionset_verbose_name_plural = None
+            if "condition" in questionset:
+                conditions = questionset["condition"]
+                conditions_root = create_conditions(conditions_root, conditions, ns, uri_prefix,
+                                                    source_questions_for_condition)
+                conditions_uri = []
+                for condition in conditions:
+                    conditions_uri.append(uri_prefix + "/conditions/" + condition["key"])
+            else:
+                conditions_uri = None
 
             questionset_attribute_key = questionset_key
             questionset_attribute_uri = section_attribute_uri + "/" + questionset_attribute_key
@@ -222,7 +274,8 @@ def create_catalog(catalog_file):
                                                     title_dict=questionset_title,
                                                     help_dict=questionset_help,
                                                     verbose_name_dict=questionset_verbose_name,
-                                                    verbose_name_plural_dict=questionset_verbose_name_plural)
+                                                    verbose_name_plural_dict=questionset_verbose_name_plural,
+                                                    conditions=conditions_uri)
                                 .make_element())
 
             # question elements
@@ -274,7 +327,6 @@ def create_catalog(catalog_file):
                 else:
                     question_unit = None
                 if "optionset" in question:
-                    # options_root.append
                     optionset = question["optionset"]
                     optionset_uri = uri_prefix + "/options/" + optionset["key"]
                     options_root = create_options(options_root=options_root,
@@ -294,6 +346,10 @@ def create_catalog(catalog_file):
                                                     path=question_attribute_path,
                                                     parent=questionset_attribute_uri)
                                    .make_element())
+
+                if "source_for_condition" in question:
+                    # this question is a potential source of condition in questionsets
+                    source_questions_for_condition[question["source_for_condition"]] = question_attribute_uri
 
                 catalog_root.append(Catalog.Question(ns=ns,
                                                      uri=question_uri,
@@ -323,7 +379,7 @@ def create_catalog(catalog_file):
     etree.cleanup_namespaces(domain_root)
     etree.cleanup_namespaces(options_root)
 
-    rdmo_element_set = RDMOElementSet(catalog_root, domain_root, options_root)
+    rdmo_element_set = RDMOElementSet(catalog_root, domain_root, options_root, conditions_root)
 
     return rdmo_element_set
 
@@ -377,7 +433,19 @@ def control_create_catalog(catalog_file, prefix_outfile):
         pass
 
     # write conditions
+    conditions = rdmo_element_set.conditions_root
+
+    parser = etree.XMLParser(remove_blank_text=True)
+    file_obj = BytesIO(etree.tostring(conditions))
+    tree = etree.parse(file_obj, parser)
+
     file_conditions_out = prefix_outfile + "_conditions.xml"
+
+    try:
+        with open(file_conditions_out, "wb") as xml_writer:
+            tree.write(xml_writer, pretty_print=True, xml_declaration=True, encoding="UTF-8")
+    except IOError:
+        pass
 
     # write tasks
     file_tasks_out = prefix_outfile + "_tasks.xml"

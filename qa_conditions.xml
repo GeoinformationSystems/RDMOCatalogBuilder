@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<rdmo xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <condition dc:uri="https://geokur.geo.tu-dresden.de/terms/conditions/dm4processing_yesno">
+    <uri_prefix>https://geokur.geo.tu-dresden.de/terms</uri_prefix>
+    <key>dm4processing_yesno</key>
+    <dc:comment>Changes from standard DM4processing</dc:comment>
+    <source dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/prerequisites/data_curator_definitions/general/dm4processing_yesno"/>
+    <relation>eq</relation>
+    <target_text>1</target_text>
+    <target_option/>
+  </condition>
+</rdmo>
