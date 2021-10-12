@@ -27,14 +27,14 @@
     <section dc:uri="https://geokur.geo.tu-dresden.de/terms/questions/qa/prerequisites"/>
     <is_collection/>
     <order>0</order>
-    <title lang="de">Datenlieferant</title>
-    <help lang="de"/>
-    <verbose_name lang="de"/>
-    <verbose_name_plural lang="de"/>
     <title lang="en">Data Provider</title>
     <help lang="en"/>
     <verbose_name lang="en"/>
     <verbose_name_plural lang="en"/>
+    <title lang="de">Datenlieferant</title>
+    <help lang="de"/>
+    <verbose_name lang="de"/>
+    <verbose_name_plural lang="de"/>
     <conditions/>
   </questionset>
   <question dc:uri="https://geokur.geo.tu-dresden.de/terms/questions/qa/prerequisites/data_provider_definitions/dq4usage">
@@ -46,14 +46,14 @@
     <questionset dc:uri="https://geokur.geo.tu-dresden.de/terms/questions/qa/prerequisites/data_provider_definitions"/>
     <is_collection>False</is_collection>
     <order>0</order>
-    <help lang="de">Bitte definieren Sie die Level/Schwellwerte der Datenqualität zur Nutzung gesammelter Inputdatensätze.</help>
-    <text lang="de">Definieren Sie DQ4usage</text>
-    <verbose_name lang="de"/>
-    <verbose_name_plural lang="de"/>
     <help lang="en">Define the data quality (DQ) level/thresholds for usage of collected input datasets.</help>
     <text lang="en">Define DQ4usage</text>
     <verbose_name lang="en"/>
     <verbose_name_plural lang="en"/>
+    <help lang="de">Bitte definieren Sie die Level/Schwellwerte der Datenqualität zur Nutzung gesammelter Inputdatensätze.</help>
+    <text lang="de">Definieren Sie DQ4usage</text>
+    <verbose_name lang="de"/>
+    <verbose_name_plural lang="de"/>
     <widget_type>textarea</widget_type>
     <value_type>text</value_type>
     <maximum/>
@@ -72,14 +72,14 @@
     <questionset dc:uri="https://geokur.geo.tu-dresden.de/terms/questions/qa/prerequisites/data_provider_definitions"/>
     <is_collection>False</is_collection>
     <order>1</order>
-    <help lang="de">Bitte definieren Sie die geforderte Offenheit von gesammelten Inputdatensätzen für deren weitere Nutzung.</help>
-    <text lang="de">Definieren Sie Open4usage</text>
-    <verbose_name lang="de"/>
-    <verbose_name_plural lang="de"/>
     <help lang="en">Define the required openness of collected input datasets for further usage.</help>
     <text lang="en">Define Open4usage</text>
     <verbose_name lang="en"/>
     <verbose_name_plural lang="en"/>
+    <help lang="de">Bitte definieren Sie die geforderte Offenheit von gesammelten Inputdatensätzen für deren weitere Nutzung.</help>
+    <text lang="de">Definieren Sie Open4usage</text>
+    <verbose_name lang="de"/>
+    <verbose_name_plural lang="de"/>
     <widget_type>textarea</widget_type>
     <value_type>text</value_type>
     <maximum/>
@@ -98,14 +98,14 @@
     <section dc:uri="https://geokur.geo.tu-dresden.de/terms/questions/qa/prerequisites"/>
     <is_collection/>
     <order>1</order>
-    <title lang="de">Datenkurator</title>
-    <help lang="de"/>
-    <verbose_name lang="de"/>
-    <verbose_name_plural lang="de"/>
     <title lang="en">Data Curator</title>
     <help lang="en"/>
     <verbose_name lang="en"/>
     <verbose_name_plural lang="en"/>
+    <title lang="de">Datenkurator</title>
+    <help lang="de"/>
+    <verbose_name lang="de"/>
+    <verbose_name_plural lang="de"/>
     <conditions/>
   </questionset>
   <question dc:uri="https://geokur.geo.tu-dresden.de/terms/questions/qa/prerequisites/data_curator_definitions/general/dm4processing_yesno">
@@ -117,14 +117,14 @@
     <questionset dc:uri="https://geokur.geo.tu-dresden.de/terms/questions/qa/prerequisites/data_curator_definitions/general"/>
     <is_collection>False</is_collection>
     <order>0</order>
-    <help lang="de">Möchten Sie die Eigenschaften der Datenreife zur Prozessierung von Datensätzen gegenüber dem Standard ändern?</help>
-    <text lang="de">Ändern der Eigenschaften von DM4processing</text>
-    <verbose_name lang="de"/>
-    <verbose_name_plural lang="de"/>
     <help lang="en">Do you want to change properties of the data maturity (DM) for processing of datasets from standard?</help>
     <text lang="en">Change properties of DM4processing</text>
     <verbose_name lang="en"/>
     <verbose_name_plural lang="en"/>
+    <help lang="de">Möchten Sie die Eigenschaften der Datenreife zur Prozessierung von Datensätzen gegenüber dem Standard ändern?</help>
+    <text lang="de">Ändern der Eigenschaften von DM4processing</text>
+    <verbose_name lang="de"/>
+    <verbose_name_plural lang="de"/>
     <widget_type>yesno</widget_type>
     <value_type>boolean</value_type>
     <maximum/>
@@ -143,14 +143,14 @@
     <questionset dc:uri="https://geokur.geo.tu-dresden.de/terms/questions/qa/prerequisites/data_curator_definitions/general"/>
     <is_collection>False</is_collection>
     <order>1</order>
-    <help lang="de">Bitte definieren Sie die Level/Schwellwerte der Datenqualität zur Verarbeitung von Datensätzen.</help>
-    <text lang="de">Definieren Sie DQ4processing</text>
-    <verbose_name lang="de"/>
-    <verbose_name_plural lang="de"/>
     <help lang="en">Define the data quality (DQ) level/thresholds for processing of datasets.</help>
     <text lang="en">Define DQ4processing</text>
     <verbose_name lang="en"/>
     <verbose_name_plural lang="en"/>
+    <help lang="de">Bitte definieren Sie die Level/Schwellwerte der Datenqualität zur Verarbeitung von Datensätzen.</help>
+    <text lang="de">Definieren Sie DQ4processing</text>
+    <verbose_name lang="de"/>
+    <verbose_name_plural lang="de"/>
     <widget_type>textarea</widget_type>
     <value_type>text</value_type>
     <maximum/>
@@ -169,14 +169,14 @@
     <section dc:uri="https://geokur.geo.tu-dresden.de/terms/questions/qa/prerequisites"/>
     <is_collection/>
     <order>2</order>
-    <title lang="de">DM4processing</title>
-    <help lang="de"/>
-    <verbose_name lang="de"/>
-    <verbose_name_plural lang="de"/>
     <title lang="en">DM4processing</title>
     <help lang="en"/>
     <verbose_name lang="en"/>
     <verbose_name_plural lang="en"/>
+    <title lang="de">DM4processing</title>
+    <help lang="de"/>
+    <verbose_name lang="de"/>
+    <verbose_name_plural lang="de"/>
     <conditions>
       <condition dc:uri="https://geokur.geo.tu-dresden.de/terms/conditions/dm4processing_yesno"/>
     </conditions>
@@ -190,14 +190,14 @@
     <questionset dc:uri="https://geokur.geo.tu-dresden.de/terms/questions/qa/prerequisites/data_curator_definitions/dm4processing"/>
     <is_collection>False</is_collection>
     <order>0</order>
-    <help lang="de">Eigenschaften von Datenformaten Teil 1</help>
-    <text lang="de">Technisches - Datenformat - Teil 1</text>
-    <verbose_name lang="de"/>
-    <verbose_name_plural lang="de"/>
     <help lang="en">Properties of data formats part 1</help>
     <text lang="en">Technicality - data formats - part 1</text>
     <verbose_name lang="en"/>
     <verbose_name_plural lang="en"/>
+    <help lang="de">Eigenschaften von Datenformaten Teil 1</help>
+    <text lang="de">Technisches - Datenformat - Teil 1</text>
+    <verbose_name lang="de"/>
+    <verbose_name_plural lang="de"/>
     <widget_type>select</widget_type>
     <value_type>text</value_type>
     <maximum/>
@@ -218,14 +218,14 @@
     <questionset dc:uri="https://geokur.geo.tu-dresden.de/terms/questions/qa/prerequisites/data_curator_definitions/dm4processing"/>
     <is_collection>False</is_collection>
     <order>1</order>
-    <help lang="de">Eigenschaften von Datenformaten Teil 2</help>
-    <text lang="de">Technisches - Datenformat - Teil 2</text>
-    <verbose_name lang="de"/>
-    <verbose_name_plural lang="de"/>
     <help lang="en">Properties of data formats part 2</help>
     <text lang="en">Technicality - data formats - part 2</text>
     <verbose_name lang="en"/>
     <verbose_name_plural lang="en"/>
+    <help lang="de">Eigenschaften von Datenformaten Teil 2</help>
+    <text lang="de">Technisches - Datenformat - Teil 2</text>
+    <verbose_name lang="de"/>
+    <verbose_name_plural lang="de"/>
     <widget_type>select</widget_type>
     <value_type>text</value_type>
     <maximum/>

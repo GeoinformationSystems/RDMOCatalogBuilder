@@ -68,6 +68,12 @@ class Task(RDMOEntities):
             etree.SubElement(task, "end_attribute")
         etree.SubElement(task, "days_before").text = self.days_before
         etree.SubElement(task, "days_after").text = self.days_after
-        etree.SubElement(task, "conditions").text = self.conditions
+        if self.conditions:
+            conditions = etree.Element("conditions")
+            for condition in self.conditions:
+                etree.SubElement(conditions, "condition", {self.ns + "uri": condition})
+            task.append(conditions)
+        else:
+            etree.SubElement(task, "conditions")
 
         return task

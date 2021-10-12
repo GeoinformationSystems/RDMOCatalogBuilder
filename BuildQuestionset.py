@@ -17,16 +17,18 @@ class RDMOElementSet:
                  catalog_root,
                  domain_root,
                  options_root,
-                 conditions_root):
+                 conditions_root,
+                 tasks_root):
         self.catalog_root = catalog_root
         self.domain_root = domain_root
         self.options_root = options_root
         self.conditions_root = conditions_root
+        self.tasks_root = tasks_root
 
 
 def create_options(options_root, optionset, ns, uri_prefix):
     """
-    Append optionsets to already existing optionsets (if any). This function will append new optionset and option
+    Append optionsets to already existing optionsets root. This function will append new optionset and option
     parameters to the predefined root element.
 
     :param options_root: Root elements for optionsets and options
@@ -67,6 +69,10 @@ def create_options(options_root, optionset, ns, uri_prefix):
             option_comment = option["comment"]
         else:
             option_comment = None
+        if "text" in option:
+            option_text = option["text"]
+        else:
+            option_text = None
         if "additional_input" in option:
             option_additional_input = option["additional_input"]
         else:
@@ -79,7 +85,7 @@ def create_options(options_root, optionset, ns, uri_prefix):
                                            comment=option_comment,
                                            optionset=optionset_uri,
                                            order=ct_options,
-                                           text_dict=option["text"],
+                                           text_dict=option_text,
                                            additional_input=option_additional_input)
                             .make_element())
 
@@ -87,6 +93,18 @@ def create_options(options_root, optionset, ns, uri_prefix):
 
 
 def create_conditions(conditions_root, conditions, ns, uri_prefix, source_question_for_condition):
+    """
+    Append conditions to already existing conditions root. This function will append new conditions and their
+    parameters to the predefined root element.
+
+    :param conditions_root: Root elements for conditions
+    :param conditions: Conditions element with all content
+    :param ns: Namespace url
+    :param uri_prefix: Used uri prefix for RDMO catalog
+    :param source_question_for_condition: Source attributes of questions linked to the respective condition
+    :return: Extended conditions_root
+    """
+
     # condition elements
     for condition in conditions:
         condition_key = condition["key"]
@@ -123,6 +141,63 @@ def create_conditions(conditions_root, conditions, ns, uri_prefix, source_questi
     return conditions_root
 
 
+def create_tasks(tasks_root, tasks, ns, uri_prefix):
+    # tasks elements
+    for task in tasks:
+        task_key = task["key"]
+        task_uri = uri_prefix + "/tasks/" + task_key
+        if "comment" in task:
+            task_comment = task["comment"]
+        else:
+            task_comment = None
+        if "title" in task:
+            task_title = task["title"]
+        else:
+            task_title = None
+        if "text" in task:
+            task_text = task["text"]
+        else:
+            task_text = None
+        if "start_attribute" in task:
+            task_start_attribute = task["start_attribute"]
+        else:
+            task_start_attribute = None
+        if "end_attribute" in task:
+            task_end_attribute = task["end_attribute"]
+        else:
+            task_end_attribute = None
+        if "days_before" in task:
+            task_days_before = task["days_before"]
+        else:
+            task_days_before = None
+        if "days_after" in task:
+            task_days_after = task["days_after"]
+        else:
+            task_days_after = None
+        if "condition" in task:
+            conditions = task["condition"]
+            task_conditions_uri = []
+            for condition in conditions:
+                task_conditions_uri.append(uri_prefix + "/conditions/" + condition)
+        else:
+            task_conditions_uri = None
+        tasks_root.append(Tasks.Task(ns=ns,
+                                     uri=task_uri,
+                                     uri_prefix=uri_prefix,
+                                     key=task_key,
+                                     comment=task_comment,
+                                     title_dict=task_title,
+                                     text_dict=task_text,
+                                     start_attribute=task_start_attribute,
+                                     end_attribute=task_end_attribute,
+                                     days_before=task_days_before,
+                                     days_after=task_days_after,
+                                     conditions=task_conditions_uri)
+                          .make_element())
+
+    return tasks_root
+
+
 def create_catalog(catalog_file):
     """
     Create a question catalog in a tree form. The input file can only contain one catalog. The number of sections,
@@ -147,6 +222,7 @@ def create_catalog(catalog_file):
     domain_root = etree.Element("rdmo", nsmap=ns_map)
     options_root = etree.Element("rdmo", nsmap=ns_map)
     conditions_root = etree.Element("rdmo", nsmap=ns_map)
+    tasks_root = etree.Element("rdmo", nsmap=ns_map)
 
     # prepare dict of source questions for conditions
     source_questions_for_condition = {}
@@ -246,11 +322,11 @@ def create_catalog(catalog_file):
                 conditions = questionset["condition"]
                 conditions_root = create_conditions(conditions_root, conditions, ns, uri_prefix,
                                                     source_questions_for_condition)
-                conditions_uri = []
+                questionset_conditions_uri = []
                 for condition in conditions:
-                    conditions_uri.append(uri_prefix + "/conditions/" + condition["key"])
+                    questionset_conditions_uri.append(uri_prefix + "/conditions/" + condition["key"])
             else:
-                conditions_uri = None
+                questionset_conditions_uri = None
 
             questionset_attribute_key = questionset_key
             questionset_attribute_uri = section_attribute_uri + "/" + questionset_attribute_key
@@ -275,7 +351,7 @@ def create_catalog(catalog_file):
                                                     help_dict=questionset_help,
                                                     verbose_name_dict=questionset_verbose_name,
                                                     verbose_name_plural_dict=questionset_verbose_name_plural,
-                                                    conditions=conditions_uri)
+                                                    conditions=questionset_conditions_uri)
                                 .make_element())
 
             # question elements
@@ -374,12 +450,16 @@ def create_catalog(catalog_file):
                                                      optionsets=optionset_uri)
                                     .make_element())
 
+    # task element
+    if "tasks" in content:
+        tasks_root = create_tasks(tasks_root, content["tasks"], ns, uri_prefix)
+
     # objectify.deannotate(catalog_root)
     etree.cleanup_namespaces(catalog_root)
     etree.cleanup_namespaces(domain_root)
     etree.cleanup_namespaces(options_root)
 
-    rdmo_element_set = RDMOElementSet(catalog_root, domain_root, options_root, conditions_root)
+    rdmo_element_set = RDMOElementSet(catalog_root, domain_root, options_root, conditions_root, tasks_root)
 
     return rdmo_element_set
 
@@ -448,7 +528,19 @@ def control_create_catalog(catalog_file, prefix_outfile):
         pass
 
     # write tasks
+    tasks = rdmo_element_set.tasks_root
+
+    parser = etree.XMLParser(remove_blank_text=True)
+    file_obj = BytesIO(etree.tostring(tasks))
+    tree = etree.parse(file_obj, parser)
+
     file_tasks_out = prefix_outfile + "_tasks.xml"
+
+    try:
+        with open(file_tasks_out, "wb") as xml_writer:
+            tree.write(xml_writer, pretty_print=True, xml_declaration=True, encoding="UTF-8")
+    except IOError:
+        pass
 
 
 if __name__ == '__main__':

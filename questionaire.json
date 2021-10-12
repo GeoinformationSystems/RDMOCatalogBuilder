@@ -196,5 +196,21 @@
         ]
       }
     ]
-  }
+  },
+  "tasks": [
+    {
+      "key": "define_dm4processing",
+      "title": {
+        "en": "Define DM4processing",
+        "de": "Definieren Sie DM4processing"
+      },
+      "text": {
+        "en": "Please define a concrete set of properties for the data maturity for data processing (DM4processing).",
+        "de": "Bitte definieren Sie die Eigenschaften der Datenreife zur Datenprozessierung (DM4processing)."
+      },
+      "condition": [
+        "dm4processing_yesno"
+      ]
+    }
+  ]
 }
