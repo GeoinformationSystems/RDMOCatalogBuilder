@@ -7,6 +7,10 @@ from RDMOEntities.RDMOEntities import RDMOEntities
 
 
 class Attribute(RDMOEntities):
+    """
+    Attribute class with question attribute variables for the domain.
+    """
+
     def __init__(self,
                  ns="{}",
                  uri=None,
@@ -24,6 +28,12 @@ class Attribute(RDMOEntities):
         self.parent = parent
 
     def make_element(self):
+        """
+        Make an etree element of an attribute entry.
+
+        :return: Attribute element
+        """
+
         attribute = etree.Element("attribute")
         if self.uri:
             attribute.set(self.ns + "uri", self.uri)

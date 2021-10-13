@@ -7,6 +7,10 @@ from RDMOEntities.RDMOEntities import RDMOEntities
 
 
 class Optionset(RDMOEntities):
+    """
+    Optionset class with optionset specific variables.
+    """
+
     def __init__(self,
                  ns="{}",
                  uri=None,
@@ -24,19 +28,32 @@ class Optionset(RDMOEntities):
         self.conditions = conditions
 
     def make_element(self):
+        """
+        Make an etree element of an optionset entry.
+
+        :return: Optionset element
+        """
+
         optionset = etree.Element("optionset")
         if self.uri:
             optionset.set(self.ns + "uri", self.uri)
         etree.SubElement(optionset, "uri_prefix").text = self.uri_prefix
         etree.SubElement(optionset, "key").text = self.key
         etree.SubElement(optionset, self.ns + "comment").text = self.comment
-        etree.SubElement(optionset, "order").text = self.order
+        if self.order is not None:
+            etree.SubElement(optionset, "order").text = str(self.order)
+        else:
+            etree.SubElement(optionset, "order")
         etree.SubElement(optionset, "conditions").text = self.conditions
 
         return optionset
 
 
 class Option(RDMOEntities):
+    """
+    Option class with option specific variables.
+    """
+
     def __init__(self,
                  ns="{}",
                  uri=None,
@@ -60,6 +77,12 @@ class Option(RDMOEntities):
         self.additional_input = str(additional_input)
 
     def make_element(self):
+        """
+        Make an etree element of a option entry.
+
+        :return: Option element
+        """
+
         option = etree.Element("option")
         if self.uri:
             option.set(self.ns + "uri", self.uri)

@@ -8,6 +8,10 @@ from RDMOEntities.RDMOEntities import RDMOEntities
 
 
 class Catalog(RDMOEntities):
+    """
+    Catalog class with catalog specific variables.
+    """
+
     def __init__(self,
                  ns="{}",
                  uri=None,
@@ -25,6 +29,12 @@ class Catalog(RDMOEntities):
         self.title_dict = title_dict
 
     def make_element(self):
+        """
+        Make an etree element of a catalog entry.
+
+        :return: Catalog element
+        """
+
         catalog = etree.Element("catalog")
         if self.uri:
             catalog.set(self.ns + "uri", self.uri)
@@ -43,6 +53,10 @@ class Catalog(RDMOEntities):
 
 
 class Section(RDMOEntities):
+    """
+    Section class with section specific variables.
+    """
+
     def __init__(self,
                  ns="{}",
                  uri=None,
@@ -64,6 +78,12 @@ class Section(RDMOEntities):
         self.title_dict = title_dict
 
     def make_element(self):
+        """
+        Make an etree element of a section entry.
+
+        :return: Section element
+        """
+
         section = etree.Element("section")
         if self.uri:
             section.set(self.ns + "uri", self.uri)
@@ -87,6 +107,10 @@ class Section(RDMOEntities):
 
 
 class Questionset(RDMOEntities):
+    """
+    Questionset class with questionset specific variables.
+    """
+
     def __init__(self,
                  ns="{}",
                  uri=None,
@@ -111,7 +135,7 @@ class Questionset(RDMOEntities):
         self.comment = comment
         self.attribute = attribute
         self.section = section
-        self.is_collection = is_collection
+        self.is_collection = str(is_collection)
         self.order = order
         self.title_dict = title_dict
         self.help_dict = help_dict
@@ -120,6 +144,12 @@ class Questionset(RDMOEntities):
         self.conditions = conditions
 
     def make_element(self):
+        """
+        Make an etree element of a questionset entry.
+
+        :return: Questionset element
+        """
+
         questionset = etree.Element("questionset")
         if self.uri:
             questionset.set(self.ns + "uri", self.uri)
@@ -183,6 +213,10 @@ class Questionset(RDMOEntities):
 
 
 class Question(RDMOEntities):
+    """
+    Question class with question specific variables.
+    """
+
     def __init__(self,
                  ns="{}",
                  uri=None,
@@ -233,6 +267,12 @@ class Question(RDMOEntities):
         self.conditions = conditions
 
     def make_element(self):
+        """
+        Make an etree element of a question entry.
+
+        :return: Question element
+        """
+
         question = etree.Element("question")
         if self.uri:
             question.set(self.ns + "uri", self.uri)

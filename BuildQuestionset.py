@@ -31,7 +31,7 @@ def create_options(options_root, optionset, ns, uri_prefix):
     Append optionsets to already existing optionsets root. This function will append new optionset and option
     parameters to the predefined root element.
 
-    :param options_root: Root elements for optionsets and options
+    :param options_root: Root element for optionsets and options
     :param optionset: Optionset element with all content of current optionset
     :param ns: Namespace url
     :param uri_prefix: Used uri prefix for RDMO catalog
@@ -48,7 +48,7 @@ def create_options(options_root, optionset, ns, uri_prefix):
     if "order" in optionset:
         optionset_order = optionset["order"]
     else:
-        optionset_order = None
+        optionset_order = 0
     options_root.append(Options.Optionset(ns=ns,
                                           uri=optionset_uri,
                                           uri_prefix=uri_prefix,
@@ -76,7 +76,7 @@ def create_options(options_root, optionset, ns, uri_prefix):
         if "additional_input" in option:
             option_additional_input = option["additional_input"]
         else:
-            option_additional_input = None
+            option_additional_input = False
         options_root.append(Options.Option(ns=ns,
                                            uri=option_uri,
                                            uri_prefix=uri_prefix,
@@ -97,7 +97,7 @@ def create_conditions(conditions_root, conditions, ns, uri_prefix, source_questi
     Append conditions to already existing conditions root. This function will append new conditions and their
     parameters to the predefined root element.
 
-    :param conditions_root: Root elements for conditions
+    :param conditions_root: Root element for conditions
     :param conditions: Conditions element with all content
     :param ns: Namespace url
     :param uri_prefix: Used uri prefix for RDMO catalog
@@ -142,6 +142,17 @@ def create_conditions(conditions_root, conditions, ns, uri_prefix, source_questi
 
 
 def create_tasks(tasks_root, tasks, ns, uri_prefix):
+    """
+    Append tasks to already existing tasks root. This function will append new tasks and their
+    parameters to the predefined root element.
+
+    :param tasks_root: Root element for conditions
+    :param tasks: Tasks element with all content
+    :param ns: Namespace url
+    :param uri_prefix: Used uri prefix for RDMO catalog
+    :return: Extended tasks_root
+    """
+
     # tasks elements
     for task in tasks:
         task_key = task["key"]
@@ -302,6 +313,10 @@ def create_catalog(catalog_file):
                 questionset_comment = questionset["comment"]
             else:
                 questionset_comment = None
+            if "is_collection" in questionset:
+                questionset_is_collection = questionset["is_collection"]
+            else:
+                questionset_is_collection = False
             if "title" in questionset:
                 questionset_title = questionset["title"]
             else:
@@ -346,6 +361,7 @@ def create_catalog(catalog_file):
                                                     path=questionset_path,
                                                     comment=questionset_comment,
                                                     section=section_uri,
+                                                    is_collection=questionset_is_collection,
                                                     order=ct_questionset,
                                                     title_dict=questionset_title,
                                                     help_dict=questionset_help,
@@ -465,6 +481,14 @@ def create_catalog(catalog_file):
 
 
 def control_create_catalog(catalog_file, prefix_outfile):
+    """
+    Control of creating an RDMO catalog with all output xml file for catalog, domain attributes, options, conditions,
+    tasks.
+
+    :param catalog_file: JSON file with questionaire
+    :param prefix_outfile: A file prefix for written xml files
+    """
+
     rdmo_element_set = create_catalog(catalog_file)
 
     # write catalog
@@ -545,5 +569,3 @@ def control_create_catalog(catalog_file, prefix_outfile):
 
 if __name__ == '__main__':
     control_create_catalog("questionaire.json", "qa")
-
-    # https://www.blog.pythonlibrary.org/2014/03/26/python-creating-xml-with-lxml-objectify/

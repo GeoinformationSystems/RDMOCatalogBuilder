@@ -7,6 +7,10 @@ from RDMOEntities.RDMOEntities import RDMOEntities
 
 
 class Task(RDMOEntities):
+    """
+    Task class with task specific variables.
+    """
+
     def __init__(self,
                  ns="{}",
                  uri=None,
@@ -34,6 +38,12 @@ class Task(RDMOEntities):
         self.conditions = conditions
 
     def make_element(self):
+        """
+        Make an etree element of a task entry.
+
+        :return: Task element
+        """
+
         task = etree.Element("task")
         if self.uri:
             task.set(self.ns + "uri", self.uri)

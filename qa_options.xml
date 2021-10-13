@@ -4,7 +4,7 @@
     <uri_prefix>https://geokur.geo.tu-dresden.de/terms</uri_prefix>
     <key>dm_data_formats_1</key>
     <dc:comment>Definition of data maturity aspects of data format, part 1</dc:comment>
-    <order/>
+    <order>0</order>
     <conditions/>
   </optionset>
   <option dc:uri="https://geokur.geo.tu-dresden.de/terms/options/dm_data_formats_1/1">
@@ -16,7 +16,7 @@
     <order>0</order>
     <text lang="en">none</text>
     <text lang="de">nichts</text>
-    <additional_input>None</additional_input>
+    <additional_input>False</additional_input>
   </option>
   <option dc:uri="https://geokur.geo.tu-dresden.de/terms/options/dm_data_formats_1/2">
     <uri_prefix>https://geokur.geo.tu-dresden.de/terms</uri_prefix>
@@ -27,7 +27,7 @@
     <order>1</order>
     <text lang="en">file extensions are consistent</text>
     <text lang="de">Dateierweiterungen sind konsistent</text>
-    <additional_input>None</additional_input>
+    <additional_input>False</additional_input>
   </option>
   <option dc:uri="https://geokur.geo.tu-dresden.de/terms/options/dm_data_formats_1/3">
     <uri_prefix>https://geokur.geo.tu-dresden.de/terms</uri_prefix>
@@ -38,7 +38,7 @@
     <order>2</order>
     <text lang="en">file extensions and sizes are consistent</text>
     <text lang="de">Dateierweiterungen und -größen sind konsistent</text>
-    <additional_input>None</additional_input>
+    <additional_input>False</additional_input>
   </option>
   <option dc:uri="https://geokur.geo.tu-dresden.de/terms/options/dm_data_formats_1/4">
     <uri_prefix>https://geokur.geo.tu-dresden.de/terms</uri_prefix>
@@ -49,13 +49,13 @@
     <order>3</order>
     <text lang="en">file extensions and sizes are consistent</text>
     <text lang="de">Dateierweiterungen und -größen sind konsistent</text>
-    <additional_input>None</additional_input>
+    <additional_input>False</additional_input>
   </option>
   <optionset dc:uri="https://geokur.geo.tu-dresden.de/terms/options/dm_data_formats_2">
     <uri_prefix>https://geokur.geo.tu-dresden.de/terms</uri_prefix>
     <key>dm_data_formats_2</key>
     <dc:comment>Definition of data maturity aspects of data format, part 2</dc:comment>
-    <order/>
+    <order>0</order>
     <conditions/>
   </optionset>
   <option dc:uri="https://geokur.geo.tu-dresden.de/terms/options/dm_data_formats_2/1">
@@ -67,7 +67,7 @@
     <order>0</order>
     <text lang="en">none</text>
     <text lang="de">nichts</text>
-    <additional_input>None</additional_input>
+    <additional_input>False</additional_input>
   </option>
   <option dc:uri="https://geokur.geo.tu-dresden.de/terms/options/dm_data_formats_2/2">
     <uri_prefix>https://geokur.geo.tu-dresden.de/terms</uri_prefix>
@@ -78,7 +78,7 @@
     <order>1</order>
     <text lang="en">conform to well-defined rules, e.g. discipline-specific standards</text>
     <text lang="de">entsprechen gut definierten Regeln, z.B. diszipline-spezifischen Standards</text>
-    <additional_input>None</additional_input>
+    <additional_input>False</additional_input>
   </option>
   <option dc:uri="https://geokur.geo.tu-dresden.de/terms/options/dm_data_formats_2/3">
     <uri_prefix>https://geokur.geo.tu-dresden.de/terms</uri_prefix>
@@ -89,6 +89,6 @@
     <order>2</order>
     <text lang="en">conform to interdisciplinary standards</text>
     <text lang="de">entsprechen interdisziplinären Standards</text>
-    <additional_input>None</additional_input>
+    <additional_input>False</additional_input>
   </option>
 </rdmo>

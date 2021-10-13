@@ -7,6 +7,10 @@ from RDMOEntities.RDMOEntities import RDMOEntities
 
 
 class Condition(RDMOEntities):
+    """
+    Condition class with condition specific variables.
+    """
+
     def __init__(self,
                  ns="{}",
                  uri=None,
@@ -28,6 +32,12 @@ class Condition(RDMOEntities):
         self.target_option = target_option
 
     def make_element(self):
+        """
+        Make an etree element of a condition entry.
+
+        :return: Condition element
+        """
+
         condition = etree.Element("condition")
         if self.uri:
             condition.set(self.ns + "uri", self.uri)
