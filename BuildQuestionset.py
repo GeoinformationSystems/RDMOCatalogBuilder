@@ -115,18 +115,18 @@ def create_conditions(conditions_root, conditions, ns, uri_prefix, source_questi
             condition_comment = None
         condition_source = source_question_for_condition[condition_key]
         condition_relation = condition["relation"]
-        if "target_text" not in condition and "target_option" not in condition:
-            # one target possibility has to be defined
-            raise Exception(f"Please add either target_text or target_option in condition {condition_key}")
+        # if "target_text" not in condition and "target_option" not in condition:
+        #     # one target possibility has to be defined
+        #     raise Exception(f"Please add either target_text or target_option in condition {condition_key}")
+        # else:
+        if "target_text" in condition:
+            condition_target_text = condition["target_text"]
         else:
-            if "target_text" in condition:
-                condition_target_text = condition["target_text"]
-            else:
-                condition_target_text = None
-            if "target_option" in condition:
-                condition_target_option = condition["target_option"]
-            else:
-                condition_target_option = None
+            condition_target_text = None
+        if "target_option" in condition:
+            condition_target_option = condition["target_option"]
+        else:
+            condition_target_option = None
         conditions_root.append(Conditions.Condition(ns=ns,
                                                     uri=condition_uri,
                                                     uri_prefix=uri_prefix,
@@ -237,6 +237,9 @@ def create_catalog(catalog_file):
 
     # prepare dict of source questions for conditions
     source_questions_for_condition = {}
+
+    # prepare dict of dataset collections for questionsets
+    collection_name = {}
 
     # catalog element
     catalog = content["catalog"]
@@ -354,12 +357,46 @@ def create_catalog(catalog_file):
                                                 parent=section_attribute_uri)
                                .make_element())
 
+            if "collection_name" in questionset:
+                # if a questionset is a collection, an additional attribute with suffix /id is necessary
+                # here an attribute with suffix /collection_name/id is added
+                if questionset["collection_name"] not in collection_name:
+                    tmp_key = questionset["collection_name"]
+                    tmp_uri = questionset_attribute_uri + "/" + tmp_key
+                    tmp_path = questionset_attribute_path + "/" + tmp_key
+                    print(tmp_key)
+                    print(tmp_uri)
+                    domain_root.append(Domain.Attribute(ns=ns,
+                                                        uri=tmp_uri,
+                                                        uri_prefix=uri_prefix,
+                                                        key=tmp_key,
+                                                        path=tmp_path,
+                                                        parent=questionset_attribute_uri)
+                                       .make_element())
+                    tmp2_key = "id"
+                    tmp2_uri = tmp_uri + "/" + tmp2_key
+                    tmp2_path = tmp_path + "/" + tmp2_key
+                    domain_root.append(Domain.Attribute(ns=ns,
+                                                        uri=tmp2_uri,
+                                                        uri_prefix=uri_prefix,
+                                                        key=tmp2_key,
+                                                        path=tmp2_path,
+                                                        parent=tmp_uri)
+                                       .make_element())
+
+                    collection_name[questionset["collection_name"]] = tmp_uri
+                questionset_attribute = collection_name[questionset["collection_name"]]
+            else:
+                # in case of non collection, no specific attribute is taken
+                questionset_attribute = questionset_attribute_uri
+
             catalog_root.append(Catalog.Questionset(ns=ns,
                                                     uri=questionset_uri,
                                                     uri_prefix=uri_prefix,
                                                     key=questionset_key,
                                                     path=questionset_path,
                                                     comment=questionset_comment,
+                                                    attribute=questionset_attribute,
                                                     section=section_uri,
                                                     is_collection=questionset_is_collection,
                                                     order=ct_questionset,
@@ -467,8 +504,8 @@ def create_catalog(catalog_file):
                                     .make_element())
 
     # task element
-    if "tasks" in content:
-        tasks_root = create_tasks(tasks_root, content["tasks"], ns, uri_prefix)
+    if "task" in content:
+        tasks_root = create_tasks(tasks_root, content["task"], ns, uri_prefix)
 
     # objectify.deannotate(catalog_root)
     etree.cleanup_namespaces(catalog_root)
@@ -568,4 +605,4 @@ def control_create_catalog(catalog_file, prefix_outfile):
 
 
 if __name__ == '__main__':
-    control_create_catalog("questionaire.json", "qa")
+    control_create_catalog("qa_questionnaire.json", "qa")

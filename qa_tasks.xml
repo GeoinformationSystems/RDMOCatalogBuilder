@@ -1,19 +1,199 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <rdmo xmlns:dc="http://purl.org/dc/elements/1.1/">
-  <task dc:uri="https://geokur.geo.tu-dresden.de/terms/tasks/define_dm4processing">
+  <task dc:uri="https://geokur.geo.tu-dresden.de/terms/tasks/define_dq4usage">
     <uri_prefix>https://geokur.geo.tu-dresden.de/terms</uri_prefix>
-    <key>define_dm4processing</key>
+    <key>define_dq4usage</key>
     <dc:comment/>
-    <title lang="de">Definieren Sie DM4processing</title>
-    <text lang="de">Bitte definieren Sie die Eigenschaften der Datenreife zur Datenprozessierung (DM4processing).</text>
-    <title lang="en">Define DM4processing</title>
-    <text lang="en">Please define a concrete set of properties for the data maturity for data processing (DM4processing).</text>
+    <title lang="en">Define DQ4usage</title>
+    <text lang="en">Please define concrete levels/thresholds of data quality for the usage of data.</text>
     <start_attribute/>
     <end_attribute/>
     <days_before/>
     <days_after/>
     <conditions>
-      <condition dc:uri="https://geokur.geo.tu-dresden.de/terms/conditions/dm4processing_yesno"/>
+      <condition dc:uri="https://geokur.geo.tu-dresden.de/terms/conditions/pr_dq4usage_definition_filled"/>
+    </conditions>
+  </task>
+  <task dc:uri="https://geokur.geo.tu-dresden.de/terms/tasks/define_open4usage">
+    <uri_prefix>https://geokur.geo.tu-dresden.de/terms</uri_prefix>
+    <key>define_open4usage</key>
+    <dc:comment/>
+    <title lang="en">Define Open4usage</title>
+    <text lang="en">Please define the required openness of input data.</text>
+    <start_attribute/>
+    <end_attribute/>
+    <days_before/>
+    <days_after/>
+    <conditions>
+      <condition dc:uri="https://geokur.geo.tu-dresden.de/terms/conditions/pr_open4usage_definition_filled"/>
+    </conditions>
+  </task>
+  <task dc:uri="https://geokur.geo.tu-dresden.de/terms/tasks/define_dm4processing">
+    <uri_prefix>https://geokur.geo.tu-dresden.de/terms</uri_prefix>
+    <key>define_dm4processing</key>
+    <dc:comment/>
+    <title lang="en">Define DM4processing</title>
+    <text lang="en">Please define a concrete set of properties for the data maturity for data processing (level 2).</text>
+    <start_attribute/>
+    <end_attribute/>
+    <days_before/>
+    <days_after/>
+    <conditions>
+      <condition dc:uri="https://geokur.geo.tu-dresden.de/terms/conditions/pr_dm4processing_definition_filled"/>
+    </conditions>
+  </task>
+  <task dc:uri="https://geokur.geo.tu-dresden.de/terms/tasks/define_dq4processing">
+    <uri_prefix>https://geokur.geo.tu-dresden.de/terms</uri_prefix>
+    <key>define_dq4processing</key>
+    <dc:comment/>
+    <title lang="en">Define DQ4processing</title>
+    <text lang="en">Please define concrete levels/thresholds of data quality for data processing (level 2).</text>
+    <start_attribute/>
+    <end_attribute/>
+    <days_before/>
+    <days_after/>
+    <conditions>
+      <condition dc:uri="https://geokur.geo.tu-dresden.de/terms/conditions/pr_dq4processing_definition_filled"/>
+    </conditions>
+  </task>
+  <task dc:uri="https://geokur.geo.tu-dresden.de/terms/tasks/define_dm4analysis">
+    <uri_prefix>https://geokur.geo.tu-dresden.de/terms</uri_prefix>
+    <key>define_dm4analysis</key>
+    <dc:comment/>
+    <title lang="en">Define DM4analysis</title>
+    <text lang="en">Please define a concrete set of properties for the data maturity for data analysis (level 3).</text>
+    <start_attribute/>
+    <end_attribute/>
+    <days_before/>
+    <days_after/>
+    <conditions>
+      <condition dc:uri="https://geokur.geo.tu-dresden.de/terms/conditions/pr_dm4analysis_definition_filled"/>
+    </conditions>
+  </task>
+  <task dc:uri="https://geokur.geo.tu-dresden.de/terms/tasks/define_dq4analysis">
+    <uri_prefix>https://geokur.geo.tu-dresden.de/terms</uri_prefix>
+    <key>define_dq4analysis</key>
+    <dc:comment/>
+    <title lang="en">Define DQ4analysis</title>
+    <text lang="en">Please define concrete levels/thresholds of data quality for data analysis (level 3).</text>
+    <start_attribute/>
+    <end_attribute/>
+    <days_before/>
+    <days_after/>
+    <conditions>
+      <condition dc:uri="https://geokur.geo.tu-dresden.de/terms/conditions/pr_dq4analysis_definition_filled"/>
+    </conditions>
+  </task>
+  <task dc:uri="https://geokur.geo.tu-dresden.de/terms/tasks/define_dm4publication">
+    <uri_prefix>https://geokur.geo.tu-dresden.de/terms</uri_prefix>
+    <key>define_dm4publication</key>
+    <dc:comment/>
+    <title lang="en">Define DM4publication</title>
+    <text lang="en">Please define a concrete set of properties for the data maturity for data publication (level 4).</text>
+    <start_attribute/>
+    <end_attribute/>
+    <days_before/>
+    <days_after/>
+    <conditions>
+      <condition dc:uri="https://geokur.geo.tu-dresden.de/terms/conditions/pr_dm4publication_definition_filled"/>
+    </conditions>
+  </task>
+  <task dc:uri="https://geokur.geo.tu-dresden.de/terms/tasks/define_dq4publication">
+    <uri_prefix>https://geokur.geo.tu-dresden.de/terms</uri_prefix>
+    <key>define_dq4publication</key>
+    <dc:comment/>
+    <title lang="en">Define DQ4publication</title>
+    <text lang="en">Please define concrete levels/thresholds of data quality for data publication (level 4).</text>
+    <start_attribute/>
+    <end_attribute/>
+    <days_before/>
+    <days_after/>
+    <conditions>
+      <condition dc:uri="https://geokur.geo.tu-dresden.de/terms/conditions/pr_dq4publication_definition_filled"/>
+    </conditions>
+  </task>
+  <task dc:uri="https://geokur.geo.tu-dresden.de/terms/tasks/define_open4publication">
+    <uri_prefix>https://geokur.geo.tu-dresden.de/terms</uri_prefix>
+    <key>define_open4publication</key>
+    <dc:comment/>
+    <title lang="en">Define Open4publication</title>
+    <text lang="en">Please define the required openness of data to be published.</text>
+    <start_attribute/>
+    <end_attribute/>
+    <days_before/>
+    <days_after/>
+    <conditions>
+      <condition dc:uri="https://geokur.geo.tu-dresden.de/terms/conditions/pr_open4publication_definition_filled"/>
+    </conditions>
+  </task>
+  <task dc:uri="https://geokur.geo.tu-dresden.de/terms/tasks/define_dm4archiving">
+    <uri_prefix>https://geokur.geo.tu-dresden.de/terms</uri_prefix>
+    <key>define_dm4archiving</key>
+    <dc:comment/>
+    <title lang="en">Define DM4archiving</title>
+    <text lang="en">Please define a concrete set of properties for the data maturity for data archiving (level 5).</text>
+    <start_attribute/>
+    <end_attribute/>
+    <days_before/>
+    <days_after/>
+    <conditions>
+      <condition dc:uri="https://geokur.geo.tu-dresden.de/terms/conditions/pr_dm4archiving_definition_filled"/>
+    </conditions>
+  </task>
+  <task dc:uri="https://geokur.geo.tu-dresden.de/terms/tasks/define_dq4archiving">
+    <uri_prefix>https://geokur.geo.tu-dresden.de/terms</uri_prefix>
+    <key>define_dq4archiving</key>
+    <dc:comment/>
+    <title lang="en">Define DQ4archiving</title>
+    <text lang="en">Please define concrete levels/thresholds of data quality for data archiving (level 5).</text>
+    <start_attribute/>
+    <end_attribute/>
+    <days_before/>
+    <days_after/>
+    <conditions>
+      <condition dc:uri="https://geokur.geo.tu-dresden.de/terms/conditions/pr_dq4archiving_definition_filled"/>
+    </conditions>
+  </task>
+  <task dc:uri="https://geokur.geo.tu-dresden.de/terms/tasks/define_open4archiving">
+    <uri_prefix>https://geokur.geo.tu-dresden.de/terms</uri_prefix>
+    <key>define_open4archiving</key>
+    <dc:comment/>
+    <title lang="en">Define Open4archiving</title>
+    <text lang="en">Please define the required openness of data to be archived.</text>
+    <start_attribute/>
+    <end_attribute/>
+    <days_before/>
+    <days_after/>
+    <conditions>
+      <condition dc:uri="https://geokur.geo.tu-dresden.de/terms/conditions/pr_open4archiving_definition_filled"/>
+    </conditions>
+  </task>
+  <task dc:uri="https://geokur.geo.tu-dresden.de/terms/tasks/ensure_open4usage">
+    <uri_prefix>https://geokur.geo.tu-dresden.de/terms</uri_prefix>
+    <key>ensure_open4usage</key>
+    <dc:comment/>
+    <title lang="en">Ensure Open4usage</title>
+    <text lang="en">Please ensure the required openness of data for usage. Further questions will be activated.</text>
+    <start_attribute/>
+    <end_attribute/>
+    <days_before/>
+    <days_after/>
+    <conditions>
+      <condition dc:uri="https://geokur.geo.tu-dresden.de/terms/conditions/pr_ensure_open4usage_definition_filled"/>
+    </conditions>
+  </task>
+  <task dc:uri="https://geokur.geo.tu-dresden.de/terms/tasks/ensure_dq4usage">
+    <uri_prefix>https://geokur.geo.tu-dresden.de/terms</uri_prefix>
+    <key>ensure_dq4usage</key>
+    <dc:comment/>
+    <title lang="en">Ensure DQ4usage</title>
+    <text lang="en">Please ensure the required data quality of data for usage. Further questions will be activated.</text>
+    <start_attribute/>
+    <end_attribute/>
+    <days_before/>
+    <days_after/>
+    <conditions>
+      <condition dc:uri="https://geokur.geo.tu-dresden.de/terms/conditions/pr_ensure_dq4usage_definition_filled"/>
     </conditions>
   </task>
 </rdmo>
