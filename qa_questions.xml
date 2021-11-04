@@ -21,7 +21,7 @@
     <key>data_provider_definitions</key>
     <path>qa/prerequisites/data_provider_definitions</path>
     <dc:comment/>
-    <attribute dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/prerequisites/data_provider_definitions"/>
+    <attribute/>
     <section dc:uri="https://geokur.geo.tu-dresden.de/terms/questions/qa/prerequisites"/>
     <is_collection>False</is_collection>
     <order>0</order>
@@ -80,7 +80,7 @@
     <key>data_curator_definitions</key>
     <path>qa/prerequisites/data_curator_definitions</path>
     <dc:comment/>
-    <attribute dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/prerequisites/data_curator_definitions"/>
+    <attribute/>
     <section dc:uri="https://geokur.geo.tu-dresden.de/terms/questions/qa/prerequisites"/>
     <is_collection>False</is_collection>
     <order>1</order>
@@ -183,7 +183,7 @@
     <key>data_publisher_definitions</key>
     <path>qa/prerequisites/data_publisher_definitions</path>
     <dc:comment/>
-    <attribute dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/prerequisites/data_publisher_definitions"/>
+    <attribute/>
     <section dc:uri="https://geokur.geo.tu-dresden.de/terms/questions/qa/prerequisites"/>
     <is_collection>False</is_collection>
     <order>2</order>
@@ -339,7 +339,7 @@
     <key>collectData</key>
     <path>qa/collectionPhase/collectData</path>
     <dc:comment/>
-    <attribute dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/collectionPhase/collectData/collection_phase_datasets"/>
+    <attribute dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/collectionPhase/collectData"/>
     <section dc:uri="https://geokur.geo.tu-dresden.de/terms/questions/qa/collectionPhase"/>
     <is_collection>True</is_collection>
     <order>0</order>
@@ -445,7 +445,7 @@
     <key>metadataUsage</key>
     <path>qa/collectionPhase/metadataUsage</path>
     <dc:comment/>
-    <attribute dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/collectionPhase/collectData/collection_phase_datasets"/>
+    <attribute dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/collectionPhase/collectData"/>
     <section dc:uri="https://geokur.geo.tu-dresden.de/terms/questions/qa/collectionPhase"/>
     <is_collection>True</is_collection>
     <order>1</order>
@@ -516,7 +516,7 @@
     <key>processData</key>
     <path>qa/processingPhase/processData</path>
     <dc:comment/>
-    <attribute dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/processingPhase/processData"/>
+    <attribute/>
     <section dc:uri="https://geokur.geo.tu-dresden.de/terms/questions/qa/processingPhase"/>
     <is_collection>False</is_collection>
     <order>0</order>
@@ -562,7 +562,7 @@
     <key>analyseData</key>
     <path>qa/analysisPhase/analyseData</path>
     <dc:comment/>
-    <attribute dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/analysisPhase/analyseData"/>
+    <attribute/>
     <section dc:uri="https://geokur.geo.tu-dresden.de/terms/questions/qa/analysisPhase"/>
     <is_collection>False</is_collection>
     <order>0</order>
@@ -608,7 +608,7 @@
     <key>publishData</key>
     <path>qa/publicationPhase/publishData</path>
     <dc:comment/>
-    <attribute dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/publicationPhase/publishData"/>
+    <attribute/>
     <section dc:uri="https://geokur.geo.tu-dresden.de/terms/questions/qa/publicationPhase"/>
     <is_collection>False</is_collection>
     <order>0</order>
@@ -654,7 +654,7 @@
     <key>archiveData</key>
     <path>qa/archivingPhase/archiveData</path>
     <dc:comment/>
-    <attribute dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/archivingPhase/archiveData"/>
+    <attribute/>
     <section dc:uri="https://geokur.geo.tu-dresden.de/terms/questions/qa/archivingPhase"/>
     <is_collection>False</is_collection>
     <order>0</order>

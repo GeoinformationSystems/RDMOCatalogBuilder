@@ -361,11 +361,9 @@ def create_catalog(catalog_file):
                 # if a questionset is a collection, an additional attribute with suffix /id is necessary
                 # here an attribute with suffix /collection_name/id is added
                 if questionset["collection_name"] not in collection_name:
-                    tmp_key = questionset["collection_name"]
+                    tmp_key = "id"
                     tmp_uri = questionset_attribute_uri + "/" + tmp_key
                     tmp_path = questionset_attribute_path + "/" + tmp_key
-                    print(tmp_key)
-                    print(tmp_uri)
                     domain_root.append(Domain.Attribute(ns=ns,
                                                         uri=tmp_uri,
                                                         uri_prefix=uri_prefix,
@@ -373,22 +371,12 @@ def create_catalog(catalog_file):
                                                         path=tmp_path,
                                                         parent=questionset_attribute_uri)
                                        .make_element())
-                    tmp2_key = "id"
-                    tmp2_uri = tmp_uri + "/" + tmp2_key
-                    tmp2_path = tmp_path + "/" + tmp2_key
-                    domain_root.append(Domain.Attribute(ns=ns,
-                                                        uri=tmp2_uri,
-                                                        uri_prefix=uri_prefix,
-                                                        key=tmp2_key,
-                                                        path=tmp2_path,
-                                                        parent=tmp_uri)
-                                       .make_element())
 
-                    collection_name[questionset["collection_name"]] = tmp_uri
+                    collection_name[questionset["collection_name"]] = questionset_attribute_uri
                 questionset_attribute = collection_name[questionset["collection_name"]]
             else:
-                # in case of non collection, no specific attribute is taken
-                questionset_attribute = questionset_attribute_uri
+                # in case of non collection, no attribute is given
+                questionset_attribute = None
 
             catalog_root.append(Catalog.Questionset(ns=ns,
                                                     uri=questionset_uri,
