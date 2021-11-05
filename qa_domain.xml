@@ -203,6 +203,13 @@
     <dc:comment/>
     <parent dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/processingPhase"/>
   </attribute>
+  <attribute dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/processingPhase/processData/id">
+    <uri_prefix>https://geokur.geo.tu-dresden.de/terms</uri_prefix>
+    <key>id</key>
+    <path>qa/processingPhase/processData/id</path>
+    <dc:comment/>
+    <parent dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/processingPhase/processData"/>
+  </attribute>
   <attribute dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/processingPhase/processData/processingOfData">
     <uri_prefix>https://geokur.geo.tu-dresden.de/terms</uri_prefix>
     <key>processingOfData</key>

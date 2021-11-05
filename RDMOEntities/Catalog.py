@@ -338,7 +338,8 @@ class Question(RDMOEntities):
             etree.SubElement(question, "optionsets")
         if self.conditions:
             conditions = etree.Element("conditions")
-            etree.SubElement(conditions, "condition", {self.ns + "uri": self.conditions})
+            for condition in self.conditions:
+                etree.SubElement(conditions, "condition", {self.ns + "uri": condition})
             question.append(conditions)
         else:
             etree.SubElement(question, "conditions")

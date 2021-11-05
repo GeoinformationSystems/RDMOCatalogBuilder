@@ -92,7 +92,7 @@ def create_options(options_root, optionset, ns, uri_prefix):
     return options_root
 
 
-def create_conditions(conditions_root, conditions, ns, uri_prefix, source_question_for_condition):
+def create_conditions(conditions_root, conditions, ns, uri_prefix, source_attribute):
     """
     Append conditions to already existing conditions root. This function will append new conditions and their
     parameters to the predefined root element.
@@ -101,7 +101,7 @@ def create_conditions(conditions_root, conditions, ns, uri_prefix, source_questi
     :param conditions: Conditions element with all content
     :param ns: Namespace url
     :param uri_prefix: Used uri prefix for RDMO catalog
-    :param source_question_for_condition: Source attributes of questions linked to the respective condition
+    :param source_attribute: Source attributes of questions linked to the respective condition
     :return: Extended conditions_root
     """
 
@@ -113,7 +113,6 @@ def create_conditions(conditions_root, conditions, ns, uri_prefix, source_questi
             condition_comment = condition["comment"]
         else:
             condition_comment = None
-        condition_source = source_question_for_condition[condition_key]
         condition_relation = condition["relation"]
         # if "target_text" not in condition and "target_option" not in condition:
         #     # one target possibility has to be defined
@@ -132,7 +131,7 @@ def create_conditions(conditions_root, conditions, ns, uri_prefix, source_questi
                                                     uri_prefix=uri_prefix,
                                                     key=condition_key,
                                                     comment=condition_comment,
-                                                    source=condition_source,
+                                                    source=source_attribute,
                                                     relation=condition_relation,
                                                     target_text=condition_target_text,
                                                     target_option=condition_target_option)
@@ -186,10 +185,14 @@ def create_tasks(tasks_root, tasks, ns, uri_prefix):
         else:
             task_days_after = None
         if "condition" in task:
+            # condition entry in task can be either a string or a json array
             conditions = task["condition"]
             task_conditions_uri = []
-            for condition in conditions:
-                task_conditions_uri.append(uri_prefix + "/conditions/" + condition)
+            if isinstance(conditions, str):
+                task_conditions_uri.append(uri_prefix + "/conditions/" + conditions)
+            elif isinstance(conditions, list):
+                for condition in conditions:
+                    task_conditions_uri.append(uri_prefix + "/conditions/" + condition)
         else:
             task_conditions_uri = None
         tasks_root.append(Tasks.Task(ns=ns,
@@ -337,12 +340,15 @@ def create_catalog(catalog_file):
             else:
                 questionset_verbose_name_plural = None
             if "condition" in questionset:
-                conditions = questionset["condition"]
-                conditions_root = create_conditions(conditions_root, conditions, ns, uri_prefix,
-                                                    source_questions_for_condition)
+                questionset_conditions = questionset["condition"]
                 questionset_conditions_uri = []
-                for condition in conditions:
-                    questionset_conditions_uri.append(uri_prefix + "/conditions/" + condition["key"])
+                if isinstance(questionset_conditions, str):
+                    # a string instance in condition indicates a single condition
+                    questionset_conditions_uri.append(uri_prefix + "/conditions/" + questionset_conditions)
+                elif isinstance(questionset_conditions, list):
+                    # a list instance in condition indicates multiple conditions
+                    for questionset_condition in questionset_conditions:
+                        questionset_conditions_uri.append(uri_prefix + "/conditions/" + questionset_condition)
             else:
                 questionset_conditions_uri = None
 
@@ -452,6 +458,18 @@ def create_catalog(catalog_file):
                                                   uri_prefix=uri_prefix)
                 else:
                     optionset_uri = None
+                if "condition" in question:
+                    question_conditions = question["condition"]
+                    conditions_uri = []
+                    if isinstance(question_conditions, str):
+                        # a string instance in condition indicates a single condition
+                        conditions_uri.append(uri_prefix + "/conditions/" + question_conditions)
+                    elif isinstance(question_conditions, list):
+                        # a list instance in condition indicates multiple conditions
+                        for question_condition in question_conditions:
+                            conditions_uri.append(uri_prefix + "/conditions/" + question_condition)
+                else:
+                    conditions_uri = None
 
                 question_attribute_key = question_key
                 question_attribute_uri = questionset_attribute_uri + "/" + question_attribute_key
@@ -464,9 +482,13 @@ def create_catalog(catalog_file):
                                                     parent=questionset_attribute_uri)
                                    .make_element())
 
-                if "source_for_condition" in question:
-                    # this question is a potential source of condition in questionsets
-                    source_questions_for_condition[question["source_for_condition"]] = question_attribute_uri
+                if "condition_definition" in question:
+                    # this question is a source of conditions, that are usable in questions, questionsets, and tasks
+                    condition_definitions = question["condition_definition"]
+                    conditions_root = create_conditions(conditions_root, condition_definitions, ns, uri_prefix,
+                                                        question_attribute_uri)
+                    for condition_definition in condition_definitions:
+                        source_questions_for_condition[condition_definition["key"]] = question_attribute_uri
 
                 catalog_root.append(Catalog.Question(ns=ns,
                                                      uri=question_uri,
@@ -488,7 +510,8 @@ def create_catalog(catalog_file):
                                                      minimum=question_minimum,
                                                      step=question_step,
                                                      unit=question_unit,
-                                                     optionsets=optionset_uri)
+                                                     optionsets=optionset_uri,
+                                                     conditions=conditions_uri)
                                     .make_element())
 
     # task element

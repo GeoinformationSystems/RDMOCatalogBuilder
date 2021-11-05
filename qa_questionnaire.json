@@ -32,7 +32,18 @@
                 },
                 "widget_type": "textarea",
                 "value_type": "text",
-                "source_for_condition": "pr_dq4usage_definition_filled"
+                "condition_definition": [
+                  {
+                    "key": "pr_dq4usage_definition_filled",
+                    "comment": "DQ4usage is defined",
+                    "relation": "notempty"
+                  },
+                  {
+                    "key": "pr_dq4usage_definition_unfilled",
+                    "comment": "DQ4usage is not defined",
+                    "relation": "empty"
+                  }
+                ]
               },
               {
                 "key": "open4usage",
@@ -44,7 +55,18 @@
                 },
                 "widget_type": "textarea",
                 "value_type": "text",
-                "source_for_condition": "pr_open4usage_definition_filled"
+                "condition_definition": [
+                  {
+                    "key": "pr_open4usage_definition_filled",
+                    "comment": "Open4usage is defined",
+                    "relation": "notempty"
+                  },
+                  {
+                    "key": "pr_open4usage_definition_unfilled",
+                    "comment": "Open4usage is not defined",
+                    "relation": "empty"
+                  }
+                ]
               }
             ]
           },
@@ -63,8 +85,7 @@
                   "en": "Define DM4processing"
                 },
                 "widget_type": "textarea",
-                "value_type": "text",
-                "source_for_condition": "pr_dm4processing_definition_filled"
+                "value_type": "text"
               },
               {
                 "key": "dq4processing",
@@ -75,8 +96,7 @@
                   "en": "Define DQ4processing"
                 },
                 "widget_type": "textarea",
-                "value_type": "text",
-                "source_for_condition": "pr_dq4processing_definition_filled"
+                "value_type": "text"
               },
               {
                 "key": "dm4analysis",
@@ -87,8 +107,7 @@
                   "en": "Define DM4analysis"
                 },
                 "widget_type": "textarea",
-                "value_type": "text",
-                "source_for_condition": "pr_dm4analysis_definition_filled"
+                "value_type": "text"
               },
               {
                 "key": "dq4analysis",
@@ -99,8 +118,7 @@
                   "en": "Define DQ4analysis"
                 },
                 "widget_type": "textarea",
-                "value_type": "text",
-                "source_for_condition": "pr_dq4analysis_definition_filled"
+                "value_type": "text"
               }
             ]
           },
@@ -119,8 +137,7 @@
                   "en": "Define DM4publication"
                 },
                 "widget_type": "textarea",
-                "value_type": "text",
-                "source_for_condition": "pr_dm4publication_definition_filled"
+                "value_type": "text"
               },
               {
                 "key": "dq4publication",
@@ -131,8 +148,7 @@
                   "en": "Define DQ4publication"
                 },
                 "widget_type": "textarea",
-                "value_type": "text",
-                "source_for_condition": "pr_dq4publication_definition_filled"
+                "value_type": "text"
               },
               {
                 "key": "open4publication",
@@ -143,8 +159,7 @@
                   "en": "Define Open4publication"
                 },
                 "widget_type": "textarea",
-                "value_type": "text",
-                "source_for_condition": "pr_open4publication_definition_filled"
+                "value_type": "text"
               },
               {
                 "key": "dm4archiving",
@@ -155,8 +170,7 @@
                   "en": "Define DM4archiving"
                 },
                 "widget_type": "textarea",
-                "value_type": "text",
-                "source_for_condition": "pr_dm4archiving_definition_filled"
+                "value_type": "text"
               },
               {
                 "key": "dq4archiving",
@@ -167,8 +181,7 @@
                   "en": "Define DQ4archiving"
                 },
                 "widget_type": "textarea",
-                "value_type": "text",
-                "source_for_condition": "pr_dq4archiving_definition_filled"
+                "value_type": "text"
               },
               {
                 "key": "open4archiving",
@@ -179,8 +192,7 @@
                   "en": "Define Open4archiving"
                 },
                 "widget_type": "textarea",
-                "value_type": "text",
-                "source_for_condition": "pr_open4archiving_definition_filled"
+                "value_type": "text"
               }
             ]
           }
@@ -205,18 +217,7 @@
             "verbose_name_plural": {
               "en": "datasets"
             },
-            "condition": [
-              {
-                "key": "pr_dq4usage_definition_filled",
-                "comment": "DQ4usage is defined",
-                "relation": "notempty"
-              },
-              {
-                "key": "pr_open4usage_definition_filled",
-                "comment": "Open4usage is defined",
-                "relation": "notempty"
-              }
-            ],
+            "condition": ["pr_dq4usage_definition_filled", "pr_open4usage_definition_filled"],
             "question": [
               {
                 "key": "collectionOfData",
@@ -239,7 +240,14 @@
                 },
                 "widget_type": "yesno",
                 "value_type": "boolean",
-                "source_for_condition": "cp_dq4usage_ensured"
+                "condition_definition": [
+                  {
+                    "key": "cp_dq4usage_ensured",
+                    "comment": "DQ4usage is ensured",
+                    "relation": "eq",
+                    "target_text": "1"
+                  }
+                ]
               },
               {
                 "key": "collectionOfDataOpenness",
@@ -251,7 +259,14 @@
                 },
                 "widget_type": "yesno",
                 "value_type": "boolean",
-                "source_for_condition": "cp_open4usage_ensured"
+                "condition_definition": [
+                  {
+                    "key": "cp_open4usage_ensured",
+                    "comment": "Open4usage is ensured",
+                    "relation": "eq",
+                    "target_text": "1"
+                  }
+                ]
               },
               {
                 "key": "collectionOfDataMetadata",
@@ -262,8 +277,7 @@
                   "en": "Is metadata available?"
                 },
                 "widget_type": "yesno",
-                "value_type": "boolean",
-                "source_for_condition": "cp_metadata_available"
+                "value_type": "boolean"
               }
             ]
           },
@@ -280,20 +294,7 @@
             "verbose_name_plural": {
               "en": "datasets"
             },
-            "condition": [
-              {
-                "key": "cp_dq4usage_ensured",
-                "comment": "DQ4usage is ensured",
-                "relation": "eq",
-                "target_text": "1"
-              },
-              {
-                "key": "cp_open4usage_ensured",
-                "comment": "Open4usage is ensured",
-                "relation": "eq",
-                "target_text": "1"
-              }
-            ],
+            "condition": ["cp_dq4usage_ensured", "cp_open4usage_ensured"],
             "question": [
               {
                 "key": "metadataExtraction",
@@ -304,8 +305,7 @@
                   "en": "Is it possible to extract further metadata (possibly automatically)?"
                 },
                 "widget_type": "yesno",
-                "value_type": "boolean",
-                "source_for_condition": "cp_metadata_extraction"
+                "value_type": "boolean"
               },
               {
                 "key": "dataQualityExtraction",
@@ -316,8 +316,7 @@
                   "en": "Is it possible to extract further data quality (possibly automatically)?"
                 },
                 "widget_type": "yesno",
-                "value_type": "boolean",
-                "source_for_condition": "cp_data_quality_extraction"
+                "value_type": "boolean"
               }
             ]
           }
@@ -333,6 +332,14 @@
             "key": "processData",
             "title": {
               "en": "Process Data"
+            },
+            "is_collection": "True",
+            "collection_name": "processing_phase_datasets",
+            "verbose_name": {
+              "en": "dataset"
+            },
+            "verbose_name_plural": {
+              "en": "datasets"
             },
             "question": [
               {
@@ -360,6 +367,14 @@
             "key": "analyseData",
             "title": {
               "en": "Analyse Data"
+            },
+            "is_collection": "True",
+            "collection_name": "processing_phase_datasets",
+            "verbose_name": {
+              "en": "dataset"
+            },
+            "verbose_name_plural": {
+              "en": "datasets"
             },
             "question": [
               {
@@ -442,7 +457,7 @@
       "text": {
         "en": "Please define concrete levels/thresholds of data quality for the usage of data."
       },
-      "condition": ["pr_dq4usage_definition_filled"]
+      "condition": "pr_dq4usage_definition_unfilled"
     },
     {
       "key": "define_open4usage",
@@ -452,7 +467,7 @@
       "text": {
         "en": "Please define the required openness of input data."
       },
-      "condition": ["pr_open4usage_definition_filled"]
+      "condition": "pr_open4usage_definition_unfilled"
     },
     {
       "key": "define_dm4processing",
@@ -462,7 +477,7 @@
       "text": {
         "en": "Please define a concrete set of properties for the data maturity for data processing (level 2)."
       },
-      "condition": ["pr_dm4processing_definition_filled"]
+      "condition": "pr_dm4processing_definition_unfilled"
     },
     {
       "key": "define_dq4processing",
@@ -472,7 +487,7 @@
       "text": {
         "en": "Please define concrete levels/thresholds of data quality for data processing (level 2)."
       },
-      "condition": ["pr_dq4processing_definition_filled"]
+      "condition": "pr_dq4processing_definition_unfilled"
     },
     {
       "key": "define_dm4analysis",
@@ -482,7 +497,7 @@
       "text": {
         "en": "Please define a concrete set of properties for the data maturity for data analysis (level 3)."
       },
-      "condition": ["pr_dm4analysis_definition_filled"]
+      "condition": "pr_dm4analysis_definition_unfilled"
     },
     {
       "key": "define_dq4analysis",
@@ -492,7 +507,7 @@
       "text": {
         "en": "Please define concrete levels/thresholds of data quality for data analysis (level 3)."
       },
-      "condition": ["pr_dq4analysis_definition_filled"]
+      "condition": "pr_dq4analysis_definition_unfilled"
     },
     {
       "key": "define_dm4publication",
@@ -502,7 +517,7 @@
       "text": {
         "en": "Please define a concrete set of properties for the data maturity for data publication (level 4)."
       },
-      "condition": ["pr_dm4publication_definition_filled"]
+      "condition": "pr_dm4publication_definition_unfilled"
     },
     {
       "key": "define_dq4publication",
@@ -512,7 +527,7 @@
       "text": {
         "en": "Please define concrete levels/thresholds of data quality for data publication (level 4)."
       },
-      "condition": ["pr_dq4publication_definition_filled"]
+      "condition": "pr_dq4publication_definition_unfilled"
     },
     {
       "key": "define_open4publication",
@@ -522,7 +537,7 @@
       "text": {
         "en": "Please define the required openness of data to be published."
       },
-      "condition": ["pr_open4publication_definition_filled"]
+      "condition": "pr_open4publication_definition_unfilled"
     },
     {
       "key": "define_dm4archiving",
@@ -532,7 +547,7 @@
       "text": {
         "en": "Please define a concrete set of properties for the data maturity for data archiving (level 5)."
       },
-      "condition": ["pr_dm4archiving_definition_filled"]
+      "condition": "pr_dm4archiving_definition_unfilled"
     },
     {
       "key": "define_dq4archiving",
@@ -542,7 +557,7 @@
       "text": {
         "en": "Please define concrete levels/thresholds of data quality for data archiving (level 5)."
       },
-      "condition": ["pr_dq4archiving_definition_filled"]
+      "condition": "pr_dq4archiving_definition_unfilled"
     },
     {
       "key": "define_open4archiving",
@@ -552,7 +567,7 @@
       "text": {
         "en": "Please define the required openness of data to be archived."
       },
-      "condition": ["pr_open4archiving_definition_filled"]
+      "condition": "pr_open4archiving_definition_unfilled"
     },
     {
       "key": "ensure_open4usage",
@@ -562,7 +577,7 @@
       "text": {
         "en": "Please ensure the required openness of data for usage. Further questions will be activated."
       },
-      "condition": ["pr_ensure_open4usage_definition_filled"]
+      "condition": "pr_ensure_open4usage_definition_unfilled"
     },
     {
       "key": "ensure_dq4usage",
@@ -572,7 +587,7 @@
       "text": {
         "en": "Please ensure the required data quality of data for usage. Further questions will be activated."
       },
-      "condition": ["pr_ensure_dq4usage_definition_filled"]
+      "condition": "pr_ensure_dq4usage_definition_unfilled"
     }
   ]
 }
