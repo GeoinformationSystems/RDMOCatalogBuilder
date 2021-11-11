@@ -1,4 +1,5 @@
 {
+  "prefix_outfile": "qa",
   "uri_prefix": "https://geokur.geo.tu-dresden.de/terms",
   "namespace": {
     "prefix": "dc",

@@ -18,12 +18,14 @@ class RDMOElementSet:
                  domain_root,
                  options_root,
                  conditions_root,
-                 tasks_root):
+                 tasks_root,
+                 prefix_outfile):
         self.catalog_root = catalog_root
         self.domain_root = domain_root
         self.options_root = options_root
         self.conditions_root = conditions_root
         self.tasks_root = tasks_root
+        self.prefix_outfile = prefix_outfile
 
 
 def create_options(options_root, optionset, ns, uri_prefix):
@@ -227,6 +229,9 @@ def create_catalog(catalog_file):
     fid = open(catalog_file)
     content = json.load(fid)
     fid.close()
+
+    # get prefix for outfile
+    prefix_outfile = content["prefix_outfile"]
 
     # build catalog
     # included are catalog, domain, options, conditions, tasks
@@ -532,21 +537,26 @@ def create_catalog(catalog_file):
     etree.cleanup_namespaces(domain_root)
     etree.cleanup_namespaces(options_root)
 
-    rdmo_element_set = RDMOElementSet(catalog_root, domain_root, options_root, conditions_root, tasks_root)
+    rdmo_element_set = RDMOElementSet(catalog_root, domain_root, options_root, conditions_root, tasks_root,
+                                      prefix_outfile)
 
     return rdmo_element_set
 
 
-def control_create_catalog(catalog_file, prefix_outfile):
+def control_create_catalog(catalog_file):
     """
     Control of creating an RDMO catalog with all output xml file for catalog, domain attributes, options, conditions,
-    tasks.
+    tasks. The generated xml files have the names:
+    [prefix_outfile]_[content].xml
+    with [content] as questions, domain, options, conditions, tasks
 
     :param catalog_file: JSON file with questionaire
-    :param prefix_outfile: A file prefix for written xml files
     """
 
     rdmo_element_set = create_catalog(catalog_file)
+
+    # get output file prefix
+    prefix_outfile = rdmo_element_set.prefix_outfile
 
     # write catalog
     catalog = rdmo_element_set.catalog_root
@@ -625,4 +635,4 @@ def control_create_catalog(catalog_file, prefix_outfile):
 
 
 if __name__ == '__main__':
-    control_create_catalog("qa_questionnaire.json", "qa")
+    control_create_catalog("qa_questionnaire.json")
