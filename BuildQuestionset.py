@@ -92,7 +92,7 @@ def create_options(options_root, optionset, ns, uri_prefix):
     return options_root
 
 
-def create_conditions(conditions_root, conditions, ns, uri_prefix, source_attribute):
+def create_conditions(conditions_root, conditions, ns, uri_prefix, source_attribute, optionsets):
     """
     Append conditions to already existing conditions root. This function will append new conditions and their
     parameters to the predefined root element.
@@ -102,6 +102,7 @@ def create_conditions(conditions_root, conditions, ns, uri_prefix, source_attrib
     :param ns: Namespace url
     :param uri_prefix: Used uri prefix for RDMO catalog
     :param source_attribute: Source attributes of questions linked to the respective condition
+    :param optionsets: Dictionary with optionset-key and according uri. Used if target_option is given.
     :return: Extended conditions_root
     """
 
@@ -123,7 +124,8 @@ def create_conditions(conditions_root, conditions, ns, uri_prefix, source_attrib
         else:
             condition_target_text = None
         if "target_option" in condition:
-            condition_target_option = condition["target_option"]
+            # if a target_option is specified, the uri of the according optionset including the option is needed
+            condition_target_option = optionsets[condition["optionset"]] + "/" + condition["target_option"]
         else:
             condition_target_option = None
         conditions_root.append(Conditions.Condition(ns=ns,
@@ -244,6 +246,9 @@ def create_catalog(catalog_file):
     # prepare dict of dataset collections for questionsets
     collection_name = {}
 
+    # prepare dict of optionsets for usage in conditions
+    optionset_name = {}
+
     # catalog element
     catalog = content["catalog"]
     catalog_key = catalog["key"]
@@ -363,23 +368,26 @@ def create_catalog(catalog_file):
                                                 parent=section_attribute_uri)
                                .make_element())
 
-            if "collection_name" in questionset:
-                # if a questionset is a collection, an additional attribute with suffix /id is necessary
-                # here an attribute with suffix /collection_name/id is added
-                if questionset["collection_name"] not in collection_name:
-                    tmp_key = "id"
-                    tmp_uri = questionset_attribute_uri + "/" + tmp_key
-                    tmp_path = questionset_attribute_path + "/" + tmp_key
-                    domain_root.append(Domain.Attribute(ns=ns,
-                                                        uri=tmp_uri,
-                                                        uri_prefix=uri_prefix,
-                                                        key=tmp_key,
-                                                        path=tmp_path,
-                                                        parent=questionset_attribute_uri)
-                                       .make_element())
+            if questionset_is_collection:
+                if "collection_name" in questionset:
+                    # if a questionset is a collection, an additional attribute with suffix /id is necessary
+                    # here an attribute with suffix /collection_name/id is added
+                    if questionset["collection_name"] not in collection_name:
+                        tmp_key = "id"
+                        tmp_uri = questionset_attribute_uri + "/" + tmp_key
+                        tmp_path = questionset_attribute_path + "/" + tmp_key
+                        domain_root.append(Domain.Attribute(ns=ns,
+                                                            uri=tmp_uri,
+                                                            uri_prefix=uri_prefix,
+                                                            key=tmp_key,
+                                                            path=tmp_path,
+                                                            parent=questionset_attribute_uri)
+                                           .make_element())
 
-                    collection_name[questionset["collection_name"]] = questionset_attribute_uri
-                questionset_attribute = collection_name[questionset["collection_name"]]
+                        collection_name[questionset["collection_name"]] = questionset_attribute_uri
+                    questionset_attribute = collection_name[questionset["collection_name"]]
+                else:
+                    raise Exception(f"Please add a collection_name in questionset {questionset_key}")
             else:
                 # in case of non collection, no attribute is given
                 questionset_attribute = None
@@ -456,6 +464,7 @@ def create_catalog(catalog_file):
                                                   optionset=optionset,
                                                   ns=ns,
                                                   uri_prefix=uri_prefix)
+                    optionset_name[optionset["key"]] = optionset_uri
                 else:
                     optionset_uri = None
                 if "condition" in question:
@@ -486,7 +495,7 @@ def create_catalog(catalog_file):
                     # this question is a source of conditions, that are usable in questions, questionsets, and tasks
                     condition_definitions = question["condition_definition"]
                     conditions_root = create_conditions(conditions_root, condition_definitions, ns, uri_prefix,
-                                                        question_attribute_uri)
+                                                        question_attribute_uri, optionset_name)
                     for condition_definition in condition_definitions:
                         source_questions_for_condition[condition_definition["key"]] = question_attribute_uri
 

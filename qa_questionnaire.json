@@ -23,35 +23,12 @@
             },
             "question": [
               {
-                "key": "dq4usage",
-                "help": {
-                  "en": "Define the data quality level/thresholds for usage of collected input datasets."
-                },
+                "key": "open4usage_license",
                 "text": {
-                  "en": "Define DQ4usage"
+                  "en": "Define License for Open4usage"
                 },
-                "widget_type": "textarea",
-                "value_type": "text",
-                "condition_definition": [
-                  {
-                    "key": "pr_dq4usage_definition_filled",
-                    "comment": "DQ4usage is defined",
-                    "relation": "notempty"
-                  },
-                  {
-                    "key": "pr_dq4usage_definition_unfilled",
-                    "comment": "DQ4usage is not defined",
-                    "relation": "empty"
-                  }
-                ]
-              },
-              {
-                "key": "open4usage",
                 "help": {
-                  "en": "Define the required openness of collected input datasets for further usage."
-                },
-                "text": {
-                  "en": "Define Open4usage"
+                  "en": "Define license demands of collected input datasets for further usage."
                 },
                 "widget_type": "textarea",
                 "value_type": "text",
@@ -67,6 +44,83 @@
                     "relation": "empty"
                   }
                 ]
+              },
+              {
+                "key": "open4usage_fivestars",
+                "text": {
+                  "en": "Define Berners-Lee five stars"
+                },
+                "help": {
+                  "en": "Define Tim Berners-Lee five stars deployment scheme for open data (see https://5stardata.info/en/)."
+                },
+                "widget_type": "radio",
+                "value_type": "option",
+                "optionset": {
+                  "key": "five_stars_input_data",
+                  "option": [
+                    {
+                      "key": "1",
+                      "text": {
+                        "en": "*: data made available on the Web"
+                      }
+                    },
+                    {
+                      "key": "2",
+                      "text": {
+                        "en": "**: data made available as structured data"
+                      }
+                    },
+                    {
+                      "key": "3",
+                      "text": {
+                        "en": "***: data made available in non-proprietary open format"
+                      }
+                    },
+                    {
+                      "key": "4",
+                      "text": {
+                        "en": "****: URIs are used to denote data, so that other people can point at the data"
+                      }
+                    },
+                    {
+                      "key": "5",
+                      "text": {
+                        "en": "*****: data is linked to other data to provide context"
+                      }
+                    },
+                    {
+                      "key": "other",
+                      "additional_input": "True",
+                      "text": {
+                        "en": "other definition"
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "key": "dq4usage",
+                "text": {
+                  "en": "Define DQ4usage"
+                },
+                "help": {
+                  "en": "Define the data quality level/thresholds for usage of collected input datasets."
+                },
+                "widget_type": "textarea",
+                "value_type": "text",
+                "condition": "pr_open4usage_definition_filled",
+                "condition_definition": [
+                  {
+                    "key": "pr_dq4usage_definition_filled",
+                    "comment": "DQ4usage is defined",
+                    "relation": "notempty"
+                  },
+                  {
+                    "key": "pr_dq4usage_definition_unfilled",
+                    "comment": "DQ4usage is not defined",
+                    "relation": "empty"
+                  }
+                ]
               }
             ]
           },
@@ -78,47 +132,95 @@
             "question": [
               {
                 "key": "dm4processing",
-                "help": {
-                  "en": "Define the data maturity level/thresholds for processing the datasets"
-                },
                 "text": {
                   "en": "Define DM4processing"
                 },
+                "help": {
+                  "en": "Define the data maturity level/thresholds for processing the datasets"
+                },
                 "widget_type": "textarea",
-                "value_type": "text"
+                "value_type": "text",
+                "condition_definition": [
+                  {
+                    "key": "pr_dm4processing_definition_filled",
+                    "comment": "DM4processing is defined",
+                    "relation": "notempty"
+                  },
+                  {
+                    "key": "pr_dm4processing_definition_unfilled",
+                    "comment": "DM4processing is not defined",
+                    "relation": "empty"
+                  }
+                ]
               },
               {
                 "key": "dq4processing",
-                "help": {
-                  "en": "Define the data quality level/thresholds for processing datasets."
-                },
                 "text": {
                   "en": "Define DQ4processing"
                 },
+                "help": {
+                  "en": "Define the data quality level/thresholds for processing datasets."
+                },
                 "widget_type": "textarea",
-                "value_type": "text"
+                "value_type": "text",
+                "condition_definition": [
+                  {
+                    "key": "pr_dq4processing_definition_filled",
+                    "comment": "DQ4processing is defined",
+                    "relation": "notempty"
+                  },
+                  {
+                    "key": "pr_dq4processing_definition_unfilled",
+                    "comment": "DQ4processing is not defined",
+                    "relation": "empty"
+                  }
+                ]
               },
               {
                 "key": "dm4analysis",
-                "help": {
-                  "en": "Define the data maturity level/thresholds for analysing the datasets"
-                },
                 "text": {
                   "en": "Define DM4analysis"
                 },
+                "help": {
+                  "en": "Define the data maturity level/thresholds for analysing the datasets"
+                },
                 "widget_type": "textarea",
-                "value_type": "text"
+                "value_type": "text",
+                "condition_definition": [
+                  {
+                    "key": "pr_dm4analysis_definition_filled",
+                    "comment": "DM4analysis is defined",
+                    "relation": "notempty"
+                  },
+                  {
+                    "key": "pr_dm4analysis_definition_unfilled",
+                    "comment": "DM4analysis is not defined",
+                    "relation": "empty"
+                  }
+                ]
               },
               {
                 "key": "dq4analysis",
-                "help": {
-                  "en": "Define the data quality level/thresholds for analysing datasets."
-                },
                 "text": {
                   "en": "Define DQ4analysis"
                 },
+                "help": {
+                  "en": "Define the data quality level/thresholds for analysing datasets."
+                },
                 "widget_type": "textarea",
-                "value_type": "text"
+                "value_type": "text",
+                "condition_definition": [
+                  {
+                    "key": "pr_dq4analysis_definition_filled",
+                    "comment": "DQ4analysis is defined",
+                    "relation": "notempty"
+                  },
+                  {
+                    "key": "pr_dq4analysis_definition_unfilled",
+                    "comment": "DQ4analysis is not defined",
+                    "relation": "empty"
+                  }
+                ]
               }
             ]
           },
@@ -130,69 +232,141 @@
             "question": [
               {
                 "key": "dm4publication",
-                "help": {
-                  "en": "Define the data maturity level/thresholds for publishing the datasets"
-                },
                 "text": {
                   "en": "Define DM4publication"
                 },
+                "help": {
+                  "en": "Define the data maturity level/thresholds for publishing the datasets"
+                },
                 "widget_type": "textarea",
-                "value_type": "text"
+                "value_type": "text",
+                "condition_definition": [
+                  {
+                    "key": "pr_dm4publication_definition_filled",
+                    "comment": "DM4publication is defined",
+                    "relation": "notempty"
+                  },
+                  {
+                    "key": "pr_dm4publication_definition_unfilled",
+                    "comment": "DM4publication is not defined",
+                    "relation": "empty"
+                  }
+                ]
               },
               {
                 "key": "dq4publication",
-                "help": {
-                  "en": "Define the data quality level/thresholds for publishing datasets."
-                },
                 "text": {
                   "en": "Define DQ4publication"
                 },
+                "help": {
+                  "en": "Define the data quality level/thresholds for publishing datasets."
+                },
                 "widget_type": "textarea",
-                "value_type": "text"
+                "value_type": "text",
+                "condition_definition": [
+                  {
+                    "key": "pr_dq4publication_definition_filled",
+                    "comment": "DM4publication is defined",
+                    "relation": "notempty"
+                  },
+                  {
+                    "key": "pr_dm4publication_definition_unfilled",
+                    "comment": "DM4publication is not defined",
+                    "relation": "empty"
+                  }
+                ]
               },
               {
                 "key": "open4publication",
-                "help": {
-                  "en": "Define the required openness of datasets for publication."
-                },
                 "text": {
                   "en": "Define Open4publication"
                 },
+                "help": {
+                  "en": "Define the required openness of datasets for publication."
+                },
                 "widget_type": "textarea",
-                "value_type": "text"
+                "value_type": "text",
+                "condition_definition": [
+                  {
+                    "key": "pr_open4publication_definition_filled",
+                    "comment": "Open4publication is defined",
+                    "relation": "notempty"
+                  },
+                  {
+                    "key": "pr_open4publication_definition_unfilled",
+                    "comment": "Open4publication is not defined",
+                    "relation": "empty"
+                  }
+                ]
               },
               {
                 "key": "dm4archiving",
-                "help": {
-                  "en": "Define the data maturity level/thresholds for archiving the datasets"
-                },
                 "text": {
                   "en": "Define DM4archiving"
                 },
+                "help": {
+                  "en": "Define the data maturity level/thresholds for archiving the datasets"
+                },
                 "widget_type": "textarea",
-                "value_type": "text"
+                "value_type": "text",
+                "condition_definition": [
+                  {
+                    "key": "pr_dm4archiving_definition_filled",
+                    "comment": "DM4archiving is defined",
+                    "relation": "notempty"
+                  },
+                  {
+                    "key": "pr_dm4archiving_definition_unfilled",
+                    "comment": "DM4archiving is not defined",
+                    "relation": "empty"
+                  }
+                ]
               },
               {
                 "key": "dq4archiving",
-                "help": {
-                  "en": "Define the data quality level/thresholds for archiving datasets."
-                },
                 "text": {
                   "en": "Define DQ4archiving"
                 },
+                "help": {
+                  "en": "Define the data quality level/thresholds for archiving datasets."
+                },
                 "widget_type": "textarea",
-                "value_type": "text"
+                "value_type": "text",
+                "condition_definition": [
+                  {
+                    "key": "pr_dq4archiving_definition_filled",
+                    "comment": "DQ4archiving is defined",
+                    "relation": "notempty"
+                  },
+                  {
+                    "key": "pr_dq4archiving_definition_unfilled",
+                    "comment": "DQ4archiving is not defined",
+                    "relation": "empty"
+                  }
+                ]
               },
               {
                 "key": "open4archiving",
-                "help": {
-                  "en": "Define the required openness of datasets for archiving."
-                },
                 "text": {
                   "en": "Define Open4archiving"
                 },
+                "help": {
+                  "en": "Define the required openness of datasets for archiving."
+                },
                 "widget_type": "textarea",
-                "value_type": "text"
+                "value_type": "text",
+                "condition_definition": [
+                  {
+                    "key": "pr_open4archiving_definition_filled",
+                    "comment": "Open4archiving is defined",
+                    "relation": "notempty"
+                  },
+                  {
+                    "key": "pr_open4archiving_definition_unfilled",
+                    "comment": "Open4archiving is not defined",
+                    "relation": "empty"
+                  }
+                ]
               }
             ]
           }
@@ -207,7 +381,7 @@
           {
             "key": "collectData",
             "title": {
-              "en": "Collect Data"
+              "en": "Data Provider: Collect Data"
             },
             "is_collection": "True",
             "collection_name": "collection_phase_datasets",
@@ -217,45 +391,33 @@
             "verbose_name_plural": {
               "en": "datasets"
             },
-            "condition": ["pr_dq4usage_definition_filled", "pr_open4usage_definition_filled"],
+            "condition": "pr_dq4usage_definition_filled",
             "question": [
               {
                 "key": "collectionOfData",
-                "help": {
-                  "en": "Collection of Data"
-                },
                 "text": {
                   "en": "How and where do you collect data?"
                 },
-                "widget_type": "textarea",
-                "value_type": "text"
-              },
-              {
-                "key": "collectionOfDataDataQuality",
                 "help": {
-                  "en": "Data Quality for Usage"
+                  "en": "Collection of Data"
                 },
-                "text": {
-                  "en": "Is the data quality for data usage ensured?"
-                },
-                "widget_type": "yesno",
-                "value_type": "boolean",
+                "widget_type": "textarea",
+                "value_type": "text",
                 "condition_definition": [
                   {
-                    "key": "cp_dq4usage_ensured",
-                    "comment": "DQ4usage is ensured",
-                    "relation": "eq",
-                    "target_text": "1"
+                    "key": "collection_phase_not_started",
+                    "comment": "collection phase is not started",
+                    "relation": "empty"
                   }
                 ]
               },
               {
                 "key": "collectionOfDataOpenness",
+                "text": {
+                  "en": "Is the openness for data usage according to Open4usage criteria ensured?"
+                },
                 "help": {
                   "en": "Openness for Usage"
-                },
-                "text": {
-                  "en": "Is the openness for data usage ensured?"
                 },
                 "widget_type": "yesno",
                 "value_type": "boolean",
@@ -269,22 +431,51 @@
                 ]
               },
               {
-                "key": "collectionOfDataMetadata",
-                "help": {
-                  "en": "Available Metadata"
+                "key": "collectionOfDataDataQuality",
+                "text": {
+                  "en": "Is the data quality for data usage ensured?"
                 },
+                "help": {
+                  "en": "Data Quality for Usage"
+                },
+                "widget_type": "yesno",
+                "value_type": "boolean",
+                "condition": "cp_open4usage_ensured",
+                "condition_definition": [
+                  {
+                    "key": "cp_dq4usage_ensured",
+                    "comment": "DQ4usage is ensured",
+                    "relation": "eq",
+                    "target_text": "1"
+                  }
+                ]
+              },
+
+              {
+                "key": "collectionOfDataMetadata",
                 "text": {
                   "en": "Is metadata available?"
                 },
+                "help": {
+                  "en": "Available Metadata"
+                },
                 "widget_type": "yesno",
-                "value_type": "boolean"
+                "value_type": "boolean",
+                "condition_definition": [
+                  {
+                    "key": "cp_metadata_available",
+                    "comment": "Metadata is available",
+                    "relation": "eq",
+                    "target_text": "1"
+                  }
+                ]
               }
             ]
           },
           {
             "key": "metadataUsage",
             "title": {
-              "en": "Metadata Usage"
+              "en": "Data Provider: Metadata Usage"
             },
             "is_collection": "True",
             "collection_name": "collection_phase_datasets",
@@ -294,29 +485,278 @@
             "verbose_name_plural": {
               "en": "datasets"
             },
-            "condition": ["cp_dq4usage_ensured", "cp_open4usage_ensured"],
+            "condition": "cp_dq4usage_ensured",
             "question": [
               {
                 "key": "metadataExtraction",
-                "help": {
-                  "en": "Metadata Extraction"
-                },
                 "text": {
                   "en": "Is it possible to extract further metadata (possibly automatically)?"
+                },
+                "help": {
+                  "en": "Metadata Extraction"
                 },
                 "widget_type": "yesno",
                 "value_type": "boolean"
               },
               {
                 "key": "dataQualityExtraction",
-                "help": {
-                  "en": "Data Quality Extraction"
-                },
                 "text": {
                   "en": "Is it possible to extract further data quality (possibly automatically)?"
                 },
+                "help": {
+                  "en": "Data Quality Extraction"
+                },
                 "widget_type": "yesno",
                 "value_type": "boolean"
+              }
+            ]
+          },
+          {
+            "key": "metadataEnriching",
+            "title": {
+              "en": "Data Curator: Metadata Enriching"
+            },
+            "is_collection": "True",
+            "collection_name": "collection_phase_datasets",
+            "verbose_name": {
+              "en": "dataset"
+            },
+            "verbose_name_plural": {
+              "en": "datasets"
+            },
+            "question": [
+              {
+                "key": "enrichMetadataYesNo",
+                "text": {
+                  "en": "Can the metadata be enriched?"
+                },
+                "help": {
+                  "en": "Enrich/Edit Metadata"
+                },
+                "widget_type": "yesno",
+                "value_type": "boolean",
+                "condition_definition": [
+                  {
+                    "key": "cp_enrich_metadata",
+                    "comment": "Enrich metadata",
+                    "relation": "eq",
+                    "target_text": "1"
+                  }
+                ]
+              },
+              {
+                "key": "enrichMetadata",
+                "text": {
+                  "en": "How can metadata be enriched? What fields do you plan to add?"
+                },
+                "help": {
+                  "en": "Enrich/Edit Metadata"
+                },
+                "widget_type": "textarea",
+                "value_type": "text",
+                "condition": "cp_enrich_metadata"
+              }
+            ]
+          },
+          {
+            "key": "qualityControl",
+            "title": {
+              "en": "Data Curator: Quality Control"
+            },
+            "is_collection": "True",
+            "collection_name": "collection_phase_datasets",
+            "verbose_name": {
+              "en": "dataset"
+            },
+            "verbose_name_plural": {
+              "en": "datasets"
+            },
+            "question": [
+              {
+                "key": "qualityControlDecision",
+                "text": {
+                  "en": "Is an intermediate quality control necessary?"
+                },
+                "help": {
+                  "en": "An intermediate quality control step is especially useful, if the input data is derived from own measurements. If such data shall be published directly, a quality control is recommended. Apart from self-measured data a quality control step is advised for data in impact research."
+                },
+                "widget_type": "yesno",
+                "value_type": "boolean",
+                "condition_definition": [
+                  {
+                    "key": "cp_quality_control_decision",
+                    "comment": "Recommendation on quality control",
+                    "relation": "eq",
+                    "target_text": "1"
+                  }
+                ]
+              },
+              {
+                "key": "qualityControlMethod",
+                "text": {
+                  "en": "Describe the method for quality control of this dataset."
+                },
+                "help": {
+                  "en": "A quality control can consist of different methods depending on data type, potential usage, target community."
+                },
+                "widget_type": "textarea",
+                "value_type": "text",
+                "condition": "cp_quality_control_decision"
+              },
+              {
+                "key": "evaluateFitnessForPurposeMethod",
+                "text": {
+                  "en": "Which methods/indicators are used to evaluate the fitness for purpose/use using the results of the quality control?"
+                },
+                "help": {
+                  "en": "Fitness for purpose (utility) and fitness for use (warranty) depict important goals of a dataset to be potentially reused."
+                },
+                "widget_type": "textarea",
+                "value_type": "text",
+                "condition": "cp_quality_control_decision"
+              },
+              {
+                "key": "evaluateFitnessForPurposeResult",
+                "text": {
+                  "en": "Describe the results of the evaluation of fitness for purpose/use."
+                },
+                "widget_type": "textarea",
+                "value_type": "text",
+                "condition": "cp_quality_control_decision"
+              },
+              {
+                "key": "evaluateFitnessForPurposeInMetadata",
+                "text": {
+                  "en": "Are the indicators or other results from fitness for purpose/use included in the metadata?"
+                },
+                "help": {
+                  "en": "To foster potential usage of the data the inclusion of indicators and/or other results is strongly recommended."
+                },
+                "widget_type": "yesno",
+                "value_type": "boolean",
+                "condition": "cp_quality_control_decision"
+              }
+            ]
+          },
+          {
+            "key": "dataMaturityHandling",
+            "title": {
+              "en": "Data Curator: Data Maturity Handling"
+            },
+            "is_collection": "True",
+            "collection_name": "collection_phase_datasets",
+            "verbose_name": {
+              "en": "dataset"
+            },
+            "verbose_name_plural": {
+              "en": "datasets"
+            },
+            "question": [
+              {
+                "key": "dataMaturityEvaluation",
+                "text": {
+                  "en": "Did you evaluate the data maturity of datasets in collection phase?"
+                },
+                "help": {
+                  "en": "The data maturity's evaluation follows the DM4processing critera in the data maturity matrix. If the dataset shall be published without processing/analyse phases, DM4publishing must be fulfilled."
+                },
+                "widget_type": "yesno",
+                "value_type": "boolean",
+                "condition_definition": [
+                  {
+                    "key": "cp_data_maturity_evaluation",
+                    "comment": "Evaluation of data maturity against DM4processing",
+                    "relation": "eq",
+                    "target_text": "1"
+                  }
+                ]
+              },
+              {
+                "key": "dataMaturityEvaluationInMetadata",
+                "text": {
+                  "en": "Did you include the level of data maturity in the metadata?"
+                },
+                "help": {
+                  "en": "To foster potential usage of the data the inclusion of data maturity indicators is strongly recommended."
+                },
+                "widget_type": "yesno",
+                "value_type": "boolean",
+                "condition": "cp_data_maturity_evaluation",
+                "condition_definition": [
+                  {
+                    "key": "cp_data_maturity_in_metadata",
+                    "comment": "Data maturity included in metadata",
+                    "relation": "eq",
+                    "target_text": "1"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "key": "nextProcedures",
+            "title": {
+              "en": "Data Curator: Next Procedures"
+            },
+            "is_collection": "False",
+            "collection_name": "collection_phase_datasets",
+            "verbose_name": {
+              "en": "dataset"
+            },
+            "verbose_name_plural": {
+              "en": "datasets"
+            },
+            "condiition": "",
+            "question": [
+              {
+                "key": "DMDQIndicators",
+                "text": {
+                  "en": "Give an estimation of data maturity and data quality indicators for all input datasets"
+                },
+                "help": {
+                  "en": "In the case of proceeding to processing phase, DM4processing and DQ4processing must be fulfilled. If the data shall be directly published (e.g. own measurements) DM4publishing and DQ4publishing must be met."
+                },
+                "widget_type": "radio",
+                "value_type": "option",
+                "optionset": {
+                  "key": "criteria_after_collecting_phase",
+                  "option": [
+                    {
+                      "key": "1",
+                      "text": {
+                        "en": "Either DM4processing or DQ4processing are not fulfilled."
+                      }
+                    },
+                    {
+                      "key": "2",
+                      "text": {
+                        "en": "DM4processing and DQ4processing are fulfilled, but DM4publishing or DQ4publishing are not reached."
+                      }
+                    },
+                    {
+                      "key": "3",
+                      "text": {
+                        "en": "DM4publishing and DQ4publishing are fulfilled."
+                      }
+                    }
+                  ]
+                },
+                "condition_definition": [
+                  {
+                    "key": "cp_processing_not_allowed",
+                    "comment": "Data maturity or data quality indicators do not allow proceeding to processing phase",
+                    "relation": "eq",
+                    "target_option": "1",
+                    "optionset": "criteria_after_collecting_phase"
+                  },
+                  {
+                    "key": "cp_processing_allowed",
+                    "comment": "Proceeding to processing phase is allowed",
+                    "relation": "neq",
+                    "target_option": "1",
+                    "optionset": "criteria_after_collecting_phase"
+                  }
+                ]
               }
             ]
           }
@@ -341,6 +781,7 @@
             "verbose_name_plural": {
               "en": "datasets"
             },
+            "condition": "cp_processing_allowed",
             "question": [
               {
                 "key": "processingOfData",
@@ -570,24 +1011,64 @@
       "condition": "pr_open4archiving_definition_unfilled"
     },
     {
-      "key": "ensure_open4usage",
+      "key": "start_collection_phase",
       "title": {
-        "en": "Ensure Open4usage"
+        "en": "Start collection phase"
       },
       "text": {
-        "en": "Please ensure the required openness of data for usage. Further questions will be activated."
+        "en": "Start the collection phase."
       },
-      "condition": "pr_ensure_open4usage_definition_unfilled"
+      "condition": "collection_phase_not_started"
     },
     {
-      "key": "ensure_dq4usage",
+      "key": "start_processing_phase",
       "title": {
-        "en": "Ensure DQ4usage"
+        "en": "Start processing phase"
       },
       "text": {
-        "en": "Please ensure the required data quality of data for usage. Further questions will be activated."
+        "en": "Start the processing phase."
       },
-      "condition": "pr_ensure_dq4usage_definition_unfilled"
+      "condition": "processing_phase_not_started"
+    },
+    {
+      "key": "start_analysing_phase",
+      "title": {
+        "en": "Start analysing phase"
+      },
+      "text": {
+        "en": "Start the analysing phase."
+      },
+      "condition": "analysing_phase_not_started"
+    },
+    {
+      "key": "start_publishing_phase",
+      "title": {
+        "en": "Start publishing phase"
+      },
+      "text": {
+        "en": "Start the publishing phase."
+      },
+      "condition": "publishing_phase_not_started"
+    },
+    {
+      "key": "start_archiving_phase",
+      "title": {
+        "en": "Start archiving phase"
+      },
+      "text": {
+        "en": "Start the archiving phase."
+      },
+      "condition": "archiving_phase_not_started"
+    },
+    {
+      "key": "processing_phase_not_allowed",
+      "title": {
+        "en": "Ensure DM4processing and DQ4processing"
+      },
+      "text": {
+        "en": "Ensure DM4processing and DQ4processing to proceed to processing phase"
+      },
+      "condition": "cp_processing_not_allowed"
     }
   ]
 }
