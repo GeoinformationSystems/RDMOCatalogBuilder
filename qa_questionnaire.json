@@ -271,7 +271,7 @@
                     "relation": "notempty"
                   },
                   {
-                    "key": "pr_dm4publication_definition_unfilled",
+                    "key": "pr_dq4publication_definition_unfilled",
                     "comment": "DM4publication is not defined",
                     "relation": "empty"
                   }
@@ -529,10 +529,10 @@
               {
                 "key": "enrichMetadataYesNo",
                 "text": {
-                  "en": "Can the metadata be enriched?"
+                  "en": "Can the metadata/data quality be enriched?"
                 },
                 "help": {
-                  "en": "Enrich/Edit Metadata"
+                  "en": "If the initial set of metadata does not fulfil project needs additional metadata and data quality measures must be added."
                 },
                 "widget_type": "yesno",
                 "value_type": "boolean",
@@ -551,7 +551,7 @@
                   "en": "How can metadata be enriched? What fields do you plan to add?"
                 },
                 "help": {
-                  "en": "Enrich/Edit Metadata"
+                  "en": "Describe the additional metadata fields and/or data quality measures that have to be included in order to fulfil project needs. The DQ4processing is an appropriate guideline here."
                 },
                 "widget_type": "textarea",
                 "value_type": "text",
@@ -598,7 +598,7 @@
                   "en": "Describe the method for quality control of this dataset."
                 },
                 "help": {
-                  "en": "A quality control can consist of different methods depending on data type, potential usage, target community."
+                  "en": "A quality control can consist of different methods depending on data type, potential usage, target community. DQ4processing is an appropriate guideline here."
                 },
                 "widget_type": "textarea",
                 "value_type": "text",
@@ -659,7 +659,7 @@
                   "en": "Did you evaluate the data maturity of datasets in collection phase?"
                 },
                 "help": {
-                  "en": "The data maturity's evaluation follows the DM4processing critera in the data maturity matrix. If the dataset shall be published without processing/analyse phases, DM4publishing must be fulfilled."
+                  "en": "The data maturity's evaluation follows the DM4processing criteria in the data maturity matrix. If the dataset shall be published without processing/analyse phases, DM4publication must be fulfilled."
                 },
                 "widget_type": "yesno",
                 "value_type": "boolean",
@@ -695,9 +695,9 @@
             ]
           },
           {
-            "key": "nextProcedures",
+            "key": "nextSteps",
             "title": {
-              "en": "Data Curator: Next Procedures"
+              "en": "Data Curator: Next Steps"
             },
             "is_collection": "False",
             "collection_name": "collection_phase_datasets",
@@ -707,7 +707,6 @@
             "verbose_name_plural": {
               "en": "datasets"
             },
-            "condiition": "",
             "question": [
               {
                 "key": "DMDQIndicators",
@@ -715,7 +714,7 @@
                   "en": "Give an estimation of data maturity and data quality indicators for all input datasets"
                 },
                 "help": {
-                  "en": "In the case of proceeding to processing phase, DM4processing and DQ4processing must be fulfilled. If the data shall be directly published (e.g. own measurements) DM4publishing and DQ4publishing must be met."
+                  "en": "In the case of proceeding to processing phase, DM4processing and DQ4processing must be fulfilled. If the data shall be directly published (e.g. own measurements) DM4publication and DQ4publication must be met."
                 },
                 "widget_type": "radio",
                 "value_type": "option",
@@ -731,13 +730,13 @@
                     {
                       "key": "2",
                       "text": {
-                        "en": "DM4processing and DQ4processing are fulfilled, but DM4publishing or DQ4publishing are not reached."
+                        "en": "DM4processing and DQ4processing are fulfilled, but DM4publication or DQ4publication are not reached."
                       }
                     },
                     {
                       "key": "3",
                       "text": {
-                        "en": "DM4publishing and DQ4publishing are fulfilled."
+                        "en": "DM4publication and DQ4publication are fulfilled."
                       }
                     }
                   ]
@@ -756,6 +755,13 @@
                     "relation": "neq",
                     "target_option": "1",
                     "optionset": "criteria_after_collecting_phase"
+                  },
+                  {
+                    "key": "cp_publication_allowed",
+                    "comment": "Proceeding to publication phase is allowed",
+                    "relation": "eq",
+                    "target_option": "3",
+                    "optionset": "criteria_after_collecting_phase"
                   }
                 ]
               }
@@ -772,7 +778,7 @@
           {
             "key": "processData",
             "title": {
-              "en": "Process Data"
+              "en": "Data Provider: Process Data"
             },
             "is_collection": "True",
             "collection_name": "processing_phase_datasets",
@@ -786,14 +792,262 @@
             "question": [
               {
                 "key": "processingOfData",
-                "help": {
-                  "en": "Processing of Data"
-                },
                 "text": {
-                  "en": "How do you process data?"
+                  "en": "Describe the data processing."
+                },
+                "help": {
+                  "en": "Describe the model workflow you create/develop. The single steps depending on the supposed granularity should be mentioned here. Also include the used input datasets according to the collection phase here."
                 },
                 "widget_type": "textarea",
                 "value_type": "text"
+              },
+              {
+                "key": "metadataExtraction",
+                "text": {
+                  "en": "Is it possible to extract metadata from the produced dataset?"
+                },
+                "help": {
+                  "en": "The extraction of metadata can either be made manually or automatically (if possible)."
+                },
+                "widget_type": "yesno",
+                "value_type": "boolean"
+              },
+              {
+                "key": "dataQualityExtraction",
+                "text": {
+                  "en": "Is it possible to extract data quality measures from the produced dataset?"
+                },
+                "help": {
+                  "en": "The extraction of data quality can either be made manually or automatically (if possible). The choice of data quality measures shall follow domain specific rules."
+                },
+                "widget_type": "yesno",
+                "value_type": "boolean"
+              }
+            ]
+          },
+          {
+            "key": "metadataEnriching",
+            "title": {
+              "en": "Data Curator: Metadata Enriching"
+            },
+            "is_collection": "True",
+            "collection_name": "processing_phase_datasets",
+            "verbose_name": {
+              "en": "dataset"
+            },
+            "verbose_name_plural": {
+              "en": "datasets"
+            },
+            "condition": "cp_processing_allowed",
+            "question": [
+              {
+                "key": "enrichMetadataYesNo",
+                "text": {
+                  "en": "Can the metadata/data quality be enriched?"
+                },
+                "help": {
+                  "en": "If the initial set of metadata does not fulfil project needs additional metadata and data quality measures must be added."
+                },
+                "widget_type": "yesno",
+                "value_type": "boolean",
+                "condition_definition": [
+                  {
+                    "key": "pp_enrich_metadata",
+                    "comment": "Enrich metadata",
+                    "relation": "eq",
+                    "target_text": "1"
+                  }
+                ]
+              },
+              {
+                "key": "enrichMetadata",
+                "text": {
+                  "en": "How can metadata and data quality be enriched? What fields/elements do you plan to add?"
+                },
+                "help": {
+                  "en": "Describe the additional metadata fields and/or data quality measures that have to be included in order to fulfil project needs. The DQ4analysis is an appropriate guideline here."
+                },
+                "widget_type": "textarea",
+                "value_type": "text",
+                "condition": "cp_enrich_metadata"
+              }
+            ]
+          },
+          {
+            "key": "qualityControl",
+            "title": {
+              "en": "Data Curator: Quality Control"
+            },
+            "is_collection": "True",
+            "collection_name": "processing_phase_datasets",
+            "verbose_name": {
+              "en": "dataset"
+            },
+            "verbose_name_plural": {
+              "en": "datasets"
+            },
+            "condition": "cp_processing_allowed",
+            "question": [
+              {
+                "key": "qualityControlDecision",
+                "text": {
+                  "en": "Is an intermediate quality control advised?"
+                },
+                "help": {
+                  "en": "A quality control at this step should include basic tests to ensure the basic functionality and characteristics of this dataset to be used in further steps."
+                },
+                "widget_type": "yesno",
+                "value_type": "boolean",
+                "condition_definition": [
+                  {
+                    "key": "pp_quality_control_decision",
+                    "comment": "Recommendation on quality control",
+                    "relation": "eq",
+                    "target_text": "1"
+                  }
+                ]
+              },
+              {
+                "key": "qualityControlMethod",
+                "text": {
+                  "en": "Describe the method for quality control of this dataset."
+                },
+                "help": {
+                  "en": "A quality control can consist of different methods depending on data type, potential usage, target community. DQ4analysis is an appropriate guideline here."
+                },
+                "widget_type": "textarea",
+                "value_type": "text",
+                "condition": "pp_quality_control_decision"
+              },
+              {
+                "key": "evaluateFitnessForAnalysis",
+                "text": {
+                  "en": "Which methods/indicators are used to evaluate the fitness for analysis using the results of the quality control?"
+                },
+                "help": {
+                  "en": "Fitness for analysis examines the potential usage of this dataset in further steps in the data life cycle."
+                },
+                "widget_type": "textarea",
+                "value_type": "text",
+                "condition": "pp_quality_control_decision"
+              },
+              {
+                "key": "evaluateFitnessForPurposeResult",
+                "text": {
+                  "en": "Describe the results of the evaluation of fitness for purpose/use."
+                },
+                "widget_type": "textarea",
+                "value_type": "text",
+                "condition": "pp_quality_control_decision"
+              }
+            ]
+          },
+          {
+            "key": "dataMaturityHandling",
+            "title": {
+              "en": "Data Curator: Data Maturity Handling"
+            },
+            "is_collection": "True",
+            "collection_name": "processing_phase_datasets",
+            "verbose_name": {
+              "en": "dataset"
+            },
+            "verbose_name_plural": {
+              "en": "datasets"
+            },
+            "condition": "cp_processing_allowed",
+            "question": [
+              {
+                "key": "dataMaturityEvaluation",
+                "text": {
+                  "en": "Did you evaluate the data maturity of datasets in processing phase?"
+                },
+                "help": {
+                  "en": "The data maturity's evaluation follows the DM4analysis criteria in the data maturity matrix."
+                },
+                "widget_type": "yesno",
+                "value_type": "boolean",
+                "condition_definition": [
+                  {
+                    "key": "pp_data_maturity_evaluation",
+                    "comment": "Evaluation of data maturity against DM4analysis",
+                    "relation": "eq",
+                    "target_text": "1"
+                  }
+                ]
+              },
+              {
+                "key": "dataMaturityEvaluationInMetadata",
+                "text": {
+                  "en": "Did you include the level of data maturity in the metadata?"
+                },
+                "help": {
+                  "en": "To foster potential usage of the data the inclusion of data maturity indicators is strongly recommended."
+                },
+                "widget_type": "yesno",
+                "value_type": "boolean",
+                "condition": "pp_data_maturity_evaluation"
+              }
+            ]
+          },
+          {
+            "key": "nextSteps",
+            "title": {
+              "en": "Data Curator: Next Steps"
+            },
+            "is_collection": "False",
+            "collection_name": "processing_phase_datasets",
+            "verbose_name": {
+              "en": "dataset"
+            },
+            "verbose_name_plural": {
+              "en": "datasets"
+            },
+            "condition": "cp_processing_allowed",
+            "question": [
+              {
+                "key": "DMDQIndicators",
+                "text": {
+                  "en": "Give an estimation of data maturity and data quality indicators for all processed datasets"
+                },
+                "help": {
+                  "en": "In order to proceed to the analysis phase DM4analysis and DQ4analysis must be fulfilled."
+                },
+                "widget_type": "radio",
+                "value_type": "option",
+                "optionset": {
+                  "key": "criteria_after_processing_phase",
+                  "option": [
+                    {
+                      "key": "1",
+                      "text": {
+                        "en": "Either DM4analysis or DQ4analysis are not fulfilled."
+                      }
+                    },
+                    {
+                      "key": "2",
+                      "text": {
+                        "en": "DM4analysis and DQ4analysis are fulfilled."
+                      }
+                    }
+                  ]
+                },
+                "condition_definition": [
+                  {
+                    "key": "pp_analysis_not_allowed",
+                    "comment": "Data maturity or data quality indicators do not allow proceeding to analysis phase",
+                    "relation": "eq",
+                    "target_option": "1",
+                    "optionset": "criteria_after_processing_phase"
+                  },
+                  {
+                    "key": "pp_analysis_allowed",
+                    "comment": "Proceeding to analysis phase is allowed",
+                    "relation": "eq",
+                    "target_option": "2",
+                    "optionset": "criteria_after_processing_phase"
+                  }
+                ]
               }
             ]
           }
@@ -808,7 +1062,7 @@
           {
             "key": "analyseData",
             "title": {
-              "en": "Analyse Data"
+              "en": "Data Provider: Analyse Data"
             },
             "is_collection": "True",
             "collection_name": "processing_phase_datasets",
@@ -818,17 +1072,236 @@
             "verbose_name_plural": {
               "en": "datasets"
             },
+            "condition": "pp_analysis_allowed",
             "question": [
               {
                 "key": "analysisOfData",
-                "help": {
-                  "en": "Analysis of Data"
-                },
                 "text": {
-                  "en": "How do you analyse data?"
+                  "en": "Describe the data analysis."
+                },
+                "help": {
+                  "en": "Describe the planned analysis of the dataset. The analysis shall examine the data in depth. This is a reasonable basis for further usage of the data."
                 },
                 "widget_type": "textarea",
                 "value_type": "text"
+              }
+            ]
+          },
+          {
+            "key": "evaluateFitnessForPurpose",
+            "title": {
+              "en": "Data Curator: Fitness for Purpose/Use"
+            },
+            "is_collection": "True",
+            "collection_name": "processing_phase_datasets",
+            "verbose_name": {
+              "en": "dataset"
+            },
+            "verbose_name_plural": {
+              "en": "datasets"
+            },
+            "condition": "pp_analysis_allowed",
+            "question": [
+              {
+                "key": "evaluateFitnessForPurpose",
+                "text": {
+                  "en": "How can you evaluate the fitness for purpose/use of the data?"
+                },
+                "help": {
+                  "en": "Describe the method of the evaluation."
+                },
+                "widget_type": "textarea",
+                "value_type": "text"
+              }
+            ]
+          },
+          {
+            "key": "qualityControl",
+            "title": {
+              "en": "Data Curator: Quality Control"
+            },
+            "is_collection": "True",
+            "collection_name": "processing_phase_datasets",
+            "verbose_name": {
+              "en": "dataset"
+            },
+            "verbose_name_plural": {
+              "en": "datasets"
+            },
+            "condition": "pp_analysis_allowed",
+            "question": [
+              {
+                "key": "qualityControlDecision",
+                "text": {
+                  "en": "Is a quality control advised?"
+                },
+                "help": {
+                  "en": "A quality control at this step is typically necessary. It is a quantified proof of your data."
+                },
+                "widget_type": "yesno",
+                "value_type": "boolean",
+                "condition_definition": [
+                  {
+                    "key": "ap_quality_control_decision",
+                    "comment": "Recommendation on quality control",
+                    "relation": "eq",
+                    "target_text": "1"
+                  }
+                ]
+              },
+              {
+                "key": "qualityControlMethod",
+                "text": {
+                  "en": "Describe the method for quality control of this dataset."
+                },
+                "help": {
+                  "en": "A quality control can consist of different methods depending on data type, potential usage, target community. DQ4publication is an appropriate guideline here."
+                },
+                "widget_type": "textarea",
+                "value_type": "text",
+                "condition": "ap_quality_control_decision"
+              },
+              {
+                "key": "evaluateFitnessForPublication",
+                "text": {
+                  "en": "Which methods/indicators are used to evaluate the fitness for publication using the results of the quality control?"
+                },
+                "help": {
+                  "en": "Fitness for publication examines the potential usage of this dataset in further steps in the data life cycle."
+                },
+                "widget_type": "textarea",
+                "value_type": "text",
+                "condition": "ap_quality_control_decision"
+              },
+              {
+                "key": "evaluateFitnessForPurposeResult",
+                "text": {
+                  "en": "Describe the results of the evaluation of fitness for purpose/use."
+                },
+                "widget_type": "textarea",
+                "value_type": "text",
+                "condition": "ap_quality_control_decision"
+              },
+              {
+                "key": "evaluateFitnessForPurposeInMetadata",
+                "text": {
+                  "en": "Are the indicators or other results from fitness for purpose/use included in the metadata?"
+                },
+                "help": {
+                  "en": "To foster potential usage of the data the inclusion of indicators and/or other results is strongly recommended."
+                },
+                "widget_type": "yesno",
+                "value_type": "boolean",
+                "condition": "ap_quality_control_decision"
+              }
+            ]
+          },
+          {
+            "key": "dataMaturityHandling",
+            "title": {
+              "en": "Data Curator: Data Maturity Handling"
+            },
+            "is_collection": "True",
+            "collection_name": "processing_phase_datasets",
+            "verbose_name": {
+              "en": "dataset"
+            },
+            "verbose_name_plural": {
+              "en": "datasets"
+            },
+            "condition": "pp_analysis_allowed",
+            "question": [
+              {
+                "key": "dataMaturityEvaluation",
+                "text": {
+                  "en": "Did you evaluate the data maturity of datasets in analysis phase?"
+                },
+                "help": {
+                  "en": "The data maturity's evaluation follows the DM4publication criteria in the data maturity matrix."
+                },
+                "widget_type": "yesno",
+                "value_type": "boolean",
+                "condition_definition": [
+                  {
+                    "key": "ap_data_maturity_evaluation",
+                    "comment": "Evaluation of data maturity against DM4publication",
+                    "relation": "eq",
+                    "target_text": "1"
+                  }
+                ]
+              },
+              {
+                "key": "dataMaturityEvaluationInMetadata",
+                "text": {
+                  "en": "Did you include the level of data maturity in the metadata?"
+                },
+                "help": {
+                  "en": "To foster potential usage of the data the inclusion of data maturity indicators is strongly recommended."
+                },
+                "widget_type": "yesno",
+                "value_type": "boolean",
+                "condition": "ap_data_maturity_evaluation"
+              }
+            ]
+          },
+          {
+            "key": "nextSteps",
+            "title": {
+              "en": "Data Curator: Next Steps"
+            },
+            "is_collection": "False",
+            "collection_name": "processing_phase_datasets",
+            "verbose_name": {
+              "en": "dataset"
+            },
+            "verbose_name_plural": {
+              "en": "datasets"
+            },
+            "condition": "pp_analysis_allowed",
+            "question": [
+              {
+                "key": "DMDQIndicators",
+                "text": {
+                  "en": "Give an estimation of data maturity and data quality indicators for all analysed datasets"
+                },
+                "help": {
+                  "en": "In order to proceed to the publication phase DM4publication and DQ4publication must be fulfilled."
+                },
+                "widget_type": "radio",
+                "value_type": "option",
+                "optionset": {
+                  "key": "criteria_after_analysis_phase",
+                  "option": [
+                    {
+                      "key": "1",
+                      "text": {
+                        "en": "Either DM4publication or DQ4publication are not fulfilled."
+                      }
+                    },
+                    {
+                      "key": "2",
+                      "text": {
+                        "en": "DM4publication and DQ4publication are fulfilled."
+                      }
+                    }
+                  ]
+                },
+                "condition_definition": [
+                  {
+                    "key": "ap_publication_not_allowed",
+                    "comment": "Data maturity or data quality indicators do not allow proceeding to publication phase",
+                    "relation": "eq",
+                    "target_option": "1",
+                    "optionset": "criteria_after_analysis_phase"
+                  },
+                  {
+                    "key": "ap_publication_allowed",
+                    "comment": "Proceeding to publication phase is allowed",
+                    "relation": "eq",
+                    "target_option": "2",
+                    "optionset": "criteria_after_analysis_phase"
+                  }
+                ]
               }
             ]
           }
@@ -843,19 +1316,89 @@
           {
             "key": "publishData",
             "title": {
-              "en": "Publish Data"
+              "en": "Data Publisher: Publish Data"
             },
+            "is_collection": "True",
+            "collection_name": "publication_phase_datasets",
+            "verbose_name": {
+              "en": "dataset"
+            },
+            "verbose_name_plural": {
+              "en": "datasets"
+            },
+            "condition": ["cp_publication_allowed", "ap_publication_allowed"],
             "question": [
               {
-                "key": "publishingOfData",
-                "help": {
-                  "en": "Publishing of Data"
-                },
+                "key": "open4publication",
                 "text": {
-                  "en": "How do you publish data?"
+                  "en": "Is Open4publication is ensured?"
+                },
+                "help": {
+                  "en": "Ensured Open4publication is mandatory for publishing the dataset."
+                },
+                "widget_type": "yesno",
+                "value_type": "boolean",
+                "condition_definition": [
+                  {
+                    "key": "pup_open4publication_assured",
+                    "comment": "Open4publication has to be assured in order to publish the dataset.",
+                    "relation": "eq",
+                    "target_text": "1"
+                  }
+                ]
+              },
+              {
+                "key": "publicationOfData",
+                "text": {
+                  "en": "How and where do you publish the dataset?"
+                },
+                "help": {
+                  "en": "The way of publication defines necessary metadata fields and file formats."
                 },
                 "widget_type": "textarea",
-                "value_type": "text"
+                "value_type": "text",
+                "condition": "pup_open4publication_assured"
+              },
+              {
+                "key": "metadataAdaptionYesno",
+                "text": {
+                  "en": "Is it necessary to adapt metadata elements?"
+                },
+                "help": {
+                  "en": "Publication of datasets in repositories often leads to repository-specific metadata elements."
+                },
+                "widget_type": "yesno",
+                "value_type": "boolean",
+                "condition": "pup_open4publication_assured"
+              },
+              {
+                "key": "metadataAdaption",
+                "text": {
+                  "en": "Did you adapt metadata elements?"
+                },
+                "help": {
+                  "en": "Is the adaption of metadata elements according to the specific needs of the repository finished?"
+                },
+                "widget_type": "yesno",
+                "value_type": "boolean",
+                "condition": "pup_open4publication_assured"
+              },
+              {
+                "key": "publicationOfData",
+                "text": {
+                  "en": "Did you publish the dataset?"
+                },
+                "widget_type": "yesno",
+                "value_type": "boolean",
+                "condition": "pup_open4publication_assured",
+                "condition_definition": [
+                  {
+                    "key": "pup_data_not_published",
+                    "comment": "The dataset is not published yet",
+                    "relation": "eq",
+                    "target_text": "0"
+                  }
+                ]
               }
             ]
           }
@@ -875,11 +1418,11 @@
             "question": [
               {
                 "key": "archivingOfData",
-                "help": {
-                  "en": "Archiving of Data"
-                },
                 "text": {
                   "en": "How do you archive data?"
+                },
+                "help": {
+                  "en": "Archiving of Data"
                 },
                 "widget_type": "textarea",
                 "value_type": "text"
@@ -1042,14 +1585,14 @@
       "condition": "analysing_phase_not_started"
     },
     {
-      "key": "start_publishing_phase",
+      "key": "start_publication_phase",
       "title": {
-        "en": "Start publishing phase"
+        "en": "Start publication phase"
       },
       "text": {
-        "en": "Start the publishing phase."
+        "en": "Start the publication phase."
       },
-      "condition": "publishing_phase_not_started"
+      "condition": "publication_phase_not_started"
     },
     {
       "key": "start_archiving_phase",
@@ -1067,9 +1610,39 @@
         "en": "Ensure DM4processing and DQ4processing"
       },
       "text": {
-        "en": "Ensure DM4processing and DQ4processing to proceed to processing phase"
+        "en": "Ensure DM4processing and DQ4processing in order to proceed to processing phase"
       },
       "condition": "cp_processing_not_allowed"
+    },
+    {
+      "key": "analysis_phase_not_allowed",
+      "title": {
+        "en": "Ensure DM4analysis and DQ4analysis"
+      },
+      "text": {
+        "en": "Ensure DM4analysis and DQ4analysis in order to proceed to analysis phase"
+      },
+      "condition": "pp_analysis_not_allowed"
+    },
+    {
+      "key": "publication_phase_not_allowed",
+      "title": {
+        "en": "Ensure DM4publication and DQ4publication"
+      },
+      "text": {
+        "en": "Ensure DM4publication and DQ4publication in order to proceed to publication phase"
+      },
+      "condition": "ap_publication_not_allowed"
+    },
+    {
+      "key": "publication_data",
+      "title": {
+        "en": "Publish the data"
+      },
+      "text": {
+        "en": "The data can be published in a repository"
+      },
+      "condition": "pup_data_not_published"
     }
   ]
 }

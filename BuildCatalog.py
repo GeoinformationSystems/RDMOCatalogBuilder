@@ -636,3 +636,4 @@ def control_create_catalog(catalog_file):
 
 if __name__ == '__main__':
     control_create_catalog("qa_questionnaire.json")
+    # TODO: write example json files to illustrate different features
