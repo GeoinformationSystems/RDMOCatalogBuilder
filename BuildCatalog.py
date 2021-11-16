@@ -464,12 +464,15 @@ def create_catalog(catalog_file):
                     question_unit = None
                 if "optionset" in question:
                     optionset = question["optionset"]
+                    if optionset["key"] in optionset_name and "option" in optionset:
+                        # exception if an optionset is defined twice
+                        raise Exception(f"Optionset {optionset['key']} already exists.")
                     optionset_uri = uri_prefix + "/options/" + optionset["key"]
-                    options_root = create_options(options_root=options_root,
-                                                  optionset=optionset,
-                                                  ns=ns,
-                                                  uri_prefix=uri_prefix)
-                    optionset_name[optionset["key"]] = optionset_uri
+                    if "option" in optionset:
+                        # a new optionset
+                        # if option is not in optionset, the optionset is already defined at another place
+                        options_root = create_options(options_root, optionset, ns, uri_prefix)
+                        optionset_name[optionset["key"]] = optionset_uri
                 else:
                     optionset_uri = None
                 if "condition" in question:
@@ -502,7 +505,11 @@ def create_catalog(catalog_file):
                     conditions_root = create_conditions(conditions_root, condition_definitions, ns, uri_prefix,
                                                         question_attribute_uri, optionset_name)
                     for condition_definition in condition_definitions:
-                        source_questions_for_condition[condition_definition["key"]] = question_attribute_uri
+                        if condition_definition["key"] in source_questions_for_condition:
+                            # exception if a condition is defined twice
+                            raise Exception(f"Condition {condition_definition['key']} already exists.")
+                        else:
+                            source_questions_for_condition[condition_definition["key"]] = question_attribute_uri
 
                 catalog_root.append(Catalog.Question(ns=ns,
                                                      uri=question_uri,

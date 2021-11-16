@@ -20,19 +20,41 @@
           {
             "key": "data_provider_definitions",
             "title": {
-              "en": "Data Provider"
+              "en": "Data Provider: Definitions"
+            },
+            "help": {
+              "en": "The following questions refer to the definitions of Open4usage and DQ4usage. Open4usage specifies the license and the openness of the data according to <a href=\"https://5stardata.info/en/\">5-star deployment scheme</a>. DQ4usage sets the minimum quality criteria to be fulfilled for the usage of the data."
             },
             "question": [
               {
                 "key": "open4usage_license",
                 "text": {
-                  "en": "Define License for Open4usage"
+                  "en": "Define license for Open4usage."
                 },
                 "help": {
-                  "en": "Define license demands of collected input datasets for further usage."
+                  "en": "Define license demands of collected input datasets for further usage.<br>*Open4usage defines the openness criteria for usage of data."
                 },
                 "widget_type": "textarea",
                 "value_type": "text",
+                "condition_definition": [
+                  {
+                    "key": "pr_open4usage_license_defined",
+                    "comment": "Open4usage license is defined",
+                    "relation": "notempty"
+                  }
+                ]
+              },
+              {
+                "key": "open4usage_fivestars",
+                "text": {
+                  "en": "Define necessary Berners-Lee five stars for Open4usage."
+                },
+                "help": {
+                  "en": "Define Tim Berners-Lee five stars deployment scheme for open data (see <a href=\"https://5stardata.info/en/\">https://5stardata.info/en/</a>).<br>*Open4usage defines the openness criteria for usage of data."
+                },
+                "widget_type": "radio",
+                "value_type": "option",
+                "condition": "pr_open4usage_license_defined",
                 "condition_definition": [
                   {
                     "key": "pr_open4usage_definition_filled",
@@ -44,20 +66,9 @@
                     "comment": "Open4usage is not defined",
                     "relation": "empty"
                   }
-                ]
-              },
-              {
-                "key": "open4usage_fivestars",
-                "text": {
-                  "en": "Define Berners-Lee five stars"
-                },
-                "help": {
-                  "en": "Define Tim Berners-Lee five stars deployment scheme for open data (see https://5stardata.info/en/)."
-                },
-                "widget_type": "radio",
-                "value_type": "option",
+                ],
                 "optionset": {
-                  "key": "five_stars_input_data",
+                  "key": "five_stars_open_data",
                   "option": [
                     {
                       "key": "1",
@@ -102,7 +113,7 @@
               {
                 "key": "dq4usage",
                 "text": {
-                  "en": "Define DQ4usage"
+                  "en": "Define DQ4usage."
                 },
                 "help": {
                   "en": "Define the data quality level/thresholds for usage of collected input datasets."
@@ -128,13 +139,16 @@
           {
             "key": "data_curator_definitions",
             "title": {
-              "en": "Data Curator"
+              "en": "Data Curator: Definitions"
+            },
+            "help": {
+              "en": "The following questions refer to the definitions of DM4processing, DQ4processing, DM4analysis and DQ4analysis. DM4processing and DQ4processing are levels of data maturity and data quality necessary for processing the data. The data analysis requires the data maturity criteria DM4analysis and the data quality criteria DQ4analysis."
             },
             "question": [
               {
                 "key": "dm4processing",
                 "text": {
-                  "en": "Define DM4processing"
+                  "en": "Define DM4processing."
                 },
                 "help": {
                   "en": "Define the data maturity level/thresholds for processing the datasets"
@@ -157,7 +171,7 @@
               {
                 "key": "dq4processing",
                 "text": {
-                  "en": "Define DQ4processing"
+                  "en": "Define DQ4processing."
                 },
                 "help": {
                   "en": "Define the data quality level/thresholds for processing datasets."
@@ -180,7 +194,7 @@
               {
                 "key": "dm4analysis",
                 "text": {
-                  "en": "Define DM4analysis"
+                  "en": "Define DM4analysis."
                 },
                 "help": {
                   "en": "Define the data maturity level/thresholds for analysing the datasets"
@@ -203,7 +217,7 @@
               {
                 "key": "dq4analysis",
                 "text": {
-                  "en": "Define DQ4analysis"
+                  "en": "Define DQ4analysis."
                 },
                 "help": {
                   "en": "Define the data quality level/thresholds for analysing datasets."
@@ -228,13 +242,16 @@
           {
             "key": "data_publisher_definitions",
             "title": {
-              "en": "Data Publisher"
+              "en": "Data Publisher: Definitions"
+            },
+            "help": {
+              "en": "The following questions refer to the definitions of DM4publication, DQ4publication, Open4publication, DM4archiving, DQ4archiving and Open4archiving. If a dataset shall be published, it must fulfil the data maturity DM4publication, the data quality DQ4publication and the openness Open4publication (license and <a href=\"https://5stardata.info/en/\">openness</a>). For archiving the data the criteria are built accordingly."
             },
             "question": [
               {
                 "key": "dm4publication",
                 "text": {
-                  "en": "Define DM4publication"
+                  "en": "Define DM4publication."
                 },
                 "help": {
                   "en": "Define the data maturity level/thresholds for publishing the datasets"
@@ -257,7 +274,7 @@
               {
                 "key": "dq4publication",
                 "text": {
-                  "en": "Define DQ4publication"
+                  "en": "Define DQ4publication."
                 },
                 "help": {
                   "en": "Define the data quality level/thresholds for publishing datasets."
@@ -278,15 +295,34 @@
                 ]
               },
               {
-                "key": "open4publication",
+                "key": "open4publication_license",
                 "text": {
-                  "en": "Define Open4publication"
+                  "en": "Define license for Open4publication."
                 },
                 "help": {
-                  "en": "Define the required openness of datasets for publication."
+                  "en": "Define license demands of dataset publication.<br>*Open4publication defines the openness criteria for publishing of data."
                 },
                 "widget_type": "textarea",
                 "value_type": "text",
+                "condition_definition": [
+                  {
+                    "key": "pr_open4publication_license_defined",
+                    "comment": "Open4publication license is defined",
+                    "relation": "notempty"
+                  }
+                ]
+              },
+              {
+                "key": "open4publication_fivestars",
+                "text": {
+                  "en": "Define necessary Berners-Lee five stars for Open4publication."
+                },
+                "help": {
+                  "en": "Define Tim Berners-Lee five stars deployment scheme for open data (see <a href=\"https://5stardata.info/en/\">https://5stardata.info/en/</a>).<br>*Open4publication defines the openness criteria for publishing of data."
+                },
+                "widget_type": "radio",
+                "value_type": "option",
+                "condition": "pr_open4publication_license_defined",
                 "condition_definition": [
                   {
                     "key": "pr_open4publication_definition_filled",
@@ -298,12 +334,15 @@
                     "comment": "Open4publication is not defined",
                     "relation": "empty"
                   }
-                ]
+                ],
+                "optionset": {
+                  "key": "five_stars_open_data"
+                }
               },
               {
                 "key": "dm4archiving",
                 "text": {
-                  "en": "Define DM4archiving"
+                  "en": "Define DM4archiving."
                 },
                 "help": {
                   "en": "Define the data maturity level/thresholds for archiving the datasets"
@@ -326,7 +365,7 @@
               {
                 "key": "dq4archiving",
                 "text": {
-                  "en": "Define DQ4archiving"
+                  "en": "Define DQ4archiving."
                 },
                 "help": {
                   "en": "Define the data quality level/thresholds for archiving datasets."
@@ -347,15 +386,34 @@
                 ]
               },
               {
-                "key": "open4archiving",
+                "key": "open4archiving_license",
                 "text": {
-                  "en": "Define Open4archiving"
+                  "en": "Define license for Open4archiving."
                 },
                 "help": {
-                  "en": "Define the required openness of datasets for archiving."
+                  "en": "Define license demands of dataset archiving.<br>*Open4archiving defines the openness criteria for archiving of data."
                 },
                 "widget_type": "textarea",
                 "value_type": "text",
+                "condition_definition": [
+                  {
+                    "key": "pr_open4archiving_license_defined",
+                    "comment": "Open4archiving license is defined",
+                    "relation": "notempty"
+                  }
+                ]
+              },
+              {
+                "key": "open4archiving_fivestars",
+                "text": {
+                  "en": "Define necessary Berners-Lee five stars for Open4archiving."
+                },
+                "help": {
+                  "en": "Define Tim Berners-Lee five stars deployment scheme for open data (see <a href=\"https://5stardata.info/en/\">https://5stardata.info/en/</a>).<br>*Open4archiving defines the openness criteria for archiving of data."
+                },
+                "widget_type": "radio",
+                "value_type": "option",
+                "condition": "pr_open4archiving_license_defined",
                 "condition_definition": [
                   {
                     "key": "pr_open4archiving_definition_filled",
@@ -367,7 +425,35 @@
                     "comment": "Open4archiving is not defined",
                     "relation": "empty"
                   }
-                ]
+                ],
+                "optionset": {
+                  "key": "five_stars_open_data"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "testSection",
+        "title": {
+          "en": "TestSection"
+        },
+        "questionset": [
+          {
+            "key": "testQuestionset",
+            "title": {
+              "en": "TestQuestionset"
+            },
+            "condition": "pr_open4usage_definition_filled",
+            "question": [
+              {
+                "key": "testQuestion",
+                "text": {
+                  "en": "TestQuestion"
+                },
+                "widget_type": "yesno",
+                "value_type": "boolean"
               }
             ]
           }
@@ -400,7 +486,7 @@
                   "en": "How and where do you collect data?"
                 },
                 "help": {
-                  "en": "Collection of Data"
+                  "en": "Describe the sources of collected data. Possible sources are repositories, governmental authorities, project partners, or own measurements/observations."
                 },
                 "widget_type": "textarea",
                 "value_type": "text",
@@ -418,7 +504,7 @@
                   "en": "Is the openness for data usage according to Open4usage criteria ensured?"
                 },
                 "help": {
-                  "en": "Openness for Usage"
+                  "en": "The collected dataset must be usable as defined in Open4usage. If the license does not allow usage, the dataset must be omitted."
                 },
                 "widget_type": "yesno",
                 "value_type": "boolean",
@@ -437,7 +523,7 @@
                   "en": "Is the data quality for data usage ensured?"
                 },
                 "help": {
-                  "en": "Data Quality for Usage"
+                  "en": "The quality of the dataset must fulfil DQ4usage criteria. If the quality is not sufficient, the dataset must be omitted."
                 },
                 "widget_type": "yesno",
                 "value_type": "boolean",
@@ -458,10 +544,11 @@
                   "en": "Is metadata available?"
                 },
                 "help": {
-                  "en": "Available Metadata"
+                  "en": "If metadata (data about data) is available, it can be used to a better understanding of the dataset. often it is crucial for further usage of the dataset."
                 },
                 "widget_type": "yesno",
                 "value_type": "boolean",
+                "condition": "cp_dq4usage_ensured",
                 "condition_definition": [
                   {
                     "key": "cp_metadata_available",
@@ -525,6 +612,7 @@
             "verbose_name_plural": {
               "en": "datasets"
             },
+            "condition": "cp_dq4usage_ensured",
             "question": [
               {
                 "key": "enrichMetadataYesNo",
@@ -572,6 +660,7 @@
             "verbose_name_plural": {
               "en": "datasets"
             },
+            "condition": "cp_dq4usage_ensured",
             "question": [
               {
                 "key": "qualityControlDecision",
@@ -652,6 +741,7 @@
             "verbose_name_plural": {
               "en": "datasets"
             },
+            "condition": "cp_dq4usage_ensured",
             "question": [
               {
                 "key": "dataMaturityEvaluation",
@@ -707,11 +797,12 @@
             "verbose_name_plural": {
               "en": "datasets"
             },
+            "condition": "cp_dq4usage_ensured",
             "question": [
               {
                 "key": "DMDQIndicators",
                 "text": {
-                  "en": "Give an estimation of data maturity and data quality indicators for all input datasets"
+                  "en": "Give an estimation of data maturity and data quality indicators for all input datasets."
                 },
                 "help": {
                   "en": "In the case of proceeding to processing phase, DM4processing and DQ4processing must be fulfilled. If the data shall be directly published (e.g. own measurements) DM4publication and DQ4publication must be met."
@@ -869,7 +960,7 @@
                 },
                 "widget_type": "textarea",
                 "value_type": "text",
-                "condition": "cp_enrich_metadata"
+                "condition": "pp_enrich_metadata"
               }
             ]
           },
@@ -1008,7 +1099,7 @@
               {
                 "key": "DMDQIndicators",
                 "text": {
-                  "en": "Give an estimation of data maturity and data quality indicators for all processed datasets"
+                  "en": "Give an estimation of data maturity and data quality indicators for all processed datasets."
                 },
                 "help": {
                   "en": "In order to proceed to the analysis phase DM4analysis and DQ4analysis must be fulfilled."
@@ -1108,10 +1199,21 @@
                   "en": "How can you evaluate the fitness for purpose/use of the data?"
                 },
                 "help": {
-                  "en": "Describe the method of the evaluation."
+                  "en": "The evaluation of the fitness for purpose/use is an important step in the analysis phase. "
                 },
                 "widget_type": "textarea",
                 "value_type": "text"
+              },
+              {
+                "key": "evaluateFitnessForPurposeInMetadata",
+                "text": {
+                  "en": "Are indicators/descriptions of fitness for purpose/use included in metadata?"
+                },
+                "help": {
+                  "en": "To foster potential usage of the data the inclusion of indicators and/or other results and descriptions is strongly recommended."
+                },
+                "widget_type": "yesno",
+                "value_type": "boolean"
               }
             ]
           },
@@ -1262,7 +1364,7 @@
               {
                 "key": "DMDQIndicators",
                 "text": {
-                  "en": "Give an estimation of data maturity and data quality indicators for all analysed datasets"
+                  "en": "Give an estimation of data maturity and data quality indicators for all analysed datasets."
                 },
                 "help": {
                   "en": "In order to proceed to the publication phase DM4publication and DQ4publication must be fulfilled."
@@ -1331,7 +1433,7 @@
               {
                 "key": "open4publication",
                 "text": {
-                  "en": "Is Open4publication is ensured?"
+                  "en": "Is Open4publication ensured?"
                 },
                 "help": {
                   "en": "Ensured Open4publication is mandatory for publishing the dataset."
@@ -1362,13 +1464,13 @@
               {
                 "key": "metadataAdaptionYesno",
                 "text": {
-                  "en": "Is it necessary to adapt metadata elements?"
+                  "en": "Describe the necessary adaption of metadata elements."
                 },
                 "help": {
                   "en": "Publication of datasets in repositories often leads to repository-specific metadata elements."
                 },
-                "widget_type": "yesno",
-                "value_type": "boolean",
+                "widget_type": "textarea",
+                "value_type": "text",
                 "condition": "pup_open4publication_assured"
               },
               {
@@ -1401,6 +1503,67 @@
                 ]
               }
             ]
+          },
+          {
+            "key": "nextSteps",
+            "title": {
+              "en": "Data Publisher: Next Steps"
+            },
+            "is_collection": "False",
+            "collection_name": "publication_phase_datasets",
+            "verbose_name": {
+              "en": "dataset"
+            },
+            "verbose_name_plural": {
+              "en": "datasets"
+            },
+            "condition": ["cp_publication_allowed", "ap_publication_allowed"],
+            "question": [
+              {
+                "key": "DMDQIndicators",
+                "text": {
+                  "en": "Give an estimation of data maturity and data quality indicators for all analysed datasets."
+                },
+                "help": {
+                  "en": "In order to proceed to the archiving phase DM4archiving and DQ4archiving must be fulfilled."
+                },
+                "widget_type": "radio",
+                "value_type": "option",
+                "optionset": {
+                  "key": "criteria_after_publication_phase",
+                  "option": [
+                    {
+                      "key": "1",
+                      "text": {
+                        "en": "Either DM4archiving or DQ4archiving are not fulfilled."
+                      }
+                    },
+                    {
+                      "key": "2",
+                      "text": {
+                        "en": "DM4archiving and DQ4archiving are fulfilled."
+                      }
+                    }
+                  ]
+                },
+                "condition_definition": [
+                  {
+                    "key": "pup_archiving_not_allowed",
+                    "comment": "Data maturity or data quality indicators do not allow proceeding to archiving phase",
+                    "relation": "eq",
+                    "target_option": "1",
+                    "optionset": "criteria_after_publication_phase"
+                  },
+                  {
+                    "key": "pup_archiving_allowed",
+                    "comment": "Proceeding to archiving phase is allowed",
+                    "relation": "eq",
+                    "target_option": "2",
+                    "optionset": "criteria_after_publication_phase"
+                  }
+                ]
+              }
+            ]
           }
         ]
       },
@@ -1413,19 +1576,89 @@
           {
             "key": "archiveData",
             "title": {
-              "en": "Archive Data"
+              "en": "Data Publisher: Archive Data"
             },
+            "is_collection": "True",
+            "collection_name": "publication_phase_datasets",
+            "verbose_name": {
+              "en": "dataset"
+            },
+            "verbose_name_plural": {
+              "en": "datasets"
+            },
+            "condition": "pup_archiving_allowed",
             "question": [
+              {
+                "key": "open4archiving",
+                "text": {
+                  "en": "Is Open4archiving ensured?"
+                },
+                "help": {
+                  "en": "Ensured Open4archiving is mandatory for publishing the dataset."
+                },
+                "widget_type": "yesno",
+                "value_type": "boolean",
+                "condition_definition": [
+                  {
+                    "key": "arp_open4archiving_assured",
+                    "comment": "Open4archiving has to be assured in order to archive the dataset.",
+                    "relation": "eq",
+                    "target_text": "1"
+                  }
+                ]
+              },
               {
                 "key": "archivingOfData",
                 "text": {
-                  "en": "How do you archive data?"
+                  "en": "How and where do you archive the dataset?"
                 },
                 "help": {
-                  "en": "Archiving of Data"
+                  "en": "The way of archiving defines necessary metadata fields and file formats."
                 },
                 "widget_type": "textarea",
-                "value_type": "text"
+                "value_type": "text",
+                "condition": "arp_open4archiving_assured"
+              },
+              {
+                "key": "metadataAdaptionYesno",
+                "text": {
+                  "en": "Describe the necessary adaption of metadata elements."
+                },
+                "help": {
+                  "en": "Archiving of datasets in repositories often leads to repository-specific metadata elements."
+                },
+                "widget_type": "textarea",
+                "value_type": "text",
+                "condition": "arp_open4archiving_assured"
+              },
+              {
+                "key": "metadataAdaption",
+                "text": {
+                  "en": "Did you adapt metadata elements?"
+                },
+                "help": {
+                  "en": "Is the adaption of metadata elements according to the specific needs of the repository finished?"
+                },
+                "widget_type": "yesno",
+                "value_type": "boolean",
+                "condition": "arp_open4archiving_assured"
+              },
+              {
+                "key": "archivingOfData",
+                "text": {
+                  "en": "Did you archive the dataset?"
+                },
+                "widget_type": "yesno",
+                "value_type": "boolean",
+                "condition": "arp_open4archiving_assured",
+                "condition_definition": [
+                  {
+                    "key": "arp_data_not_archived",
+                    "comment": "The dataset is not archived yet",
+                    "relation": "eq",
+                    "target_text": "0"
+                  }
+                ]
               }
             ]
           }
@@ -1565,46 +1798,6 @@
       "condition": "collection_phase_not_started"
     },
     {
-      "key": "start_processing_phase",
-      "title": {
-        "en": "Start processing phase"
-      },
-      "text": {
-        "en": "Start the processing phase."
-      },
-      "condition": "processing_phase_not_started"
-    },
-    {
-      "key": "start_analysing_phase",
-      "title": {
-        "en": "Start analysing phase"
-      },
-      "text": {
-        "en": "Start the analysing phase."
-      },
-      "condition": "analysing_phase_not_started"
-    },
-    {
-      "key": "start_publication_phase",
-      "title": {
-        "en": "Start publication phase"
-      },
-      "text": {
-        "en": "Start the publication phase."
-      },
-      "condition": "publication_phase_not_started"
-    },
-    {
-      "key": "start_archiving_phase",
-      "title": {
-        "en": "Start archiving phase"
-      },
-      "text": {
-        "en": "Start the archiving phase."
-      },
-      "condition": "archiving_phase_not_started"
-    },
-    {
       "key": "processing_phase_not_allowed",
       "title": {
         "en": "Ensure DM4processing and DQ4processing"
@@ -1643,6 +1836,16 @@
         "en": "The data can be published in a repository"
       },
       "condition": "pup_data_not_published"
+    },
+    {
+      "key": "archiving_data",
+      "title": {
+        "en": "Archive the data"
+      },
+      "text": {
+        "en": "The data can be archived in a repository"
+      },
+      "condition": "arp_data_not_archived"
     }
   ]
 }
