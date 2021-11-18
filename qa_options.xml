@@ -1,2 +1,188 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rdmo/>
+<rdmo xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <optionset dc:uri="https://geokur.geo.tu-dresden.de/terms/options/five_stars_open_data">
+    <uri_prefix>https://geokur.geo.tu-dresden.de/terms</uri_prefix>
+    <key>five_stars_open_data</key>
+    <dc:comment/>
+    <order>0</order>
+    <conditions/>
+  </optionset>
+  <option dc:uri="https://geokur.geo.tu-dresden.de/terms/options/five_stars_open_data/1">
+    <uri_prefix>https://geokur.geo.tu-dresden.de/terms</uri_prefix>
+    <key>1</key>
+    <path>five_stars_open_data/1</path>
+    <dc:comment/>
+    <optionset dc:uri="https://geokur.geo.tu-dresden.de/terms/options/five_stars_open_data"/>
+    <order>0</order>
+    <text lang="en">*: data made available on the Web</text>
+    <additional_input>False</additional_input>
+  </option>
+  <option dc:uri="https://geokur.geo.tu-dresden.de/terms/options/five_stars_open_data/2">
+    <uri_prefix>https://geokur.geo.tu-dresden.de/terms</uri_prefix>
+    <key>2</key>
+    <path>five_stars_open_data/2</path>
+    <dc:comment/>
+    <optionset dc:uri="https://geokur.geo.tu-dresden.de/terms/options/five_stars_open_data"/>
+    <order>1</order>
+    <text lang="en">**: data made available as structured data</text>
+    <additional_input>False</additional_input>
+  </option>
+  <option dc:uri="https://geokur.geo.tu-dresden.de/terms/options/five_stars_open_data/3">
+    <uri_prefix>https://geokur.geo.tu-dresden.de/terms</uri_prefix>
+    <key>3</key>
+    <path>five_stars_open_data/3</path>
+    <dc:comment/>
+    <optionset dc:uri="https://geokur.geo.tu-dresden.de/terms/options/five_stars_open_data"/>
+    <order>2</order>
+    <text lang="en">***: data made available in non-proprietary open format</text>
+    <additional_input>False</additional_input>
+  </option>
+  <option dc:uri="https://geokur.geo.tu-dresden.de/terms/options/five_stars_open_data/4">
+    <uri_prefix>https://geokur.geo.tu-dresden.de/terms</uri_prefix>
+    <key>4</key>
+    <path>five_stars_open_data/4</path>
+    <dc:comment/>
+    <optionset dc:uri="https://geokur.geo.tu-dresden.de/terms/options/five_stars_open_data"/>
+    <order>3</order>
+    <text lang="en">****: URIs are used to denote data, so that other people can point at the data</text>
+    <additional_input>False</additional_input>
+  </option>
+  <option dc:uri="https://geokur.geo.tu-dresden.de/terms/options/five_stars_open_data/5">
+    <uri_prefix>https://geokur.geo.tu-dresden.de/terms</uri_prefix>
+    <key>5</key>
+    <path>five_stars_open_data/5</path>
+    <dc:comment/>
+    <optionset dc:uri="https://geokur.geo.tu-dresden.de/terms/options/five_stars_open_data"/>
+    <order>4</order>
+    <text lang="en">*****: data is linked to other data to provide context</text>
+    <additional_input>False</additional_input>
+  </option>
+  <option dc:uri="https://geokur.geo.tu-dresden.de/terms/options/five_stars_open_data/other">
+    <uri_prefix>https://geokur.geo.tu-dresden.de/terms</uri_prefix>
+    <key>other</key>
+    <path>five_stars_open_data/other</path>
+    <dc:comment/>
+    <optionset dc:uri="https://geokur.geo.tu-dresden.de/terms/options/five_stars_open_data"/>
+    <order>5</order>
+    <text lang="en">other definition</text>
+    <additional_input>True</additional_input>
+  </option>
+  <optionset dc:uri="https://geokur.geo.tu-dresden.de/terms/options/criteria_after_collecting_phase">
+    <uri_prefix>https://geokur.geo.tu-dresden.de/terms</uri_prefix>
+    <key>criteria_after_collecting_phase</key>
+    <dc:comment/>
+    <order>0</order>
+    <conditions/>
+  </optionset>
+  <option dc:uri="https://geokur.geo.tu-dresden.de/terms/options/criteria_after_collecting_phase/1">
+    <uri_prefix>https://geokur.geo.tu-dresden.de/terms</uri_prefix>
+    <key>1</key>
+    <path>criteria_after_collecting_phase/1</path>
+    <dc:comment/>
+    <optionset dc:uri="https://geokur.geo.tu-dresden.de/terms/options/criteria_after_collecting_phase"/>
+    <order>0</order>
+    <text lang="en">Either DM4processing or DQ4processing are not fulfilled.</text>
+    <additional_input>False</additional_input>
+  </option>
+  <option dc:uri="https://geokur.geo.tu-dresden.de/terms/options/criteria_after_collecting_phase/2">
+    <uri_prefix>https://geokur.geo.tu-dresden.de/terms</uri_prefix>
+    <key>2</key>
+    <path>criteria_after_collecting_phase/2</path>
+    <dc:comment/>
+    <optionset dc:uri="https://geokur.geo.tu-dresden.de/terms/options/criteria_after_collecting_phase"/>
+    <order>1</order>
+    <text lang="en">DM4processing and DQ4processing are fulfilled, but DM4publication or DQ4publication are not reached.</text>
+    <additional_input>False</additional_input>
+  </option>
+  <option dc:uri="https://geokur.geo.tu-dresden.de/terms/options/criteria_after_collecting_phase/3">
+    <uri_prefix>https://geokur.geo.tu-dresden.de/terms</uri_prefix>
+    <key>3</key>
+    <path>criteria_after_collecting_phase/3</path>
+    <dc:comment/>
+    <optionset dc:uri="https://geokur.geo.tu-dresden.de/terms/options/criteria_after_collecting_phase"/>
+    <order>2</order>
+    <text lang="en">DM4publication and DQ4publication are fulfilled.</text>
+    <additional_input>False</additional_input>
+  </option>
+  <optionset dc:uri="https://geokur.geo.tu-dresden.de/terms/options/criteria_after_processing_phase">
+    <uri_prefix>https://geokur.geo.tu-dresden.de/terms</uri_prefix>
+    <key>criteria_after_processing_phase</key>
+    <dc:comment/>
+    <order>0</order>
+    <conditions/>
+  </optionset>
+  <option dc:uri="https://geokur.geo.tu-dresden.de/terms/options/criteria_after_processing_phase/1">
+    <uri_prefix>https://geokur.geo.tu-dresden.de/terms</uri_prefix>
+    <key>1</key>
+    <path>criteria_after_processing_phase/1</path>
+    <dc:comment/>
+    <optionset dc:uri="https://geokur.geo.tu-dresden.de/terms/options/criteria_after_processing_phase"/>
+    <order>0</order>
+    <text lang="en">Either DM4analysis or DQ4analysis are not fulfilled.</text>
+    <additional_input>False</additional_input>
+  </option>
+  <option dc:uri="https://geokur.geo.tu-dresden.de/terms/options/criteria_after_processing_phase/2">
+    <uri_prefix>https://geokur.geo.tu-dresden.de/terms</uri_prefix>
+    <key>2</key>
+    <path>criteria_after_processing_phase/2</path>
+    <dc:comment/>
+    <optionset dc:uri="https://geokur.geo.tu-dresden.de/terms/options/criteria_after_processing_phase"/>
+    <order>1</order>
+    <text lang="en">DM4analysis and DQ4analysis are fulfilled.</text>
+    <additional_input>False</additional_input>
+  </option>
+  <optionset dc:uri="https://geokur.geo.tu-dresden.de/terms/options/criteria_after_analysis_phase">
+    <uri_prefix>https://geokur.geo.tu-dresden.de/terms</uri_prefix>
+    <key>criteria_after_analysis_phase</key>
+    <dc:comment/>
+    <order>0</order>
+    <conditions/>
+  </optionset>
+  <option dc:uri="https://geokur.geo.tu-dresden.de/terms/options/criteria_after_analysis_phase/1">
+    <uri_prefix>https://geokur.geo.tu-dresden.de/terms</uri_prefix>
+    <key>1</key>
+    <path>criteria_after_analysis_phase/1</path>
+    <dc:comment/>
+    <optionset dc:uri="https://geokur.geo.tu-dresden.de/terms/options/criteria_after_analysis_phase"/>
+    <order>0</order>
+    <text lang="en">Either DM4publication or DQ4publication are not fulfilled.</text>
+    <additional_input>False</additional_input>
+  </option>
+  <option dc:uri="https://geokur.geo.tu-dresden.de/terms/options/criteria_after_analysis_phase/2">
+    <uri_prefix>https://geokur.geo.tu-dresden.de/terms</uri_prefix>
+    <key>2</key>
+    <path>criteria_after_analysis_phase/2</path>
+    <dc:comment/>
+    <optionset dc:uri="https://geokur.geo.tu-dresden.de/terms/options/criteria_after_analysis_phase"/>
+    <order>1</order>
+    <text lang="en">DM4publication and DQ4publication are fulfilled.</text>
+    <additional_input>False</additional_input>
+  </option>
+  <optionset dc:uri="https://geokur.geo.tu-dresden.de/terms/options/criteria_after_publication_phase">
+    <uri_prefix>https://geokur.geo.tu-dresden.de/terms</uri_prefix>
+    <key>criteria_after_publication_phase</key>
+    <dc:comment/>
+    <order>0</order>
+    <conditions/>
+  </optionset>
+  <option dc:uri="https://geokur.geo.tu-dresden.de/terms/options/criteria_after_publication_phase/1">
+    <uri_prefix>https://geokur.geo.tu-dresden.de/terms</uri_prefix>
+    <key>1</key>
+    <path>criteria_after_publication_phase/1</path>
+    <dc:comment/>
+    <optionset dc:uri="https://geokur.geo.tu-dresden.de/terms/options/criteria_after_publication_phase"/>
+    <order>0</order>
+    <text lang="en">Either DM4archiving or DQ4archiving are not fulfilled.</text>
+    <additional_input>False</additional_input>
+  </option>
+  <option dc:uri="https://geokur.geo.tu-dresden.de/terms/options/criteria_after_publication_phase/2">
+    <uri_prefix>https://geokur.geo.tu-dresden.de/terms</uri_prefix>
+    <key>2</key>
+    <path>criteria_after_publication_phase/2</path>
+    <dc:comment/>
+    <optionset dc:uri="https://geokur.geo.tu-dresden.de/terms/options/criteria_after_publication_phase"/>
+    <order>1</order>
+    <text lang="en">DM4archiving and DQ4archiving are fulfilled.</text>
+    <additional_input>False</additional_input>
+  </option>
+</rdmo>

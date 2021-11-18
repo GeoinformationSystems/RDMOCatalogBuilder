@@ -21,17 +21,24 @@
     <dc:comment/>
     <parent dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/prerequisites"/>
   </attribute>
+  <attribute dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/prerequisites/data_provider_definitions/open4usage_license">
+    <uri_prefix>https://geokur.geo.tu-dresden.de/terms</uri_prefix>
+    <key>open4usage_license</key>
+    <path>qa/prerequisites/data_provider_definitions/open4usage_license</path>
+    <dc:comment/>
+    <parent dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/prerequisites/data_provider_definitions"/>
+  </attribute>
+  <attribute dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/prerequisites/data_provider_definitions/open4usage_fivestars">
+    <uri_prefix>https://geokur.geo.tu-dresden.de/terms</uri_prefix>
+    <key>open4usage_fivestars</key>
+    <path>qa/prerequisites/data_provider_definitions/open4usage_fivestars</path>
+    <dc:comment/>
+    <parent dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/prerequisites/data_provider_definitions"/>
+  </attribute>
   <attribute dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/prerequisites/data_provider_definitions/dq4usage">
     <uri_prefix>https://geokur.geo.tu-dresden.de/terms</uri_prefix>
     <key>dq4usage</key>
     <path>qa/prerequisites/data_provider_definitions/dq4usage</path>
-    <dc:comment/>
-    <parent dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/prerequisites/data_provider_definitions"/>
-  </attribute>
-  <attribute dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/prerequisites/data_provider_definitions/open4usage">
-    <uri_prefix>https://geokur.geo.tu-dresden.de/terms</uri_prefix>
-    <key>open4usage</key>
-    <path>qa/prerequisites/data_provider_definitions/open4usage</path>
     <dc:comment/>
     <parent dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/prerequisites/data_provider_definitions"/>
   </attribute>
@@ -91,10 +98,17 @@
     <dc:comment/>
     <parent dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/prerequisites/data_publisher_definitions"/>
   </attribute>
-  <attribute dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/prerequisites/data_publisher_definitions/open4publication">
+  <attribute dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/prerequisites/data_publisher_definitions/open4publication_license">
     <uri_prefix>https://geokur.geo.tu-dresden.de/terms</uri_prefix>
-    <key>open4publication</key>
-    <path>qa/prerequisites/data_publisher_definitions/open4publication</path>
+    <key>open4publication_license</key>
+    <path>qa/prerequisites/data_publisher_definitions/open4publication_license</path>
+    <dc:comment/>
+    <parent dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/prerequisites/data_publisher_definitions"/>
+  </attribute>
+  <attribute dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/prerequisites/data_publisher_definitions/open4publication_fivestars">
+    <uri_prefix>https://geokur.geo.tu-dresden.de/terms</uri_prefix>
+    <key>open4publication_fivestars</key>
+    <path>qa/prerequisites/data_publisher_definitions/open4publication_fivestars</path>
     <dc:comment/>
     <parent dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/prerequisites/data_publisher_definitions"/>
   </attribute>
@@ -112,12 +126,40 @@
     <dc:comment/>
     <parent dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/prerequisites/data_publisher_definitions"/>
   </attribute>
-  <attribute dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/prerequisites/data_publisher_definitions/open4archiving">
+  <attribute dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/prerequisites/data_publisher_definitions/open4archiving_license">
     <uri_prefix>https://geokur.geo.tu-dresden.de/terms</uri_prefix>
-    <key>open4archiving</key>
-    <path>qa/prerequisites/data_publisher_definitions/open4archiving</path>
+    <key>open4archiving_license</key>
+    <path>qa/prerequisites/data_publisher_definitions/open4archiving_license</path>
     <dc:comment/>
     <parent dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/prerequisites/data_publisher_definitions"/>
+  </attribute>
+  <attribute dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/prerequisites/data_publisher_definitions/open4archiving_fivestars">
+    <uri_prefix>https://geokur.geo.tu-dresden.de/terms</uri_prefix>
+    <key>open4archiving_fivestars</key>
+    <path>qa/prerequisites/data_publisher_definitions/open4archiving_fivestars</path>
+    <dc:comment/>
+    <parent dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/prerequisites/data_publisher_definitions"/>
+  </attribute>
+  <attribute dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/testSection">
+    <uri_prefix>https://geokur.geo.tu-dresden.de/terms</uri_prefix>
+    <key>testSection</key>
+    <path>qa/testSection</path>
+    <dc:comment/>
+    <parent dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa"/>
+  </attribute>
+  <attribute dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/testSection/testQuestionset">
+    <uri_prefix>https://geokur.geo.tu-dresden.de/terms</uri_prefix>
+    <key>testQuestionset</key>
+    <path>qa/testSection/testQuestionset</path>
+    <dc:comment/>
+    <parent dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/testSection"/>
+  </attribute>
+  <attribute dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/testSection/testQuestionset/testQuestion">
+    <uri_prefix>https://geokur.geo.tu-dresden.de/terms</uri_prefix>
+    <key>testQuestion</key>
+    <path>qa/testSection/testQuestionset/testQuestion</path>
+    <dc:comment/>
+    <parent dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/testSection/testQuestionset"/>
   </attribute>
   <attribute dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/collectionPhase">
     <uri_prefix>https://geokur.geo.tu-dresden.de/terms</uri_prefix>
@@ -147,17 +189,17 @@
     <dc:comment/>
     <parent dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/collectionPhase/collectData"/>
   </attribute>
-  <attribute dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/collectionPhase/collectData/collectionOfDataDataQuality">
-    <uri_prefix>https://geokur.geo.tu-dresden.de/terms</uri_prefix>
-    <key>collectionOfDataDataQuality</key>
-    <path>qa/collectionPhase/collectData/collectionOfDataDataQuality</path>
-    <dc:comment/>
-    <parent dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/collectionPhase/collectData"/>
-  </attribute>
   <attribute dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/collectionPhase/collectData/collectionOfDataOpenness">
     <uri_prefix>https://geokur.geo.tu-dresden.de/terms</uri_prefix>
     <key>collectionOfDataOpenness</key>
     <path>qa/collectionPhase/collectData/collectionOfDataOpenness</path>
+    <dc:comment/>
+    <parent dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/collectionPhase/collectData"/>
+  </attribute>
+  <attribute dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/collectionPhase/collectData/collectionOfDataDataQuality">
+    <uri_prefix>https://geokur.geo.tu-dresden.de/terms</uri_prefix>
+    <key>collectionOfDataDataQuality</key>
+    <path>qa/collectionPhase/collectData/collectionOfDataDataQuality</path>
     <dc:comment/>
     <parent dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/collectionPhase/collectData"/>
   </attribute>
@@ -189,6 +231,104 @@
     <dc:comment/>
     <parent dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/collectionPhase/metadataUsage"/>
   </attribute>
+  <attribute dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/collectionPhase/metadataEnriching">
+    <uri_prefix>https://geokur.geo.tu-dresden.de/terms</uri_prefix>
+    <key>metadataEnriching</key>
+    <path>qa/collectionPhase/metadataEnriching</path>
+    <dc:comment/>
+    <parent dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/collectionPhase"/>
+  </attribute>
+  <attribute dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/collectionPhase/metadataEnriching/enrichMetadataYesNo">
+    <uri_prefix>https://geokur.geo.tu-dresden.de/terms</uri_prefix>
+    <key>enrichMetadataYesNo</key>
+    <path>qa/collectionPhase/metadataEnriching/enrichMetadataYesNo</path>
+    <dc:comment/>
+    <parent dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/collectionPhase/metadataEnriching"/>
+  </attribute>
+  <attribute dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/collectionPhase/metadataEnriching/enrichMetadata">
+    <uri_prefix>https://geokur.geo.tu-dresden.de/terms</uri_prefix>
+    <key>enrichMetadata</key>
+    <path>qa/collectionPhase/metadataEnriching/enrichMetadata</path>
+    <dc:comment/>
+    <parent dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/collectionPhase/metadataEnriching"/>
+  </attribute>
+  <attribute dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/collectionPhase/qualityControl">
+    <uri_prefix>https://geokur.geo.tu-dresden.de/terms</uri_prefix>
+    <key>qualityControl</key>
+    <path>qa/collectionPhase/qualityControl</path>
+    <dc:comment/>
+    <parent dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/collectionPhase"/>
+  </attribute>
+  <attribute dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/collectionPhase/qualityControl/qualityControlDecision">
+    <uri_prefix>https://geokur.geo.tu-dresden.de/terms</uri_prefix>
+    <key>qualityControlDecision</key>
+    <path>qa/collectionPhase/qualityControl/qualityControlDecision</path>
+    <dc:comment/>
+    <parent dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/collectionPhase/qualityControl"/>
+  </attribute>
+  <attribute dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/collectionPhase/qualityControl/qualityControlMethod">
+    <uri_prefix>https://geokur.geo.tu-dresden.de/terms</uri_prefix>
+    <key>qualityControlMethod</key>
+    <path>qa/collectionPhase/qualityControl/qualityControlMethod</path>
+    <dc:comment/>
+    <parent dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/collectionPhase/qualityControl"/>
+  </attribute>
+  <attribute dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/collectionPhase/qualityControl/evaluateFitnessForPurposeMethod">
+    <uri_prefix>https://geokur.geo.tu-dresden.de/terms</uri_prefix>
+    <key>evaluateFitnessForPurposeMethod</key>
+    <path>qa/collectionPhase/qualityControl/evaluateFitnessForPurposeMethod</path>
+    <dc:comment/>
+    <parent dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/collectionPhase/qualityControl"/>
+  </attribute>
+  <attribute dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/collectionPhase/qualityControl/evaluateFitnessForPurposeResult">
+    <uri_prefix>https://geokur.geo.tu-dresden.de/terms</uri_prefix>
+    <key>evaluateFitnessForPurposeResult</key>
+    <path>qa/collectionPhase/qualityControl/evaluateFitnessForPurposeResult</path>
+    <dc:comment/>
+    <parent dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/collectionPhase/qualityControl"/>
+  </attribute>
+  <attribute dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/collectionPhase/qualityControl/evaluateFitnessForPurposeInMetadata">
+    <uri_prefix>https://geokur.geo.tu-dresden.de/terms</uri_prefix>
+    <key>evaluateFitnessForPurposeInMetadata</key>
+    <path>qa/collectionPhase/qualityControl/evaluateFitnessForPurposeInMetadata</path>
+    <dc:comment/>
+    <parent dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/collectionPhase/qualityControl"/>
+  </attribute>
+  <attribute dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/collectionPhase/dataMaturityHandling">
+    <uri_prefix>https://geokur.geo.tu-dresden.de/terms</uri_prefix>
+    <key>dataMaturityHandling</key>
+    <path>qa/collectionPhase/dataMaturityHandling</path>
+    <dc:comment/>
+    <parent dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/collectionPhase"/>
+  </attribute>
+  <attribute dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/collectionPhase/dataMaturityHandling/dataMaturityEvaluation">
+    <uri_prefix>https://geokur.geo.tu-dresden.de/terms</uri_prefix>
+    <key>dataMaturityEvaluation</key>
+    <path>qa/collectionPhase/dataMaturityHandling/dataMaturityEvaluation</path>
+    <dc:comment/>
+    <parent dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/collectionPhase/dataMaturityHandling"/>
+  </attribute>
+  <attribute dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/collectionPhase/dataMaturityHandling/dataMaturityEvaluationInMetadata">
+    <uri_prefix>https://geokur.geo.tu-dresden.de/terms</uri_prefix>
+    <key>dataMaturityEvaluationInMetadata</key>
+    <path>qa/collectionPhase/dataMaturityHandling/dataMaturityEvaluationInMetadata</path>
+    <dc:comment/>
+    <parent dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/collectionPhase/dataMaturityHandling"/>
+  </attribute>
+  <attribute dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/collectionPhase/nextSteps">
+    <uri_prefix>https://geokur.geo.tu-dresden.de/terms</uri_prefix>
+    <key>nextSteps</key>
+    <path>qa/collectionPhase/nextSteps</path>
+    <dc:comment/>
+    <parent dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/collectionPhase"/>
+  </attribute>
+  <attribute dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/collectionPhase/nextSteps/DMDQIndicators">
+    <uri_prefix>https://geokur.geo.tu-dresden.de/terms</uri_prefix>
+    <key>DMDQIndicators</key>
+    <path>qa/collectionPhase/nextSteps/DMDQIndicators</path>
+    <dc:comment/>
+    <parent dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/collectionPhase/nextSteps"/>
+  </attribute>
   <attribute dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/processingPhase">
     <uri_prefix>https://geokur.geo.tu-dresden.de/terms</uri_prefix>
     <key>processingPhase</key>
@@ -217,6 +357,111 @@
     <dc:comment/>
     <parent dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/processingPhase/processData"/>
   </attribute>
+  <attribute dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/processingPhase/processData/metadataExtraction">
+    <uri_prefix>https://geokur.geo.tu-dresden.de/terms</uri_prefix>
+    <key>metadataExtraction</key>
+    <path>qa/processingPhase/processData/metadataExtraction</path>
+    <dc:comment/>
+    <parent dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/processingPhase/processData"/>
+  </attribute>
+  <attribute dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/processingPhase/processData/dataQualityExtraction">
+    <uri_prefix>https://geokur.geo.tu-dresden.de/terms</uri_prefix>
+    <key>dataQualityExtraction</key>
+    <path>qa/processingPhase/processData/dataQualityExtraction</path>
+    <dc:comment/>
+    <parent dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/processingPhase/processData"/>
+  </attribute>
+  <attribute dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/processingPhase/metadataEnriching">
+    <uri_prefix>https://geokur.geo.tu-dresden.de/terms</uri_prefix>
+    <key>metadataEnriching</key>
+    <path>qa/processingPhase/metadataEnriching</path>
+    <dc:comment/>
+    <parent dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/processingPhase"/>
+  </attribute>
+  <attribute dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/processingPhase/metadataEnriching/enrichMetadataYesNo">
+    <uri_prefix>https://geokur.geo.tu-dresden.de/terms</uri_prefix>
+    <key>enrichMetadataYesNo</key>
+    <path>qa/processingPhase/metadataEnriching/enrichMetadataYesNo</path>
+    <dc:comment/>
+    <parent dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/processingPhase/metadataEnriching"/>
+  </attribute>
+  <attribute dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/processingPhase/metadataEnriching/enrichMetadata">
+    <uri_prefix>https://geokur.geo.tu-dresden.de/terms</uri_prefix>
+    <key>enrichMetadata</key>
+    <path>qa/processingPhase/metadataEnriching/enrichMetadata</path>
+    <dc:comment/>
+    <parent dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/processingPhase/metadataEnriching"/>
+  </attribute>
+  <attribute dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/processingPhase/qualityControl">
+    <uri_prefix>https://geokur.geo.tu-dresden.de/terms</uri_prefix>
+    <key>qualityControl</key>
+    <path>qa/processingPhase/qualityControl</path>
+    <dc:comment/>
+    <parent dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/processingPhase"/>
+  </attribute>
+  <attribute dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/processingPhase/qualityControl/qualityControlDecision">
+    <uri_prefix>https://geokur.geo.tu-dresden.de/terms</uri_prefix>
+    <key>qualityControlDecision</key>
+    <path>qa/processingPhase/qualityControl/qualityControlDecision</path>
+    <dc:comment/>
+    <parent dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/processingPhase/qualityControl"/>
+  </attribute>
+  <attribute dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/processingPhase/qualityControl/qualityControlMethod">
+    <uri_prefix>https://geokur.geo.tu-dresden.de/terms</uri_prefix>
+    <key>qualityControlMethod</key>
+    <path>qa/processingPhase/qualityControl/qualityControlMethod</path>
+    <dc:comment/>
+    <parent dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/processingPhase/qualityControl"/>
+  </attribute>
+  <attribute dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/processingPhase/qualityControl/evaluateFitnessForAnalysis">
+    <uri_prefix>https://geokur.geo.tu-dresden.de/terms</uri_prefix>
+    <key>evaluateFitnessForAnalysis</key>
+    <path>qa/processingPhase/qualityControl/evaluateFitnessForAnalysis</path>
+    <dc:comment/>
+    <parent dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/processingPhase/qualityControl"/>
+  </attribute>
+  <attribute dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/processingPhase/qualityControl/evaluateFitnessForPurposeResult">
+    <uri_prefix>https://geokur.geo.tu-dresden.de/terms</uri_prefix>
+    <key>evaluateFitnessForPurposeResult</key>
+    <path>qa/processingPhase/qualityControl/evaluateFitnessForPurposeResult</path>
+    <dc:comment/>
+    <parent dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/processingPhase/qualityControl"/>
+  </attribute>
+  <attribute dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/processingPhase/dataMaturityHandling">
+    <uri_prefix>https://geokur.geo.tu-dresden.de/terms</uri_prefix>
+    <key>dataMaturityHandling</key>
+    <path>qa/processingPhase/dataMaturityHandling</path>
+    <dc:comment/>
+    <parent dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/processingPhase"/>
+  </attribute>
+  <attribute dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/processingPhase/dataMaturityHandling/dataMaturityEvaluation">
+    <uri_prefix>https://geokur.geo.tu-dresden.de/terms</uri_prefix>
+    <key>dataMaturityEvaluation</key>
+    <path>qa/processingPhase/dataMaturityHandling/dataMaturityEvaluation</path>
+    <dc:comment/>
+    <parent dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/processingPhase/dataMaturityHandling"/>
+  </attribute>
+  <attribute dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/processingPhase/dataMaturityHandling/dataMaturityEvaluationInMetadata">
+    <uri_prefix>https://geokur.geo.tu-dresden.de/terms</uri_prefix>
+    <key>dataMaturityEvaluationInMetadata</key>
+    <path>qa/processingPhase/dataMaturityHandling/dataMaturityEvaluationInMetadata</path>
+    <dc:comment/>
+    <parent dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/processingPhase/dataMaturityHandling"/>
+  </attribute>
+  <attribute dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/processingPhase/nextSteps">
+    <uri_prefix>https://geokur.geo.tu-dresden.de/terms</uri_prefix>
+    <key>nextSteps</key>
+    <path>qa/processingPhase/nextSteps</path>
+    <dc:comment/>
+    <parent dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/processingPhase"/>
+  </attribute>
+  <attribute dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/processingPhase/nextSteps/DMDQIndicators">
+    <uri_prefix>https://geokur.geo.tu-dresden.de/terms</uri_prefix>
+    <key>DMDQIndicators</key>
+    <path>qa/processingPhase/nextSteps/DMDQIndicators</path>
+    <dc:comment/>
+    <parent dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/processingPhase/nextSteps"/>
+  </attribute>
   <attribute dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/analysisPhase">
     <uri_prefix>https://geokur.geo.tu-dresden.de/terms</uri_prefix>
     <key>analysisPhase</key>
@@ -238,6 +483,104 @@
     <dc:comment/>
     <parent dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/analysisPhase/analyseData"/>
   </attribute>
+  <attribute dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/analysisPhase/evaluateFitnessForPurpose">
+    <uri_prefix>https://geokur.geo.tu-dresden.de/terms</uri_prefix>
+    <key>evaluateFitnessForPurpose</key>
+    <path>qa/analysisPhase/evaluateFitnessForPurpose</path>
+    <dc:comment/>
+    <parent dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/analysisPhase"/>
+  </attribute>
+  <attribute dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/analysisPhase/evaluateFitnessForPurpose/evaluateFitnessForPurpose">
+    <uri_prefix>https://geokur.geo.tu-dresden.de/terms</uri_prefix>
+    <key>evaluateFitnessForPurpose</key>
+    <path>qa/analysisPhase/evaluateFitnessForPurpose/evaluateFitnessForPurpose</path>
+    <dc:comment/>
+    <parent dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/analysisPhase/evaluateFitnessForPurpose"/>
+  </attribute>
+  <attribute dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/analysisPhase/evaluateFitnessForPurpose/evaluateFitnessForPurposeInMetadata">
+    <uri_prefix>https://geokur.geo.tu-dresden.de/terms</uri_prefix>
+    <key>evaluateFitnessForPurposeInMetadata</key>
+    <path>qa/analysisPhase/evaluateFitnessForPurpose/evaluateFitnessForPurposeInMetadata</path>
+    <dc:comment/>
+    <parent dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/analysisPhase/evaluateFitnessForPurpose"/>
+  </attribute>
+  <attribute dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/analysisPhase/qualityControl">
+    <uri_prefix>https://geokur.geo.tu-dresden.de/terms</uri_prefix>
+    <key>qualityControl</key>
+    <path>qa/analysisPhase/qualityControl</path>
+    <dc:comment/>
+    <parent dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/analysisPhase"/>
+  </attribute>
+  <attribute dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/analysisPhase/qualityControl/qualityControlDecision">
+    <uri_prefix>https://geokur.geo.tu-dresden.de/terms</uri_prefix>
+    <key>qualityControlDecision</key>
+    <path>qa/analysisPhase/qualityControl/qualityControlDecision</path>
+    <dc:comment/>
+    <parent dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/analysisPhase/qualityControl"/>
+  </attribute>
+  <attribute dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/analysisPhase/qualityControl/qualityControlMethod">
+    <uri_prefix>https://geokur.geo.tu-dresden.de/terms</uri_prefix>
+    <key>qualityControlMethod</key>
+    <path>qa/analysisPhase/qualityControl/qualityControlMethod</path>
+    <dc:comment/>
+    <parent dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/analysisPhase/qualityControl"/>
+  </attribute>
+  <attribute dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/analysisPhase/qualityControl/evaluateFitnessForPublication">
+    <uri_prefix>https://geokur.geo.tu-dresden.de/terms</uri_prefix>
+    <key>evaluateFitnessForPublication</key>
+    <path>qa/analysisPhase/qualityControl/evaluateFitnessForPublication</path>
+    <dc:comment/>
+    <parent dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/analysisPhase/qualityControl"/>
+  </attribute>
+  <attribute dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/analysisPhase/qualityControl/evaluateFitnessForPurposeResult">
+    <uri_prefix>https://geokur.geo.tu-dresden.de/terms</uri_prefix>
+    <key>evaluateFitnessForPurposeResult</key>
+    <path>qa/analysisPhase/qualityControl/evaluateFitnessForPurposeResult</path>
+    <dc:comment/>
+    <parent dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/analysisPhase/qualityControl"/>
+  </attribute>
+  <attribute dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/analysisPhase/qualityControl/evaluateFitnessForPurposeInMetadata">
+    <uri_prefix>https://geokur.geo.tu-dresden.de/terms</uri_prefix>
+    <key>evaluateFitnessForPurposeInMetadata</key>
+    <path>qa/analysisPhase/qualityControl/evaluateFitnessForPurposeInMetadata</path>
+    <dc:comment/>
+    <parent dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/analysisPhase/qualityControl"/>
+  </attribute>
+  <attribute dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/analysisPhase/dataMaturityHandling">
+    <uri_prefix>https://geokur.geo.tu-dresden.de/terms</uri_prefix>
+    <key>dataMaturityHandling</key>
+    <path>qa/analysisPhase/dataMaturityHandling</path>
+    <dc:comment/>
+    <parent dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/analysisPhase"/>
+  </attribute>
+  <attribute dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/analysisPhase/dataMaturityHandling/dataMaturityEvaluation">
+    <uri_prefix>https://geokur.geo.tu-dresden.de/terms</uri_prefix>
+    <key>dataMaturityEvaluation</key>
+    <path>qa/analysisPhase/dataMaturityHandling/dataMaturityEvaluation</path>
+    <dc:comment/>
+    <parent dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/analysisPhase/dataMaturityHandling"/>
+  </attribute>
+  <attribute dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/analysisPhase/dataMaturityHandling/dataMaturityEvaluationInMetadata">
+    <uri_prefix>https://geokur.geo.tu-dresden.de/terms</uri_prefix>
+    <key>dataMaturityEvaluationInMetadata</key>
+    <path>qa/analysisPhase/dataMaturityHandling/dataMaturityEvaluationInMetadata</path>
+    <dc:comment/>
+    <parent dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/analysisPhase/dataMaturityHandling"/>
+  </attribute>
+  <attribute dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/analysisPhase/nextSteps">
+    <uri_prefix>https://geokur.geo.tu-dresden.de/terms</uri_prefix>
+    <key>nextSteps</key>
+    <path>qa/analysisPhase/nextSteps</path>
+    <dc:comment/>
+    <parent dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/analysisPhase"/>
+  </attribute>
+  <attribute dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/analysisPhase/nextSteps/DMDQIndicators">
+    <uri_prefix>https://geokur.geo.tu-dresden.de/terms</uri_prefix>
+    <key>DMDQIndicators</key>
+    <path>qa/analysisPhase/nextSteps/DMDQIndicators</path>
+    <dc:comment/>
+    <parent dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/analysisPhase/nextSteps"/>
+  </attribute>
   <attribute dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/publicationPhase">
     <uri_prefix>https://geokur.geo.tu-dresden.de/terms</uri_prefix>
     <key>publicationPhase</key>
@@ -252,12 +595,61 @@
     <dc:comment/>
     <parent dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/publicationPhase"/>
   </attribute>
-  <attribute dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/publicationPhase/publishData/publishingOfData">
+  <attribute dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/publicationPhase/publishData/id">
     <uri_prefix>https://geokur.geo.tu-dresden.de/terms</uri_prefix>
-    <key>publishingOfData</key>
-    <path>qa/publicationPhase/publishData/publishingOfData</path>
+    <key>id</key>
+    <path>qa/publicationPhase/publishData/id</path>
     <dc:comment/>
     <parent dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/publicationPhase/publishData"/>
+  </attribute>
+  <attribute dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/publicationPhase/publishData/open4publication">
+    <uri_prefix>https://geokur.geo.tu-dresden.de/terms</uri_prefix>
+    <key>open4publication</key>
+    <path>qa/publicationPhase/publishData/open4publication</path>
+    <dc:comment/>
+    <parent dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/publicationPhase/publishData"/>
+  </attribute>
+  <attribute dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/publicationPhase/publishData/publicationOfData">
+    <uri_prefix>https://geokur.geo.tu-dresden.de/terms</uri_prefix>
+    <key>publicationOfData</key>
+    <path>qa/publicationPhase/publishData/publicationOfData</path>
+    <dc:comment/>
+    <parent dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/publicationPhase/publishData"/>
+  </attribute>
+  <attribute dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/publicationPhase/publishData/metadataAdaptionYesno">
+    <uri_prefix>https://geokur.geo.tu-dresden.de/terms</uri_prefix>
+    <key>metadataAdaptionYesno</key>
+    <path>qa/publicationPhase/publishData/metadataAdaptionYesno</path>
+    <dc:comment/>
+    <parent dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/publicationPhase/publishData"/>
+  </attribute>
+  <attribute dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/publicationPhase/publishData/metadataAdaption">
+    <uri_prefix>https://geokur.geo.tu-dresden.de/terms</uri_prefix>
+    <key>metadataAdaption</key>
+    <path>qa/publicationPhase/publishData/metadataAdaption</path>
+    <dc:comment/>
+    <parent dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/publicationPhase/publishData"/>
+  </attribute>
+  <attribute dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/publicationPhase/publishData/publicationOfData">
+    <uri_prefix>https://geokur.geo.tu-dresden.de/terms</uri_prefix>
+    <key>publicationOfData</key>
+    <path>qa/publicationPhase/publishData/publicationOfData</path>
+    <dc:comment/>
+    <parent dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/publicationPhase/publishData"/>
+  </attribute>
+  <attribute dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/publicationPhase/nextSteps">
+    <uri_prefix>https://geokur.geo.tu-dresden.de/terms</uri_prefix>
+    <key>nextSteps</key>
+    <path>qa/publicationPhase/nextSteps</path>
+    <dc:comment/>
+    <parent dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/publicationPhase"/>
+  </attribute>
+  <attribute dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/publicationPhase/nextSteps/DMDQIndicators">
+    <uri_prefix>https://geokur.geo.tu-dresden.de/terms</uri_prefix>
+    <key>DMDQIndicators</key>
+    <path>qa/publicationPhase/nextSteps/DMDQIndicators</path>
+    <dc:comment/>
+    <parent dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/publicationPhase/nextSteps"/>
   </attribute>
   <attribute dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/archivingPhase">
     <uri_prefix>https://geokur.geo.tu-dresden.de/terms</uri_prefix>
@@ -272,6 +664,34 @@
     <path>qa/archivingPhase/archiveData</path>
     <dc:comment/>
     <parent dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/archivingPhase"/>
+  </attribute>
+  <attribute dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/archivingPhase/archiveData/open4archiving">
+    <uri_prefix>https://geokur.geo.tu-dresden.de/terms</uri_prefix>
+    <key>open4archiving</key>
+    <path>qa/archivingPhase/archiveData/open4archiving</path>
+    <dc:comment/>
+    <parent dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/archivingPhase/archiveData"/>
+  </attribute>
+  <attribute dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/archivingPhase/archiveData/archivingOfData">
+    <uri_prefix>https://geokur.geo.tu-dresden.de/terms</uri_prefix>
+    <key>archivingOfData</key>
+    <path>qa/archivingPhase/archiveData/archivingOfData</path>
+    <dc:comment/>
+    <parent dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/archivingPhase/archiveData"/>
+  </attribute>
+  <attribute dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/archivingPhase/archiveData/metadataAdaptionYesno">
+    <uri_prefix>https://geokur.geo.tu-dresden.de/terms</uri_prefix>
+    <key>metadataAdaptionYesno</key>
+    <path>qa/archivingPhase/archiveData/metadataAdaptionYesno</path>
+    <dc:comment/>
+    <parent dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/archivingPhase/archiveData"/>
+  </attribute>
+  <attribute dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/archivingPhase/archiveData/metadataAdaption">
+    <uri_prefix>https://geokur.geo.tu-dresden.de/terms</uri_prefix>
+    <key>metadataAdaption</key>
+    <path>qa/archivingPhase/archiveData/metadataAdaption</path>
+    <dc:comment/>
+    <parent dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/archivingPhase/archiveData"/>
   </attribute>
   <attribute dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/archivingPhase/archiveData/archivingOfData">
     <uri_prefix>https://geokur.geo.tu-dresden.de/terms</uri_prefix>

@@ -470,6 +470,9 @@
             "title": {
               "en": "Data Provider: Collect Data"
             },
+            "help": {
+              "en": "The collection of data is the first step in the data life cycle. Please specify one or multiple datasets to be collected. A dataset is not necessarily one file only. It is possible and advised to aggregate similar types of input data if they share general properties (e.g. source, license)"
+            },
             "is_collection": "True",
             "collection_name": "collection_phase_datasets",
             "verbose_name": {
@@ -565,6 +568,9 @@
             "title": {
               "en": "Data Provider: Metadata Usage"
             },
+            "help": {
+              "en": "Often the existing metadata must be complemented by metadata elements that are necessary for further usage of the data after the collection phase. Metadata includes general elements, domain specifiv elements, and data quality."
+            },
             "is_collection": "True",
             "collection_name": "collection_phase_datasets",
             "verbose_name": {
@@ -603,6 +609,9 @@
             "key": "metadataEnriching",
             "title": {
               "en": "Data Curator: Metadata Enriching"
+            },
+            "help": {
+              "en": "The data curator can potentially enrich the metadata by additional elements. This is mostly done manually."
             },
             "is_collection": "True",
             "collection_name": "collection_phase_datasets",
@@ -651,6 +660,9 @@
             "key": "qualityControl",
             "title": {
               "en": "Data Curator: Quality Control"
+            },
+            "help": {
+              "en": "The quality control step plays an important role in the quality assurance workflow. Several phases of the data life cycle can benefit from quality control. Therefore a careful decision must be made."
             },
             "is_collection": "True",
             "collection_name": "collection_phase_datasets",
@@ -732,6 +744,9 @@
             "key": "dataMaturityHandling",
             "title": {
               "en": "Data Curator: Data Maturity Handling"
+            },
+            "help": {
+              "en": "The data maturity is an important concept of data meeting the usage requirements. For the next phase the data must reach level 2 data maturity."
             },
             "is_collection": "True",
             "collection_name": "collection_phase_datasets",
@@ -843,8 +858,8 @@
                   {
                     "key": "cp_processing_allowed",
                     "comment": "Proceeding to processing phase is allowed",
-                    "relation": "neq",
-                    "target_option": "1",
+                    "relation": "eq",
+                    "target_option": "2",
                     "optionset": "criteria_after_collecting_phase"
                   },
                   {
@@ -870,6 +885,9 @@
             "key": "processData",
             "title": {
               "en": "Data Provider: Process Data"
+            },
+            "help": {
+              "en": "The processing of data is the second step in the data life cycle. Please specify one or multiple datasets to be processed. The same datasets will be used for the analysing phase. A dataset is not necessarily one file only. It is possible and advised to aggregate similar types of data to be processed and analysed if they share general properties (e.g. topic, type)"
             },
             "is_collection": "True",
             "collection_name": "processing_phase_datasets",
@@ -921,6 +939,9 @@
             "title": {
               "en": "Data Curator: Metadata Enriching"
             },
+            "help": {
+              "en": "The data curator can potentially enrich the metadata by additional elements. This is mostly done manually."
+            },
             "is_collection": "True",
             "collection_name": "processing_phase_datasets",
             "verbose_name": {
@@ -968,6 +989,9 @@
             "key": "qualityControl",
             "title": {
               "en": "Data Curator: Quality Control"
+            },
+            "help": {
+              "en": "The quality control step plays an important role in the quality assurance workflow. Several phases of the data life cycle can benefit from quality control. Therefore a careful decision must be made."
             },
             "is_collection": "True",
             "collection_name": "processing_phase_datasets",
@@ -1037,6 +1061,9 @@
             "key": "dataMaturityHandling",
             "title": {
               "en": "Data Curator: Data Maturity Handling"
+            },
+            "help": {
+              "en": "The data maturity is an important concept of data meeting the usage requirements. For the next phase the data must reach level 3 data maturity."
             },
             "is_collection": "True",
             "collection_name": "processing_phase_datasets",
@@ -1155,6 +1182,9 @@
             "title": {
               "en": "Data Provider: Analyse Data"
             },
+            "help": {
+              "en": "The analysis of data is the third step in the data life cycle. The datasets here are the same like in the processing phase. A dataset is not necessarily one file only. It is possible and advised to aggregate similar types of data to be processed and analysed if they share general properties (e.g. topic, type)"
+            },
             "is_collection": "True",
             "collection_name": "processing_phase_datasets",
             "verbose_name": {
@@ -1182,6 +1212,9 @@
             "key": "evaluateFitnessForPurpose",
             "title": {
               "en": "Data Curator: Fitness for Purpose/Use"
+            },
+            "help": {
+              "en": "The fitness for purpose (utility) and use (warranty) are general properties of the data. In the analysis phase they should be evaluated in order to assess the usability of the data for own purposes as well as further usage in other research projects/communities."
             },
             "is_collection": "True",
             "collection_name": "processing_phase_datasets",
@@ -1221,6 +1254,9 @@
             "key": "qualityControl",
             "title": {
               "en": "Data Curator: Quality Control"
+            },
+            "help": {
+              "en": "The quality control step plays an important role in the quality assurance workflow. Several phases of the data life cycle can benefit from quality control. Therefore a careful decision must be made."
             },
             "is_collection": "True",
             "collection_name": "processing_phase_datasets",
@@ -1302,6 +1338,9 @@
             "key": "dataMaturityHandling",
             "title": {
               "en": "Data Curator: Data Maturity Handling"
+            },
+            "help": {
+              "en": "The data maturity is an important concept of data meeting the usage requirements. For the next phase the data must reach level 4 data maturity."
             },
             "is_collection": "True",
             "collection_name": "processing_phase_datasets",
@@ -1419,6 +1458,9 @@
             "key": "publishData",
             "title": {
               "en": "Data Publisher: Publish Data"
+            },
+            "help": {
+              "en": "The publication of data is the fourth step in the data life cycle. The same datasets are used for publication and archiving phases. A dataset is not necessarily one file only. It is possible and advised to aggregate similar types of data to be publication and/or archived if they share general properties (e.g. topic, type)"
             },
             "is_collection": "True",
             "collection_name": "publication_phase_datasets",
@@ -1577,6 +1619,9 @@
             "key": "archiveData",
             "title": {
               "en": "Data Publisher: Archive Data"
+            },
+            "help": {
+              "en": "The archiving of data is the fifth step in the data life cycle. The same datasets are used for publication and archiving phases. A dataset is not necessarily one file only. It is possible and advised to aggregate similar types of data to be publication and/or archived if they share general properties (e.g. topic, type)"
             },
             "is_collection": "True",
             "collection_name": "publication_phase_datasets",

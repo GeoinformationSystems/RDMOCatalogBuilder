@@ -11,7 +11,7 @@
     <days_before/>
     <days_after/>
     <conditions>
-      <condition dc:uri="https://geokur.geo.tu-dresden.de/terms/conditions/pr_dq4usage_definition_filled"/>
+      <condition dc:uri="https://geokur.geo.tu-dresden.de/terms/conditions/pr_dq4usage_definition_unfilled"/>
     </conditions>
   </task>
   <task dc:uri="https://geokur.geo.tu-dresden.de/terms/tasks/define_open4usage">
@@ -25,7 +25,7 @@
     <days_before/>
     <days_after/>
     <conditions>
-      <condition dc:uri="https://geokur.geo.tu-dresden.de/terms/conditions/pr_open4usage_definition_filled"/>
+      <condition dc:uri="https://geokur.geo.tu-dresden.de/terms/conditions/pr_open4usage_definition_unfilled"/>
     </conditions>
   </task>
   <task dc:uri="https://geokur.geo.tu-dresden.de/terms/tasks/define_dm4processing">
@@ -39,7 +39,7 @@
     <days_before/>
     <days_after/>
     <conditions>
-      <condition dc:uri="https://geokur.geo.tu-dresden.de/terms/conditions/pr_dm4processing_definition_filled"/>
+      <condition dc:uri="https://geokur.geo.tu-dresden.de/terms/conditions/pr_dm4processing_definition_unfilled"/>
     </conditions>
   </task>
   <task dc:uri="https://geokur.geo.tu-dresden.de/terms/tasks/define_dq4processing">
@@ -53,7 +53,7 @@
     <days_before/>
     <days_after/>
     <conditions>
-      <condition dc:uri="https://geokur.geo.tu-dresden.de/terms/conditions/pr_dq4processing_definition_filled"/>
+      <condition dc:uri="https://geokur.geo.tu-dresden.de/terms/conditions/pr_dq4processing_definition_unfilled"/>
     </conditions>
   </task>
   <task dc:uri="https://geokur.geo.tu-dresden.de/terms/tasks/define_dm4analysis">
@@ -67,7 +67,7 @@
     <days_before/>
     <days_after/>
     <conditions>
-      <condition dc:uri="https://geokur.geo.tu-dresden.de/terms/conditions/pr_dm4analysis_definition_filled"/>
+      <condition dc:uri="https://geokur.geo.tu-dresden.de/terms/conditions/pr_dm4analysis_definition_unfilled"/>
     </conditions>
   </task>
   <task dc:uri="https://geokur.geo.tu-dresden.de/terms/tasks/define_dq4analysis">
@@ -81,7 +81,7 @@
     <days_before/>
     <days_after/>
     <conditions>
-      <condition dc:uri="https://geokur.geo.tu-dresden.de/terms/conditions/pr_dq4analysis_definition_filled"/>
+      <condition dc:uri="https://geokur.geo.tu-dresden.de/terms/conditions/pr_dq4analysis_definition_unfilled"/>
     </conditions>
   </task>
   <task dc:uri="https://geokur.geo.tu-dresden.de/terms/tasks/define_dm4publication">
@@ -95,7 +95,7 @@
     <days_before/>
     <days_after/>
     <conditions>
-      <condition dc:uri="https://geokur.geo.tu-dresden.de/terms/conditions/pr_dm4publication_definition_filled"/>
+      <condition dc:uri="https://geokur.geo.tu-dresden.de/terms/conditions/pr_dm4publication_definition_unfilled"/>
     </conditions>
   </task>
   <task dc:uri="https://geokur.geo.tu-dresden.de/terms/tasks/define_dq4publication">
@@ -109,7 +109,7 @@
     <days_before/>
     <days_after/>
     <conditions>
-      <condition dc:uri="https://geokur.geo.tu-dresden.de/terms/conditions/pr_dq4publication_definition_filled"/>
+      <condition dc:uri="https://geokur.geo.tu-dresden.de/terms/conditions/pr_dq4publication_definition_unfilled"/>
     </conditions>
   </task>
   <task dc:uri="https://geokur.geo.tu-dresden.de/terms/tasks/define_open4publication">
@@ -123,7 +123,7 @@
     <days_before/>
     <days_after/>
     <conditions>
-      <condition dc:uri="https://geokur.geo.tu-dresden.de/terms/conditions/pr_open4publication_definition_filled"/>
+      <condition dc:uri="https://geokur.geo.tu-dresden.de/terms/conditions/pr_open4publication_definition_unfilled"/>
     </conditions>
   </task>
   <task dc:uri="https://geokur.geo.tu-dresden.de/terms/tasks/define_dm4archiving">
@@ -137,7 +137,7 @@
     <days_before/>
     <days_after/>
     <conditions>
-      <condition dc:uri="https://geokur.geo.tu-dresden.de/terms/conditions/pr_dm4archiving_definition_filled"/>
+      <condition dc:uri="https://geokur.geo.tu-dresden.de/terms/conditions/pr_dm4archiving_definition_unfilled"/>
     </conditions>
   </task>
   <task dc:uri="https://geokur.geo.tu-dresden.de/terms/tasks/define_dq4archiving">
@@ -151,7 +151,7 @@
     <days_before/>
     <days_after/>
     <conditions>
-      <condition dc:uri="https://geokur.geo.tu-dresden.de/terms/conditions/pr_dq4archiving_definition_filled"/>
+      <condition dc:uri="https://geokur.geo.tu-dresden.de/terms/conditions/pr_dq4archiving_definition_unfilled"/>
     </conditions>
   </task>
   <task dc:uri="https://geokur.geo.tu-dresden.de/terms/tasks/define_open4archiving">
@@ -165,35 +165,91 @@
     <days_before/>
     <days_after/>
     <conditions>
-      <condition dc:uri="https://geokur.geo.tu-dresden.de/terms/conditions/pr_open4archiving_definition_filled"/>
+      <condition dc:uri="https://geokur.geo.tu-dresden.de/terms/conditions/pr_open4archiving_definition_unfilled"/>
     </conditions>
   </task>
-  <task dc:uri="https://geokur.geo.tu-dresden.de/terms/tasks/ensure_open4usage">
+  <task dc:uri="https://geokur.geo.tu-dresden.de/terms/tasks/start_collection_phase">
     <uri_prefix>https://geokur.geo.tu-dresden.de/terms</uri_prefix>
-    <key>ensure_open4usage</key>
+    <key>start_collection_phase</key>
     <dc:comment/>
-    <title lang="en">Ensure Open4usage</title>
-    <text lang="en">Please ensure the required openness of data for usage. Further questions will be activated.</text>
+    <title lang="en">Start collection phase</title>
+    <text lang="en">Start the collection phase.</text>
     <start_attribute/>
     <end_attribute/>
     <days_before/>
     <days_after/>
     <conditions>
-      <condition dc:uri="https://geokur.geo.tu-dresden.de/terms/conditions/pr_ensure_open4usage_definition_filled"/>
+      <condition dc:uri="https://geokur.geo.tu-dresden.de/terms/conditions/collection_phase_not_started"/>
     </conditions>
   </task>
-  <task dc:uri="https://geokur.geo.tu-dresden.de/terms/tasks/ensure_dq4usage">
+  <task dc:uri="https://geokur.geo.tu-dresden.de/terms/tasks/processing_phase_not_allowed">
     <uri_prefix>https://geokur.geo.tu-dresden.de/terms</uri_prefix>
-    <key>ensure_dq4usage</key>
+    <key>processing_phase_not_allowed</key>
     <dc:comment/>
-    <title lang="en">Ensure DQ4usage</title>
-    <text lang="en">Please ensure the required data quality of data for usage. Further questions will be activated.</text>
+    <title lang="en">Ensure DM4processing and DQ4processing</title>
+    <text lang="en">Ensure DM4processing and DQ4processing in order to proceed to processing phase</text>
     <start_attribute/>
     <end_attribute/>
     <days_before/>
     <days_after/>
     <conditions>
-      <condition dc:uri="https://geokur.geo.tu-dresden.de/terms/conditions/pr_ensure_dq4usage_definition_filled"/>
+      <condition dc:uri="https://geokur.geo.tu-dresden.de/terms/conditions/cp_processing_not_allowed"/>
+    </conditions>
+  </task>
+  <task dc:uri="https://geokur.geo.tu-dresden.de/terms/tasks/analysis_phase_not_allowed">
+    <uri_prefix>https://geokur.geo.tu-dresden.de/terms</uri_prefix>
+    <key>analysis_phase_not_allowed</key>
+    <dc:comment/>
+    <title lang="en">Ensure DM4analysis and DQ4analysis</title>
+    <text lang="en">Ensure DM4analysis and DQ4analysis in order to proceed to analysis phase</text>
+    <start_attribute/>
+    <end_attribute/>
+    <days_before/>
+    <days_after/>
+    <conditions>
+      <condition dc:uri="https://geokur.geo.tu-dresden.de/terms/conditions/pp_analysis_not_allowed"/>
+    </conditions>
+  </task>
+  <task dc:uri="https://geokur.geo.tu-dresden.de/terms/tasks/publication_phase_not_allowed">
+    <uri_prefix>https://geokur.geo.tu-dresden.de/terms</uri_prefix>
+    <key>publication_phase_not_allowed</key>
+    <dc:comment/>
+    <title lang="en">Ensure DM4publication and DQ4publication</title>
+    <text lang="en">Ensure DM4publication and DQ4publication in order to proceed to publication phase</text>
+    <start_attribute/>
+    <end_attribute/>
+    <days_before/>
+    <days_after/>
+    <conditions>
+      <condition dc:uri="https://geokur.geo.tu-dresden.de/terms/conditions/ap_publication_not_allowed"/>
+    </conditions>
+  </task>
+  <task dc:uri="https://geokur.geo.tu-dresden.de/terms/tasks/publication_data">
+    <uri_prefix>https://geokur.geo.tu-dresden.de/terms</uri_prefix>
+    <key>publication_data</key>
+    <dc:comment/>
+    <title lang="en">Publish the data</title>
+    <text lang="en">The data can be published in a repository</text>
+    <start_attribute/>
+    <end_attribute/>
+    <days_before/>
+    <days_after/>
+    <conditions>
+      <condition dc:uri="https://geokur.geo.tu-dresden.de/terms/conditions/pup_data_not_published"/>
+    </conditions>
+  </task>
+  <task dc:uri="https://geokur.geo.tu-dresden.de/terms/tasks/archiving_data">
+    <uri_prefix>https://geokur.geo.tu-dresden.de/terms</uri_prefix>
+    <key>archiving_data</key>
+    <dc:comment/>
+    <title lang="en">Archive the data</title>
+    <text lang="en">The data can be archived in a repository</text>
+    <start_attribute/>
+    <end_attribute/>
+    <days_before/>
+    <days_after/>
+    <conditions>
+      <condition dc:uri="https://geokur.geo.tu-dresden.de/terms/conditions/arp_data_not_archived"/>
     </conditions>
   </task>
 </rdmo>

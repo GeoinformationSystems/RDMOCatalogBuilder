@@ -1,5 +1,32 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <rdmo xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <condition dc:uri="https://geokur.geo.tu-dresden.de/terms/conditions/pr_open4usage_license_defined">
+    <uri_prefix>https://geokur.geo.tu-dresden.de/terms</uri_prefix>
+    <key>pr_open4usage_license_defined</key>
+    <dc:comment>Open4usage license is defined</dc:comment>
+    <source dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/prerequisites/data_provider_definitions/open4usage_license"/>
+    <relation>notempty</relation>
+    <target_text/>
+    <target_option/>
+  </condition>
+  <condition dc:uri="https://geokur.geo.tu-dresden.de/terms/conditions/pr_open4usage_definition_filled">
+    <uri_prefix>https://geokur.geo.tu-dresden.de/terms</uri_prefix>
+    <key>pr_open4usage_definition_filled</key>
+    <dc:comment>Open4usage is defined</dc:comment>
+    <source dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/prerequisites/data_provider_definitions/open4usage_fivestars"/>
+    <relation>notempty</relation>
+    <target_text/>
+    <target_option/>
+  </condition>
+  <condition dc:uri="https://geokur.geo.tu-dresden.de/terms/conditions/pr_open4usage_definition_unfilled">
+    <uri_prefix>https://geokur.geo.tu-dresden.de/terms</uri_prefix>
+    <key>pr_open4usage_definition_unfilled</key>
+    <dc:comment>Open4usage is not defined</dc:comment>
+    <source dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/prerequisites/data_provider_definitions/open4usage_fivestars"/>
+    <relation>empty</relation>
+    <target_text/>
+    <target_option/>
+  </condition>
   <condition dc:uri="https://geokur.geo.tu-dresden.de/terms/conditions/pr_dq4usage_definition_filled">
     <uri_prefix>https://geokur.geo.tu-dresden.de/terms</uri_prefix>
     <key>pr_dq4usage_definition_filled</key>
@@ -18,22 +45,220 @@
     <target_text/>
     <target_option/>
   </condition>
-  <condition dc:uri="https://geokur.geo.tu-dresden.de/terms/conditions/pr_open4usage_definition_filled">
+  <condition dc:uri="https://geokur.geo.tu-dresden.de/terms/conditions/pr_dm4processing_definition_filled">
     <uri_prefix>https://geokur.geo.tu-dresden.de/terms</uri_prefix>
-    <key>pr_open4usage_definition_filled</key>
-    <dc:comment>Open4usage is defined</dc:comment>
-    <source dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/prerequisites/data_provider_definitions/open4usage"/>
+    <key>pr_dm4processing_definition_filled</key>
+    <dc:comment>DM4processing is defined</dc:comment>
+    <source dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/prerequisites/data_curator_definitions/dm4processing"/>
     <relation>notempty</relation>
     <target_text/>
     <target_option/>
   </condition>
-  <condition dc:uri="https://geokur.geo.tu-dresden.de/terms/conditions/pr_open4usage_definition_unfilled">
+  <condition dc:uri="https://geokur.geo.tu-dresden.de/terms/conditions/pr_dm4processing_definition_unfilled">
     <uri_prefix>https://geokur.geo.tu-dresden.de/terms</uri_prefix>
-    <key>pr_open4usage_definition_unfilled</key>
-    <dc:comment>Open4usage is not defined</dc:comment>
-    <source dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/prerequisites/data_provider_definitions/open4usage"/>
+    <key>pr_dm4processing_definition_unfilled</key>
+    <dc:comment>DM4processing is not defined</dc:comment>
+    <source dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/prerequisites/data_curator_definitions/dm4processing"/>
     <relation>empty</relation>
     <target_text/>
+    <target_option/>
+  </condition>
+  <condition dc:uri="https://geokur.geo.tu-dresden.de/terms/conditions/pr_dq4processing_definition_filled">
+    <uri_prefix>https://geokur.geo.tu-dresden.de/terms</uri_prefix>
+    <key>pr_dq4processing_definition_filled</key>
+    <dc:comment>DQ4processing is defined</dc:comment>
+    <source dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/prerequisites/data_curator_definitions/dq4processing"/>
+    <relation>notempty</relation>
+    <target_text/>
+    <target_option/>
+  </condition>
+  <condition dc:uri="https://geokur.geo.tu-dresden.de/terms/conditions/pr_dq4processing_definition_unfilled">
+    <uri_prefix>https://geokur.geo.tu-dresden.de/terms</uri_prefix>
+    <key>pr_dq4processing_definition_unfilled</key>
+    <dc:comment>DQ4processing is not defined</dc:comment>
+    <source dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/prerequisites/data_curator_definitions/dq4processing"/>
+    <relation>empty</relation>
+    <target_text/>
+    <target_option/>
+  </condition>
+  <condition dc:uri="https://geokur.geo.tu-dresden.de/terms/conditions/pr_dm4analysis_definition_filled">
+    <uri_prefix>https://geokur.geo.tu-dresden.de/terms</uri_prefix>
+    <key>pr_dm4analysis_definition_filled</key>
+    <dc:comment>DM4analysis is defined</dc:comment>
+    <source dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/prerequisites/data_curator_definitions/dm4analysis"/>
+    <relation>notempty</relation>
+    <target_text/>
+    <target_option/>
+  </condition>
+  <condition dc:uri="https://geokur.geo.tu-dresden.de/terms/conditions/pr_dm4analysis_definition_unfilled">
+    <uri_prefix>https://geokur.geo.tu-dresden.de/terms</uri_prefix>
+    <key>pr_dm4analysis_definition_unfilled</key>
+    <dc:comment>DM4analysis is not defined</dc:comment>
+    <source dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/prerequisites/data_curator_definitions/dm4analysis"/>
+    <relation>empty</relation>
+    <target_text/>
+    <target_option/>
+  </condition>
+  <condition dc:uri="https://geokur.geo.tu-dresden.de/terms/conditions/pr_dq4analysis_definition_filled">
+    <uri_prefix>https://geokur.geo.tu-dresden.de/terms</uri_prefix>
+    <key>pr_dq4analysis_definition_filled</key>
+    <dc:comment>DQ4analysis is defined</dc:comment>
+    <source dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/prerequisites/data_curator_definitions/dq4analysis"/>
+    <relation>notempty</relation>
+    <target_text/>
+    <target_option/>
+  </condition>
+  <condition dc:uri="https://geokur.geo.tu-dresden.de/terms/conditions/pr_dq4analysis_definition_unfilled">
+    <uri_prefix>https://geokur.geo.tu-dresden.de/terms</uri_prefix>
+    <key>pr_dq4analysis_definition_unfilled</key>
+    <dc:comment>DQ4analysis is not defined</dc:comment>
+    <source dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/prerequisites/data_curator_definitions/dq4analysis"/>
+    <relation>empty</relation>
+    <target_text/>
+    <target_option/>
+  </condition>
+  <condition dc:uri="https://geokur.geo.tu-dresden.de/terms/conditions/pr_dm4publication_definition_filled">
+    <uri_prefix>https://geokur.geo.tu-dresden.de/terms</uri_prefix>
+    <key>pr_dm4publication_definition_filled</key>
+    <dc:comment>DM4publication is defined</dc:comment>
+    <source dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/prerequisites/data_publisher_definitions/dm4publication"/>
+    <relation>notempty</relation>
+    <target_text/>
+    <target_option/>
+  </condition>
+  <condition dc:uri="https://geokur.geo.tu-dresden.de/terms/conditions/pr_dm4publication_definition_unfilled">
+    <uri_prefix>https://geokur.geo.tu-dresden.de/terms</uri_prefix>
+    <key>pr_dm4publication_definition_unfilled</key>
+    <dc:comment>DM4publication is not defined</dc:comment>
+    <source dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/prerequisites/data_publisher_definitions/dm4publication"/>
+    <relation>empty</relation>
+    <target_text/>
+    <target_option/>
+  </condition>
+  <condition dc:uri="https://geokur.geo.tu-dresden.de/terms/conditions/pr_dq4publication_definition_filled">
+    <uri_prefix>https://geokur.geo.tu-dresden.de/terms</uri_prefix>
+    <key>pr_dq4publication_definition_filled</key>
+    <dc:comment>DM4publication is defined</dc:comment>
+    <source dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/prerequisites/data_publisher_definitions/dq4publication"/>
+    <relation>notempty</relation>
+    <target_text/>
+    <target_option/>
+  </condition>
+  <condition dc:uri="https://geokur.geo.tu-dresden.de/terms/conditions/pr_dq4publication_definition_unfilled">
+    <uri_prefix>https://geokur.geo.tu-dresden.de/terms</uri_prefix>
+    <key>pr_dq4publication_definition_unfilled</key>
+    <dc:comment>DM4publication is not defined</dc:comment>
+    <source dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/prerequisites/data_publisher_definitions/dq4publication"/>
+    <relation>empty</relation>
+    <target_text/>
+    <target_option/>
+  </condition>
+  <condition dc:uri="https://geokur.geo.tu-dresden.de/terms/conditions/pr_open4publication_license_defined">
+    <uri_prefix>https://geokur.geo.tu-dresden.de/terms</uri_prefix>
+    <key>pr_open4publication_license_defined</key>
+    <dc:comment>Open4publication license is defined</dc:comment>
+    <source dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/prerequisites/data_publisher_definitions/open4publication_license"/>
+    <relation>notempty</relation>
+    <target_text/>
+    <target_option/>
+  </condition>
+  <condition dc:uri="https://geokur.geo.tu-dresden.de/terms/conditions/pr_open4publication_definition_filled">
+    <uri_prefix>https://geokur.geo.tu-dresden.de/terms</uri_prefix>
+    <key>pr_open4publication_definition_filled</key>
+    <dc:comment>Open4publication is defined</dc:comment>
+    <source dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/prerequisites/data_publisher_definitions/open4publication_fivestars"/>
+    <relation>notempty</relation>
+    <target_text/>
+    <target_option/>
+  </condition>
+  <condition dc:uri="https://geokur.geo.tu-dresden.de/terms/conditions/pr_open4publication_definition_unfilled">
+    <uri_prefix>https://geokur.geo.tu-dresden.de/terms</uri_prefix>
+    <key>pr_open4publication_definition_unfilled</key>
+    <dc:comment>Open4publication is not defined</dc:comment>
+    <source dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/prerequisites/data_publisher_definitions/open4publication_fivestars"/>
+    <relation>empty</relation>
+    <target_text/>
+    <target_option/>
+  </condition>
+  <condition dc:uri="https://geokur.geo.tu-dresden.de/terms/conditions/pr_dm4archiving_definition_filled">
+    <uri_prefix>https://geokur.geo.tu-dresden.de/terms</uri_prefix>
+    <key>pr_dm4archiving_definition_filled</key>
+    <dc:comment>DM4archiving is defined</dc:comment>
+    <source dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/prerequisites/data_publisher_definitions/dm4archiving"/>
+    <relation>notempty</relation>
+    <target_text/>
+    <target_option/>
+  </condition>
+  <condition dc:uri="https://geokur.geo.tu-dresden.de/terms/conditions/pr_dm4archiving_definition_unfilled">
+    <uri_prefix>https://geokur.geo.tu-dresden.de/terms</uri_prefix>
+    <key>pr_dm4archiving_definition_unfilled</key>
+    <dc:comment>DM4archiving is not defined</dc:comment>
+    <source dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/prerequisites/data_publisher_definitions/dm4archiving"/>
+    <relation>empty</relation>
+    <target_text/>
+    <target_option/>
+  </condition>
+  <condition dc:uri="https://geokur.geo.tu-dresden.de/terms/conditions/pr_dq4archiving_definition_filled">
+    <uri_prefix>https://geokur.geo.tu-dresden.de/terms</uri_prefix>
+    <key>pr_dq4archiving_definition_filled</key>
+    <dc:comment>DQ4archiving is defined</dc:comment>
+    <source dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/prerequisites/data_publisher_definitions/dq4archiving"/>
+    <relation>notempty</relation>
+    <target_text/>
+    <target_option/>
+  </condition>
+  <condition dc:uri="https://geokur.geo.tu-dresden.de/terms/conditions/pr_dq4archiving_definition_unfilled">
+    <uri_prefix>https://geokur.geo.tu-dresden.de/terms</uri_prefix>
+    <key>pr_dq4archiving_definition_unfilled</key>
+    <dc:comment>DQ4archiving is not defined</dc:comment>
+    <source dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/prerequisites/data_publisher_definitions/dq4archiving"/>
+    <relation>empty</relation>
+    <target_text/>
+    <target_option/>
+  </condition>
+  <condition dc:uri="https://geokur.geo.tu-dresden.de/terms/conditions/pr_open4archiving_license_defined">
+    <uri_prefix>https://geokur.geo.tu-dresden.de/terms</uri_prefix>
+    <key>pr_open4archiving_license_defined</key>
+    <dc:comment>Open4archiving license is defined</dc:comment>
+    <source dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/prerequisites/data_publisher_definitions/open4archiving_license"/>
+    <relation>notempty</relation>
+    <target_text/>
+    <target_option/>
+  </condition>
+  <condition dc:uri="https://geokur.geo.tu-dresden.de/terms/conditions/pr_open4archiving_definition_filled">
+    <uri_prefix>https://geokur.geo.tu-dresden.de/terms</uri_prefix>
+    <key>pr_open4archiving_definition_filled</key>
+    <dc:comment>Open4archiving is defined</dc:comment>
+    <source dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/prerequisites/data_publisher_definitions/open4archiving_fivestars"/>
+    <relation>notempty</relation>
+    <target_text/>
+    <target_option/>
+  </condition>
+  <condition dc:uri="https://geokur.geo.tu-dresden.de/terms/conditions/pr_open4archiving_definition_unfilled">
+    <uri_prefix>https://geokur.geo.tu-dresden.de/terms</uri_prefix>
+    <key>pr_open4archiving_definition_unfilled</key>
+    <dc:comment>Open4archiving is not defined</dc:comment>
+    <source dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/prerequisites/data_publisher_definitions/open4archiving_fivestars"/>
+    <relation>empty</relation>
+    <target_text/>
+    <target_option/>
+  </condition>
+  <condition dc:uri="https://geokur.geo.tu-dresden.de/terms/conditions/collection_phase_not_started">
+    <uri_prefix>https://geokur.geo.tu-dresden.de/terms</uri_prefix>
+    <key>collection_phase_not_started</key>
+    <dc:comment>collection phase is not started</dc:comment>
+    <source dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/collectionPhase/collectData/collectionOfData"/>
+    <relation>empty</relation>
+    <target_text/>
+    <target_option/>
+  </condition>
+  <condition dc:uri="https://geokur.geo.tu-dresden.de/terms/conditions/cp_open4usage_ensured">
+    <uri_prefix>https://geokur.geo.tu-dresden.de/terms</uri_prefix>
+    <key>cp_open4usage_ensured</key>
+    <dc:comment>Open4usage is ensured</dc:comment>
+    <source dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/collectionPhase/collectData/collectionOfDataOpenness"/>
+    <relation>eq</relation>
+    <target_text>1</target_text>
     <target_option/>
   </condition>
   <condition dc:uri="https://geokur.geo.tu-dresden.de/terms/conditions/cp_dq4usage_ensured">
@@ -45,13 +270,211 @@
     <target_text>1</target_text>
     <target_option/>
   </condition>
-  <condition dc:uri="https://geokur.geo.tu-dresden.de/terms/conditions/cp_open4usage_ensured">
+  <condition dc:uri="https://geokur.geo.tu-dresden.de/terms/conditions/cp_metadata_available">
     <uri_prefix>https://geokur.geo.tu-dresden.de/terms</uri_prefix>
-    <key>cp_open4usage_ensured</key>
-    <dc:comment>Open4usage is ensured</dc:comment>
-    <source dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/collectionPhase/collectData/collectionOfDataOpenness"/>
+    <key>cp_metadata_available</key>
+    <dc:comment>Metadata is available</dc:comment>
+    <source dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/collectionPhase/collectData/collectionOfDataMetadata"/>
     <relation>eq</relation>
     <target_text>1</target_text>
+    <target_option/>
+  </condition>
+  <condition dc:uri="https://geokur.geo.tu-dresden.de/terms/conditions/cp_enrich_metadata">
+    <uri_prefix>https://geokur.geo.tu-dresden.de/terms</uri_prefix>
+    <key>cp_enrich_metadata</key>
+    <dc:comment>Enrich metadata</dc:comment>
+    <source dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/collectionPhase/metadataEnriching/enrichMetadataYesNo"/>
+    <relation>eq</relation>
+    <target_text>1</target_text>
+    <target_option/>
+  </condition>
+  <condition dc:uri="https://geokur.geo.tu-dresden.de/terms/conditions/cp_quality_control_decision">
+    <uri_prefix>https://geokur.geo.tu-dresden.de/terms</uri_prefix>
+    <key>cp_quality_control_decision</key>
+    <dc:comment>Recommendation on quality control</dc:comment>
+    <source dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/collectionPhase/qualityControl/qualityControlDecision"/>
+    <relation>eq</relation>
+    <target_text>1</target_text>
+    <target_option/>
+  </condition>
+  <condition dc:uri="https://geokur.geo.tu-dresden.de/terms/conditions/cp_data_maturity_evaluation">
+    <uri_prefix>https://geokur.geo.tu-dresden.de/terms</uri_prefix>
+    <key>cp_data_maturity_evaluation</key>
+    <dc:comment>Evaluation of data maturity against DM4processing</dc:comment>
+    <source dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/collectionPhase/dataMaturityHandling/dataMaturityEvaluation"/>
+    <relation>eq</relation>
+    <target_text>1</target_text>
+    <target_option/>
+  </condition>
+  <condition dc:uri="https://geokur.geo.tu-dresden.de/terms/conditions/cp_data_maturity_in_metadata">
+    <uri_prefix>https://geokur.geo.tu-dresden.de/terms</uri_prefix>
+    <key>cp_data_maturity_in_metadata</key>
+    <dc:comment>Data maturity included in metadata</dc:comment>
+    <source dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/collectionPhase/dataMaturityHandling/dataMaturityEvaluationInMetadata"/>
+    <relation>eq</relation>
+    <target_text>1</target_text>
+    <target_option/>
+  </condition>
+  <condition dc:uri="https://geokur.geo.tu-dresden.de/terms/conditions/cp_processing_not_allowed">
+    <uri_prefix>https://geokur.geo.tu-dresden.de/terms</uri_prefix>
+    <key>cp_processing_not_allowed</key>
+    <dc:comment>Data maturity or data quality indicators do not allow proceeding to processing phase</dc:comment>
+    <source dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/collectionPhase/nextSteps/DMDQIndicators"/>
+    <relation>eq</relation>
+    <target_text/>
+    <target_option>https://geokur.geo.tu-dresden.de/terms/options/criteria_after_collecting_phase/1</target_option>
+  </condition>
+  <condition dc:uri="https://geokur.geo.tu-dresden.de/terms/conditions/cp_processing_allowed">
+    <uri_prefix>https://geokur.geo.tu-dresden.de/terms</uri_prefix>
+    <key>cp_processing_allowed</key>
+    <dc:comment>Proceeding to processing phase is allowed</dc:comment>
+    <source dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/collectionPhase/nextSteps/DMDQIndicators"/>
+    <relation>eq</relation>
+    <target_text/>
+    <target_option>https://geokur.geo.tu-dresden.de/terms/options/criteria_after_collecting_phase/2</target_option>
+  </condition>
+  <condition dc:uri="https://geokur.geo.tu-dresden.de/terms/conditions/cp_publication_allowed">
+    <uri_prefix>https://geokur.geo.tu-dresden.de/terms</uri_prefix>
+    <key>cp_publication_allowed</key>
+    <dc:comment>Proceeding to publication phase is allowed</dc:comment>
+    <source dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/collectionPhase/nextSteps/DMDQIndicators"/>
+    <relation>eq</relation>
+    <target_text/>
+    <target_option>https://geokur.geo.tu-dresden.de/terms/options/criteria_after_collecting_phase/3</target_option>
+  </condition>
+  <condition dc:uri="https://geokur.geo.tu-dresden.de/terms/conditions/pp_enrich_metadata">
+    <uri_prefix>https://geokur.geo.tu-dresden.de/terms</uri_prefix>
+    <key>pp_enrich_metadata</key>
+    <dc:comment>Enrich metadata</dc:comment>
+    <source dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/processingPhase/metadataEnriching/enrichMetadataYesNo"/>
+    <relation>eq</relation>
+    <target_text>1</target_text>
+    <target_option/>
+  </condition>
+  <condition dc:uri="https://geokur.geo.tu-dresden.de/terms/conditions/pp_quality_control_decision">
+    <uri_prefix>https://geokur.geo.tu-dresden.de/terms</uri_prefix>
+    <key>pp_quality_control_decision</key>
+    <dc:comment>Recommendation on quality control</dc:comment>
+    <source dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/processingPhase/qualityControl/qualityControlDecision"/>
+    <relation>eq</relation>
+    <target_text>1</target_text>
+    <target_option/>
+  </condition>
+  <condition dc:uri="https://geokur.geo.tu-dresden.de/terms/conditions/pp_data_maturity_evaluation">
+    <uri_prefix>https://geokur.geo.tu-dresden.de/terms</uri_prefix>
+    <key>pp_data_maturity_evaluation</key>
+    <dc:comment>Evaluation of data maturity against DM4analysis</dc:comment>
+    <source dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/processingPhase/dataMaturityHandling/dataMaturityEvaluation"/>
+    <relation>eq</relation>
+    <target_text>1</target_text>
+    <target_option/>
+  </condition>
+  <condition dc:uri="https://geokur.geo.tu-dresden.de/terms/conditions/pp_analysis_not_allowed">
+    <uri_prefix>https://geokur.geo.tu-dresden.de/terms</uri_prefix>
+    <key>pp_analysis_not_allowed</key>
+    <dc:comment>Data maturity or data quality indicators do not allow proceeding to analysis phase</dc:comment>
+    <source dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/processingPhase/nextSteps/DMDQIndicators"/>
+    <relation>eq</relation>
+    <target_text/>
+    <target_option>https://geokur.geo.tu-dresden.de/terms/options/criteria_after_processing_phase/1</target_option>
+  </condition>
+  <condition dc:uri="https://geokur.geo.tu-dresden.de/terms/conditions/pp_analysis_allowed">
+    <uri_prefix>https://geokur.geo.tu-dresden.de/terms</uri_prefix>
+    <key>pp_analysis_allowed</key>
+    <dc:comment>Proceeding to analysis phase is allowed</dc:comment>
+    <source dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/processingPhase/nextSteps/DMDQIndicators"/>
+    <relation>eq</relation>
+    <target_text/>
+    <target_option>https://geokur.geo.tu-dresden.de/terms/options/criteria_after_processing_phase/2</target_option>
+  </condition>
+  <condition dc:uri="https://geokur.geo.tu-dresden.de/terms/conditions/ap_quality_control_decision">
+    <uri_prefix>https://geokur.geo.tu-dresden.de/terms</uri_prefix>
+    <key>ap_quality_control_decision</key>
+    <dc:comment>Recommendation on quality control</dc:comment>
+    <source dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/analysisPhase/qualityControl/qualityControlDecision"/>
+    <relation>eq</relation>
+    <target_text>1</target_text>
+    <target_option/>
+  </condition>
+  <condition dc:uri="https://geokur.geo.tu-dresden.de/terms/conditions/ap_data_maturity_evaluation">
+    <uri_prefix>https://geokur.geo.tu-dresden.de/terms</uri_prefix>
+    <key>ap_data_maturity_evaluation</key>
+    <dc:comment>Evaluation of data maturity against DM4publication</dc:comment>
+    <source dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/analysisPhase/dataMaturityHandling/dataMaturityEvaluation"/>
+    <relation>eq</relation>
+    <target_text>1</target_text>
+    <target_option/>
+  </condition>
+  <condition dc:uri="https://geokur.geo.tu-dresden.de/terms/conditions/ap_publication_not_allowed">
+    <uri_prefix>https://geokur.geo.tu-dresden.de/terms</uri_prefix>
+    <key>ap_publication_not_allowed</key>
+    <dc:comment>Data maturity or data quality indicators do not allow proceeding to publication phase</dc:comment>
+    <source dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/analysisPhase/nextSteps/DMDQIndicators"/>
+    <relation>eq</relation>
+    <target_text/>
+    <target_option>https://geokur.geo.tu-dresden.de/terms/options/criteria_after_analysis_phase/1</target_option>
+  </condition>
+  <condition dc:uri="https://geokur.geo.tu-dresden.de/terms/conditions/ap_publication_allowed">
+    <uri_prefix>https://geokur.geo.tu-dresden.de/terms</uri_prefix>
+    <key>ap_publication_allowed</key>
+    <dc:comment>Proceeding to publication phase is allowed</dc:comment>
+    <source dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/analysisPhase/nextSteps/DMDQIndicators"/>
+    <relation>eq</relation>
+    <target_text/>
+    <target_option>https://geokur.geo.tu-dresden.de/terms/options/criteria_after_analysis_phase/2</target_option>
+  </condition>
+  <condition dc:uri="https://geokur.geo.tu-dresden.de/terms/conditions/pup_open4publication_assured">
+    <uri_prefix>https://geokur.geo.tu-dresden.de/terms</uri_prefix>
+    <key>pup_open4publication_assured</key>
+    <dc:comment>Open4publication has to be assured in order to publish the dataset.</dc:comment>
+    <source dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/publicationPhase/publishData/open4publication"/>
+    <relation>eq</relation>
+    <target_text>1</target_text>
+    <target_option/>
+  </condition>
+  <condition dc:uri="https://geokur.geo.tu-dresden.de/terms/conditions/pup_data_not_published">
+    <uri_prefix>https://geokur.geo.tu-dresden.de/terms</uri_prefix>
+    <key>pup_data_not_published</key>
+    <dc:comment>The dataset is not published yet</dc:comment>
+    <source dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/publicationPhase/publishData/publicationOfData"/>
+    <relation>eq</relation>
+    <target_text>0</target_text>
+    <target_option/>
+  </condition>
+  <condition dc:uri="https://geokur.geo.tu-dresden.de/terms/conditions/pup_archiving_not_allowed">
+    <uri_prefix>https://geokur.geo.tu-dresden.de/terms</uri_prefix>
+    <key>pup_archiving_not_allowed</key>
+    <dc:comment>Data maturity or data quality indicators do not allow proceeding to archiving phase</dc:comment>
+    <source dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/publicationPhase/nextSteps/DMDQIndicators"/>
+    <relation>eq</relation>
+    <target_text/>
+    <target_option>https://geokur.geo.tu-dresden.de/terms/options/criteria_after_publication_phase/1</target_option>
+  </condition>
+  <condition dc:uri="https://geokur.geo.tu-dresden.de/terms/conditions/pup_archiving_allowed">
+    <uri_prefix>https://geokur.geo.tu-dresden.de/terms</uri_prefix>
+    <key>pup_archiving_allowed</key>
+    <dc:comment>Proceeding to archiving phase is allowed</dc:comment>
+    <source dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/publicationPhase/nextSteps/DMDQIndicators"/>
+    <relation>eq</relation>
+    <target_text/>
+    <target_option>https://geokur.geo.tu-dresden.de/terms/options/criteria_after_publication_phase/2</target_option>
+  </condition>
+  <condition dc:uri="https://geokur.geo.tu-dresden.de/terms/conditions/arp_open4archiving_assured">
+    <uri_prefix>https://geokur.geo.tu-dresden.de/terms</uri_prefix>
+    <key>arp_open4archiving_assured</key>
+    <dc:comment>Open4archiving has to be assured in order to archive the dataset.</dc:comment>
+    <source dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/archivingPhase/archiveData/open4archiving"/>
+    <relation>eq</relation>
+    <target_text>1</target_text>
+    <target_option/>
+  </condition>
+  <condition dc:uri="https://geokur.geo.tu-dresden.de/terms/conditions/arp_data_not_archived">
+    <uri_prefix>https://geokur.geo.tu-dresden.de/terms</uri_prefix>
+    <key>arp_data_not_archived</key>
+    <dc:comment>The dataset is not archived yet</dc:comment>
+    <source dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/archivingPhase/archiveData/archivingOfData"/>
+    <relation>eq</relation>
+    <target_text>0</target_text>
     <target_option/>
   </condition>
 </rdmo>
