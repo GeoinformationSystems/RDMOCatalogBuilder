@@ -435,31 +435,6 @@
         ]
       },
       {
-        "key": "testSection",
-        "title": {
-          "en": "TestSection"
-        },
-        "questionset": [
-          {
-            "key": "testQuestionset",
-            "title": {
-              "en": "TestQuestionset"
-            },
-            "condition": "pr_open4usage_definition_filled",
-            "question": [
-              {
-                "key": "testQuestion",
-                "text": {
-                  "en": "TestQuestion"
-                },
-                "widget_type": "yesno",
-                "value_type": "boolean"
-              }
-            ]
-          }
-        ]
-      },
-      {
         "key": "collectionPhase",
         "title": {
           "en": "Collection Phase"

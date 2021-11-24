@@ -19,7 +19,8 @@ class Catalog(RDMOEntities):
                  key=None,
                  comment=None,
                  order=None,
-                 title_dict=None):
+                 title_dict=None,
+                 help_dict=None):
         self.ns = ns
         self.uri = uri
         self.uri_prefix = uri_prefix
@@ -27,6 +28,7 @@ class Catalog(RDMOEntities):
         self.comment = comment
         self.order = order
         self.title_dict = title_dict
+        self.help_dict = help_dict
 
     def make_element(self):
         """
@@ -48,6 +50,9 @@ class Catalog(RDMOEntities):
         if self.title_dict:
             for lang in self.title_dict:
                 etree.SubElement(catalog, "title", lang=lang).text = self.title_dict[lang]
+        if self.help_dict:
+            for lang in self.help_dict:
+                etree.SubElement(catalog, "help", lang=lang).text = self.help_dict[lang]
 
         return catalog
 

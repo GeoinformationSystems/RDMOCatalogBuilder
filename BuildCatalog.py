@@ -249,7 +249,9 @@ def create_catalog(catalog_file):
     source_questions_for_condition = {}
 
     # prepare dict of dataset collections for questionsets
-    collection_name = {}
+    collection_name_path = {}
+    collection_name_uri = {}
+    collection_name_first_mentioned = True
 
     # prepare dict of optionsets for usage in conditions
     optionset_name = {}
@@ -262,6 +264,10 @@ def create_catalog(catalog_file):
         catalog_comment = catalog["comment"]
     else:
         catalog_comment = None
+    if "help" in catalog:
+        catalog_help = catalog["help"]
+    else:
+        catalog_help = None
 
     catalog_attribute_key = catalog_key
     catalog_attribute_uri = uri_prefix + "/domain/" + catalog_attribute_key
@@ -279,7 +285,8 @@ def create_catalog(catalog_file):
                                         key=catalog_key,
                                         comment=catalog_comment,
                                         order=0,
-                                        title_dict=catalog["title"])
+                                        title_dict=catalog["title"],
+                                        help_dict=catalog_help)
                         .make_element())
 
     # section elements
@@ -373,11 +380,14 @@ def create_catalog(catalog_file):
                                                 parent=section_attribute_uri)
                                .make_element())
 
+            collection_name = ""
             if questionset_is_collection:
                 if "collection_name" in questionset:
                     # if a questionset is a collection, an additional attribute with suffix /id is necessary
                     # here an attribute with suffix /collection_name/id is added
-                    if questionset["collection_name"] not in collection_name:
+                    collection_name = questionset["collection_name"]
+                    if collection_name not in collection_name_uri:
+                        collection_name_first_mentioned = True
                         tmp_key = "id"
                         tmp_uri = questionset_attribute_uri + "/" + tmp_key
                         tmp_path = questionset_attribute_path + "/" + tmp_key
@@ -389,8 +399,12 @@ def create_catalog(catalog_file):
                                                             parent=questionset_attribute_uri)
                                            .make_element())
 
-                        collection_name[questionset["collection_name"]] = questionset_attribute_uri
-                    questionset_attribute = collection_name[questionset["collection_name"]]
+                        collection_name_path[collection_name] = questionset_attribute_path
+                        collection_name_uri[collection_name] = questionset_attribute_uri
+                    else:
+                        collection_name_first_mentioned = False
+
+                    questionset_attribute = collection_name_uri[collection_name]
                 else:
                     raise Exception(f"Please add a collection_name in questionset {questionset_key}")
             else:
@@ -488,15 +502,50 @@ def create_catalog(catalog_file):
                 else:
                     conditions_uri = None
 
-                question_attribute_key = question_key
-                question_attribute_uri = questionset_attribute_uri + "/" + question_attribute_key
-                question_attribute_path = questionset_attribute_path + "/" + question_attribute_key
+                if questionset_is_collection and not collection_name_first_mentioned:
+                    # the question attribute must be under the collection attribute
+                    # -> inclusion of section, questionset, question
+                    # add section
+                    attribute_tmp_key = section_key
+                    attribute_tmp_uri = collection_name_uri[collection_name] + "/" + attribute_tmp_key
+                    attribute_tmp_path = collection_name_path[collection_name] + "/" + attribute_tmp_key
+                    attribute_tmp_parent = collection_name_uri[collection_name]
+                    domain_root.append(Domain.Attribute(ns=ns,
+                                                        uri=attribute_tmp_uri,
+                                                        uri_prefix=uri_prefix,
+                                                        key=attribute_tmp_key,
+                                                        path=attribute_tmp_path,
+                                                        parent=attribute_tmp_parent)
+                                       .make_element())
+                    # add questionset
+                    attribute_tmp_key = questionset_key
+                    attribute_tmp_uri = attribute_tmp_uri + "/" + attribute_tmp_key
+                    attribute_tmp_path = attribute_tmp_path + "/" + attribute_tmp_key
+                    attribute_tmp_parent = attribute_tmp_parent + "/" + section_key
+                    domain_root.append(Domain.Attribute(ns=ns,
+                                                        uri=attribute_tmp_uri,
+                                                        uri_prefix=uri_prefix,
+                                                        key=attribute_tmp_key,
+                                                        path=attribute_tmp_path,
+                                                        parent=attribute_tmp_parent)
+                                       .make_element())
+                    # add question
+                    question_attribute_key = question_key
+                    question_attribute_uri = attribute_tmp_uri + "/" + question_attribute_key
+                    question_attribute_path = attribute_tmp_path + "/" + question_attribute_key
+                    question_attribute_parent = attribute_tmp_parent + "/" + questionset_key
+                else:
+                    question_attribute_key = question_key
+                    question_attribute_uri = questionset_attribute_uri + "/" + question_attribute_key
+                    question_attribute_path = questionset_attribute_path + "/" + question_attribute_key
+                    question_attribute_parent = questionset_attribute_uri
+
                 domain_root.append(Domain.Attribute(ns=ns,
                                                     uri=question_attribute_uri,
                                                     uri_prefix=uri_prefix,
                                                     key=question_attribute_key,
                                                     path=question_attribute_path,
-                                                    parent=questionset_attribute_uri)
+                                                    parent=question_attribute_parent)
                                    .make_element())
 
                 if "condition_definition" in question:
@@ -643,4 +692,6 @@ def control_create_catalog(catalog_file):
 
 if __name__ == '__main__':
     control_create_catalog("qa_questionnaire.json")
-    # TODO: write example json files to illustrate different features
+    # control_create_catalog("examples/example1_questionnaire.json")
+    # control_create_catalog("examples/example2_questionnaire.json")
+    # control_create_catalog("examples/example3_questionnaire.json")
