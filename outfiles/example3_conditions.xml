@@ -1,0 +1,57 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<rdmo xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <condition dc:uri="https://example.org/terms3/conditions/questionset2Allowed">
+    <uri_prefix>https://example.org/terms3</uri_prefix>
+    <key>questionset2Allowed</key>
+    <dc:comment>questionset 2 allowed</dc:comment>
+    <source dc:uri="https://example.org/terms3/domain/example3/section1/questionset1/question1"/>
+    <relation>eq</relation>
+    <target_text>1</target_text>
+    <target_option/>
+  </condition>
+  <condition dc:uri="https://example.org/terms3/conditions/questionset3Allowed">
+    <uri_prefix>https://example.org/terms3</uri_prefix>
+    <key>questionset3Allowed</key>
+    <dc:comment>questionset 3 allowed</dc:comment>
+    <source dc:uri="https://example.org/terms3/domain/example3/section1/questionset1/question2"/>
+    <relation>notempty</relation>
+    <target_text/>
+    <target_option/>
+  </condition>
+  <condition dc:uri="https://example.org/terms3/conditions/questionset4Allowed">
+    <uri_prefix>https://example.org/terms3</uri_prefix>
+    <key>questionset4Allowed</key>
+    <dc:comment>questionset 4 allowed</dc:comment>
+    <source dc:uri="https://example.org/terms3/domain/example3/section1/questionset1/question3"/>
+    <relation>eq</relation>
+    <target_text/>
+    <target_option>https://example.org/terms3/options/optionsetConditional/2</target_option>
+  </condition>
+  <condition dc:uri="https://example.org/terms3/conditions/showTask1">
+    <uri_prefix>https://example.org/terms3</uri_prefix>
+    <key>showTask1</key>
+    <dc:comment>task 1 is shown</dc:comment>
+    <source dc:uri="https://example.org/terms3/domain/example3/section2/questionset5/question1"/>
+    <relation>eq</relation>
+    <target_text>1</target_text>
+    <target_option/>
+  </condition>
+  <condition dc:uri="https://example.org/terms3/conditions/questionset6Allowed">
+    <uri_prefix>https://example.org/terms3</uri_prefix>
+    <key>questionset6Allowed</key>
+    <dc:comment>questionset 6 allowed</dc:comment>
+    <source dc:uri="https://example.org/terms3/domain/example3/section2/questionset5/question2"/>
+    <relation>eq</relation>
+    <target_text>1</target_text>
+    <target_option/>
+  </condition>
+  <condition dc:uri="https://example.org/terms3/conditions/showTask2">
+    <uri_prefix>https://example.org/terms3</uri_prefix>
+    <key>showTask2</key>
+    <dc:comment>task 2 is shown</dc:comment>
+    <source dc:uri="https://example.org/terms3/domain/example3/section2/questionset5/question2"/>
+    <relation>neq</relation>
+    <target_text>1</target_text>
+    <target_option/>
+  </condition>
+</rdmo>

@@ -621,7 +621,7 @@ def control_create_catalog(catalog_file):
     file_obj = BytesIO(etree.tostring(catalog))
     tree = etree.parse(file_obj, parser)
 
-    file_catalog_out = prefix_outfile + "_questions.xml"
+    file_catalog_out = "outfiles/" + prefix_outfile + "_questions.xml"
 
     try:
         with open(file_catalog_out, "wb") as xml_writer:
@@ -636,7 +636,7 @@ def control_create_catalog(catalog_file):
     file_obj = BytesIO(etree.tostring(domain))
     tree = etree.parse(file_obj, parser)
 
-    file_domain_out = prefix_outfile + "_domain.xml"
+    file_domain_out = "outfiles/" + prefix_outfile + "_domain.xml"
 
     try:
         with open(file_domain_out, "wb") as xml_writer:
@@ -651,7 +651,7 @@ def control_create_catalog(catalog_file):
     file_obj = BytesIO(etree.tostring(options))
     tree = etree.parse(file_obj, parser)
 
-    file_options_out = prefix_outfile + "_options.xml"
+    file_options_out = "outfiles/" + prefix_outfile + "_options.xml"
 
     try:
         with open(file_options_out, "wb") as xml_writer:
@@ -666,7 +666,7 @@ def control_create_catalog(catalog_file):
     file_obj = BytesIO(etree.tostring(conditions))
     tree = etree.parse(file_obj, parser)
 
-    file_conditions_out = prefix_outfile + "_conditions.xml"
+    file_conditions_out = "outfiles/" + prefix_outfile + "_conditions.xml"
 
     try:
         with open(file_conditions_out, "wb") as xml_writer:
@@ -681,7 +681,7 @@ def control_create_catalog(catalog_file):
     file_obj = BytesIO(etree.tostring(tasks))
     tree = etree.parse(file_obj, parser)
 
-    file_tasks_out = prefix_outfile + "_tasks.xml"
+    file_tasks_out = "outfiles/" + prefix_outfile + "_tasks.xml"
 
     try:
         with open(file_tasks_out, "wb") as xml_writer:
@@ -691,7 +691,7 @@ def control_create_catalog(catalog_file):
 
 
 if __name__ == '__main__':
-    control_create_catalog("qa_questionnaire.json")
-    # control_create_catalog("examples/example1_questionnaire.json")
-    # control_create_catalog("examples/example2_questionnaire.json")
-    # control_create_catalog("examples/example3_questionnaire.json")
+    control_create_catalog("infiles/qa_questionnaire.json")
+    # control_create_catalog("infiles/example1_questionnaire.json")
+    # control_create_catalog("infiles/example2_questionnaire.json")
+    # control_create_catalog("infiles/example3_questionnaire.json")

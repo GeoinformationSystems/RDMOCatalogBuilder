@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<rdmo xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <optionset dc:uri="https://example.org/terms3/options/optionsetConditional">
+    <uri_prefix>https://example.org/terms3</uri_prefix>
+    <key>optionsetConditional</key>
+    <dc:comment/>
+    <order>0</order>
+    <conditions/>
+  </optionset>
+  <option dc:uri="https://example.org/terms3/options/optionsetConditional/1">
+    <uri_prefix>https://example.org/terms3</uri_prefix>
+    <key>1</key>
+    <path>optionsetConditional/1</path>
+    <dc:comment/>
+    <optionset dc:uri="https://example.org/terms3/options/optionsetConditional"/>
+    <order>0</order>
+    <text lang="en">Questionset 4 not allowed</text>
+    <text lang="de">Fragenset 4 nicht erlaubt</text>
+    <additional_input>False</additional_input>
+  </option>
+  <option dc:uri="https://example.org/terms3/options/optionsetConditional/2">
+    <uri_prefix>https://example.org/terms3</uri_prefix>
+    <key>2</key>
+    <path>optionsetConditional/2</path>
+    <dc:comment/>
+    <optionset dc:uri="https://example.org/terms3/options/optionsetConditional"/>
+    <order>1</order>
+    <text lang="en">Questionset 4 allowed</text>
+    <text lang="de">Fragenset 4 erlaubt</text>
+    <additional_input>False</additional_input>
+  </option>
+</rdmo>

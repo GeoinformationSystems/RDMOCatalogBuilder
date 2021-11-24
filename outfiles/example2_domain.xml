@@ -1,0 +1,115 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<rdmo xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <attribute dc:uri="https://example.org/terms2/domain/example2">
+    <uri_prefix>https://example.org/terms2</uri_prefix>
+    <key>example2</key>
+    <path>example2</path>
+    <dc:comment/>
+    <parent/>
+  </attribute>
+  <attribute dc:uri="https://example.org/terms2/domain/example2/section1">
+    <uri_prefix>https://example.org/terms2</uri_prefix>
+    <key>section1</key>
+    <path>example2/section1</path>
+    <dc:comment/>
+    <parent dc:uri="https://example.org/terms2/domain/example2"/>
+  </attribute>
+  <attribute dc:uri="https://example.org/terms2/domain/example2/section1/questionset1">
+    <uri_prefix>https://example.org/terms2</uri_prefix>
+    <key>questionset1</key>
+    <path>example2/section1/questionset1</path>
+    <dc:comment/>
+    <parent dc:uri="https://example.org/terms2/domain/example2/section1"/>
+  </attribute>
+  <attribute dc:uri="https://example.org/terms2/domain/example2/section1/questionset1/id">
+    <uri_prefix>https://example.org/terms2</uri_prefix>
+    <key>id</key>
+    <path>example2/section1/questionset1/id</path>
+    <dc:comment/>
+    <parent dc:uri="https://example.org/terms2/domain/example2/section1/questionset1"/>
+  </attribute>
+  <attribute dc:uri="https://example.org/terms2/domain/example2/section1/questionset1/question1">
+    <uri_prefix>https://example.org/terms2</uri_prefix>
+    <key>question1</key>
+    <path>example2/section1/questionset1/question1</path>
+    <dc:comment/>
+    <parent dc:uri="https://example.org/terms2/domain/example2/section1/questionset1"/>
+  </attribute>
+  <attribute dc:uri="https://example.org/terms2/domain/example2/section1/questionset2">
+    <uri_prefix>https://example.org/terms2</uri_prefix>
+    <key>questionset2</key>
+    <path>example2/section1/questionset2</path>
+    <dc:comment/>
+    <parent dc:uri="https://example.org/terms2/domain/example2/section1"/>
+  </attribute>
+  <attribute dc:uri="https://example.org/terms2/domain/example2/section1/questionset1/section1">
+    <uri_prefix>https://example.org/terms2</uri_prefix>
+    <key>section1</key>
+    <path>example2/section1/questionset1/section1</path>
+    <dc:comment/>
+    <parent dc:uri="https://example.org/terms2/domain/example2/section1/questionset1"/>
+  </attribute>
+  <attribute dc:uri="https://example.org/terms2/domain/example2/section1/questionset1/section1/questionset2">
+    <uri_prefix>https://example.org/terms2</uri_prefix>
+    <key>questionset2</key>
+    <path>example2/section1/questionset1/section1/questionset2</path>
+    <dc:comment/>
+    <parent dc:uri="https://example.org/terms2/domain/example2/section1/questionset1/section1"/>
+  </attribute>
+  <attribute dc:uri="https://example.org/terms2/domain/example2/section1/questionset1/section1/questionset2/question1">
+    <uri_prefix>https://example.org/terms2</uri_prefix>
+    <key>question1</key>
+    <path>example2/section1/questionset1/section1/questionset2/question1</path>
+    <dc:comment/>
+    <parent dc:uri="https://example.org/terms2/domain/example2/section1/questionset1/section1/questionset2"/>
+  </attribute>
+  <attribute dc:uri="https://example.org/terms2/domain/example2/section1/questionset3">
+    <uri_prefix>https://example.org/terms2</uri_prefix>
+    <key>questionset3</key>
+    <path>example2/section1/questionset3</path>
+    <dc:comment/>
+    <parent dc:uri="https://example.org/terms2/domain/example2/section1"/>
+  </attribute>
+  <attribute dc:uri="https://example.org/terms2/domain/example2/section1/questionset3/id">
+    <uri_prefix>https://example.org/terms2</uri_prefix>
+    <key>id</key>
+    <path>example2/section1/questionset3/id</path>
+    <dc:comment/>
+    <parent dc:uri="https://example.org/terms2/domain/example2/section1/questionset3"/>
+  </attribute>
+  <attribute dc:uri="https://example.org/terms2/domain/example2/section1/questionset3/question1">
+    <uri_prefix>https://example.org/terms2</uri_prefix>
+    <key>question1</key>
+    <path>example2/section1/questionset3/question1</path>
+    <dc:comment/>
+    <parent dc:uri="https://example.org/terms2/domain/example2/section1/questionset3"/>
+  </attribute>
+  <attribute dc:uri="https://example.org/terms2/domain/example2/section1/questionset4">
+    <uri_prefix>https://example.org/terms2</uri_prefix>
+    <key>questionset4</key>
+    <path>example2/section1/questionset4</path>
+    <dc:comment/>
+    <parent dc:uri="https://example.org/terms2/domain/example2/section1"/>
+  </attribute>
+  <attribute dc:uri="https://example.org/terms2/domain/example2/section1/questionset3/section1">
+    <uri_prefix>https://example.org/terms2</uri_prefix>
+    <key>section1</key>
+    <path>example2/section1/questionset3/section1</path>
+    <dc:comment/>
+    <parent dc:uri="https://example.org/terms2/domain/example2/section1/questionset3"/>
+  </attribute>
+  <attribute dc:uri="https://example.org/terms2/domain/example2/section1/questionset3/section1/questionset4">
+    <uri_prefix>https://example.org/terms2</uri_prefix>
+    <key>questionset4</key>
+    <path>example2/section1/questionset3/section1/questionset4</path>
+    <dc:comment/>
+    <parent dc:uri="https://example.org/terms2/domain/example2/section1/questionset3/section1"/>
+  </attribute>
+  <attribute dc:uri="https://example.org/terms2/domain/example2/section1/questionset3/section1/questionset4/question1">
+    <uri_prefix>https://example.org/terms2</uri_prefix>
+    <key>question1</key>
+    <path>example2/section1/questionset3/section1/questionset4/question1</path>
+    <dc:comment/>
+    <parent dc:uri="https://example.org/terms2/domain/example2/section1/questionset3/section1/questionset4"/>
+  </attribute>
+</rdmo>

@@ -1,0 +1,158 @@
+{
+  "prefix_outfile": "example2",
+  "uri_prefix": "https://example.org/terms2",
+  "namespace": {
+    "prefix": "dc",
+    "url":"http://purl.org/dc/elements/1.1/"
+  },
+  "catalog": {
+    "key": "example2",
+    "title": {
+      "en": "Example Questionnaire 2",
+      "de": "Beispielkatalog 2"
+    },
+    "help": {
+      "en": "This catalog offers questionsets with collections.",
+      "de": "Dieser Katalog zeigt die Verwendung von Kollektionen in Fragensets."
+    },
+    "section": [
+      {
+        "key": "section1",
+        "title": {
+          "en": "Section 1",
+          "de": "Abschnitt 1"
+        },
+        "questionset": [
+          {
+            "key": "questionset1",
+            "title": {
+              "en": "Questionset 1",
+              "de": "Fragenset 1"
+            },
+            "help": {
+              "en": "The dataset given here is valid for questionset 1 and 2.",
+              "de": "Die hier angegebenen Datensätze gelten für Fragenset 1 und 2."
+            },
+            "is_collection": "True",
+            "collection_name": "collection_one",
+            "verbose_name": {
+              "en": "dataset",
+              "de": "Datensatz"
+            },
+            "verbose_name_plural": {
+              "en": "datasets",
+              "de": "Datensätze"
+            },
+            "question": [
+              {
+                "key": "question1",
+                "text": {
+                  "en": "Is the data used?",
+                  "de": "Werden diese Daten genutzt?"
+                },
+                "widget_type": "yesno",
+                "value_type": "boolean"
+              }
+            ]
+          },
+          {
+            "key": "questionset2",
+            "title": {
+              "en": "Questionset 2",
+              "de": "Fragenset 2"
+            },
+            "help": {
+              "en": "The dataset given here is valid for questionset 1 and 2.",
+              "de": "Die hier angegebenen Datensätze gelten für Fragenset 1 und 2."
+            },
+            "is_collection": "True",
+            "collection_name": "collection_one",
+            "verbose_name": {
+              "en": "dataset",
+              "de": "Datensatz"
+            },
+            "verbose_name_plural": {
+              "en": "datasets",
+              "de": "Datensätze"
+            },
+            "question": [
+              {
+                "key": "question1",
+                "text": {
+                  "en": "Is the data used?",
+                  "de": "Werden diese Daten genutzt?"
+                },
+                "widget_type": "yesno",
+                "value_type": "boolean"
+              }
+            ]
+          },
+          {
+            "key": "questionset3",
+            "title": {
+              "en": "Questionset 3",
+              "de": "Fragenset 3"
+            },
+            "help": {
+              "en": "The dataset given here is valid for questionset 3 and 4.",
+              "de": "Die hier angegebenen Datensätze gelten für Fragenset 3 und 4."
+            },
+            "is_collection": "True",
+            "collection_name": "collection_two",
+            "verbose_name": {
+              "en": "dataset",
+              "de": "Datensatz"
+            },
+            "verbose_name_plural": {
+              "en": "datasets",
+              "de": "Datensätze"
+            },
+            "question": [
+              {
+                "key": "question1",
+                "text": {
+                  "en": "Is the data used?",
+                  "de": "Werden diese Daten genutzt?"
+                },
+                "widget_type": "yesno",
+                "value_type": "boolean"
+              }
+            ]
+          },
+          {
+            "key": "questionset4",
+            "title": {
+              "en": "Questionset 4",
+              "de": "Fragenset 4"
+            },
+            "help": {
+              "en": "The dataset given here is valid for questionset 3 and 4.",
+              "de": "Die hier angegebenen Datensätze gelten für Fragenset 3 und 4."
+            },
+            "is_collection": "True",
+            "collection_name": "collection_two",
+            "verbose_name": {
+              "en": "dataset",
+              "de": "Datensatz"
+            },
+            "verbose_name_plural": {
+              "en": "datasets",
+              "de": "Datensätze"
+            },
+            "question": [
+              {
+                "key": "question1",
+                "text": {
+                  "en": "How is the data used?",
+                  "de": "Wie werden diese Daten genutzt?"
+                },
+                "widget_type": "text",
+                "value_type": "text"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

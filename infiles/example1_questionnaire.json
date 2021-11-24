@@ -1,0 +1,212 @@
+{
+  "prefix_outfile": "example1",
+  "uri_prefix": "https://example.org/terms1",
+  "namespace": {
+    "prefix": "dc",
+    "url":"http://purl.org/dc/elements/1.1/"
+  },
+  "catalog": {
+    "key": "example1",
+    "title": {
+      "en": "Example Questionnaire 1",
+      "de": "Beispielkatalog 1"
+    },
+    "help": {
+      "en": "This catalog serves as an example with different types of answers including options.",
+      "de": "Dieser Katalog zeigt beispielhaft verschiedene Antworttypen auf Fragen inkl. vorgefertigter Optionen."
+    },
+    "section": [
+      {
+        "key": "section1",
+        "title": {
+          "en": "Section 1",
+          "de": "Abschnitt 1"
+        },
+        "questionset": [
+          {
+            "key": "questionset1",
+            "title": {
+              "en": "Questionset 1",
+              "de": "Fragenset 1"
+            },
+            "help": {
+              "en": "Here different answer possibilities for questions are given.",
+              "de": "Hier werden verschiedene Antwortmöglichkeiten für Fragen in RDMO aufgezeigt."
+            },
+            "question": [
+              {
+                "key": "question1",
+                "text": {
+                  "en": "Text",
+                  "de": "Text"
+                },
+                "help": {
+                  "en": "Text type.",
+                  "de": "Text Typ."
+                },
+                "widget_type": "text",
+                "value_type": "text"
+              },
+              {
+                "key": "question2",
+                "text": {
+                  "en": "Textarea",
+                  "de": "Textarea"
+                },
+                "help": {
+                  "en": "Textarea type.",
+                  "de": "Textarea Typ."
+                },
+                "widget_type": "textarea",
+                "value_type": "text"
+              },
+              {
+                "key": "question3",
+                "text": {
+                  "en": "Yesno",
+                  "de": "Yesno"
+                },
+                "help": {
+                  "en": "Yesno type.",
+                  "de": "Yesno Typ."
+                },
+                "widget_type": "yesno",
+                "value_type": "boolean"
+              },
+              {
+                "key": "question4",
+                "text": {
+                  "en": "Select",
+                  "de": "Select"
+                },
+                "help": {
+                  "en": "Select type.",
+                  "de": "Select Typ."
+                },
+                "widget_type": "select",
+                "value_type": "option",
+                "optionset": {
+                  "key": "exampleOptionset",
+                  "option": [
+                    {
+                      "key": "1",
+                      "text": {
+                        "en": "First option",
+                        "de": "Erste Option"
+                      }
+                    },
+                    {
+                      "key": "2",
+                      "text": {
+                        "en": "Second option",
+                        "de": "Zweite Option"
+                      }
+                    },
+                    {
+                      "key": "3",
+                      "text": {
+                        "en": "Third option",
+                        "de": "Dritte Option"
+                      }
+                    },
+                    {
+                      "key": "other",
+                      "additional_input": "True",
+                      "text": {
+                        "en": "Other definition",
+                        "de": "Andere Definitionen"
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "key": "question5",
+                "text": {
+                  "en": "Radio",
+                  "de": "Radio"
+                },
+                "help": {
+                  "en": "Radiobutton type",
+                  "de": "Radiobutton Typ"
+                },
+                "widget_type": "radio",
+                "value_type": "option",
+                "optionset": {
+                  "key": "exampleOptionset"
+                }
+              },
+              {
+                "key": "question6",
+                "text": {
+                  "en": "Checkbox",
+                  "de": "Checkbox"
+                },
+                "help": {
+                  "en": "Checkbox type",
+                  "de": "Checkbox Typ"
+                },
+                "widget_type": "checkbox",
+                "value_type": "option",
+                "optionset": {
+                  "key": "exampleOptionset"
+                }
+              },
+              {
+                "key": "question7",
+                "text": {
+                  "en": "Range",
+                  "de": "Range"
+                },
+                "help": {
+                  "en": "Range type",
+                  "de": "Range Typ"
+                },
+                "widget_type": "range",
+                "value_type": "integer",
+                "minimum": "0",
+                "maximum": "100",
+                "step": "1"
+              },
+              {
+                "key": "question8",
+                "text": {
+                  "en": "Date",
+                  "de": "Datum"
+                },
+                "help": {
+                  "en": "Datetime Picker",
+                  "de": "Datumsauswahl"
+                },
+                "widget_type": "date",
+                "value_type": "datetime"
+              },
+              {
+                "key": "question9",
+                "text": {
+                  "en": "File",
+                  "de": "Datei"
+                },
+                "help": {
+                  "en": "File upload",
+                  "de": "Dateiupload"
+                },
+                "is_collection": "True",
+                "widget_type": "file",
+                "value_type": "file",
+                "verbose_name": {
+                  "en": "file",
+                  "de": "Datei"
+                },
+                "verbose_name_plural": {
+                  "en": "files",
+                  "de": "Dateien"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}
