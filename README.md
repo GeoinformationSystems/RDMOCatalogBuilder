@@ -9,7 +9,7 @@ To use RDMOCatalogBuilder type the following:
 
 ```
 from BuildCatalog import *
-control_create_catalog("qa_questionnaire.json")
+control_create_catalog("infiles/qa_questionnaire.json")
 ```
 
 This produces an example catalog resource for qa_questionnaire.json. Basically the json file is built according the
@@ -32,8 +32,8 @@ The following contents for RDMO are produced as xml files:
 - tasks
 
 ## Known Limits/Bugs
-Per json file only one catalog is allowed. Currently RDMOCatalogBuilder implements the catalog features of RDMO
-1.5.5. An upgrade to RDMO 1.6.x is planned for the near future.
+Per json file only one catalog is allowed. Currently, RDMOCatalogBuilder implements the catalog features of RDMO
+1.6.1. Missing is "Option: Provider".
 
 ## License
 The RDMOCatalogBuilder is licensed under Apache-2.0. You may obtain a copy of the License at

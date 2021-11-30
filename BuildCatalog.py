@@ -444,6 +444,10 @@ def create_catalog(catalog_file):
                     question_is_collection = question["is_collection"]
                 else:
                     question_is_collection = False
+                if "is_optional" in question:
+                    question_is_optional = question["is_optional"]
+                else:
+                    question_is_optional = False
                 if "help" in question:
                     question_help = question["help"]
                 else:
@@ -452,6 +456,10 @@ def create_catalog(catalog_file):
                     question_text = question["text"]
                 else:
                     question_text = None
+                if "default_text" in question:
+                    question_default_text = question["default_text"]
+                else:
+                    question_default_text = None
                 if "verbose_name" in question:
                     question_verbose_name = question["verbose_name"]
                 else:
@@ -476,6 +484,10 @@ def create_catalog(catalog_file):
                     question_unit = question["minimum"]
                 else:
                     question_unit = None
+                if "width" in question:
+                    question_width = question["width"]
+                else:
+                    question_width = None
                 if "optionset" in question:
                     optionset = question["optionset"]
                     if optionset["key"] in optionset_name and "option" in optionset:
@@ -489,6 +501,10 @@ def create_catalog(catalog_file):
                         optionset_name[optionset["key"]] = optionset_uri
                 else:
                     optionset_uri = None
+                if "default_option" in question:
+                    question_default_option = optionset_uri + "/" + question["default_option"]
+                else:
+                    question_default_option = None
                 if "condition" in question:
                     question_conditions = question["condition"]
                     conditions_uri = []
@@ -501,6 +517,10 @@ def create_catalog(catalog_file):
                             conditions_uri.append(uri_prefix + "/conditions/" + question_condition)
                 else:
                     conditions_uri = None
+                if "default_external_id" in question:
+                    question_default_external_id = question["default_external_id"]
+                else:
+                    question_default_external_id = None
 
                 if questionset_is_collection and not collection_name_first_mentioned:
                     # the question attribute must be under the collection attribute
@@ -569,9 +589,11 @@ def create_catalog(catalog_file):
                                                      attribute=question_attribute_uri,
                                                      questionset=questionset_uri,
                                                      is_collection=question_is_collection,
+                                                     is_optional=question_is_optional,
                                                      order=ct_question,
                                                      help_dict=question_help,
                                                      text_dict=question_text,
+                                                     default_text_dict=question_default_text,
                                                      verbose_name_dict=question_verbose_name,
                                                      verbose_name_plural_dict=question_verbose_name_plural,
                                                      widget_type=question["widget_type"],
@@ -580,8 +602,11 @@ def create_catalog(catalog_file):
                                                      minimum=question_minimum,
                                                      step=question_step,
                                                      unit=question_unit,
+                                                     width=question_width,
                                                      optionsets=optionset_uri,
-                                                     conditions=conditions_uri)
+                                                     default_option=question_default_option,
+                                                     conditions=conditions_uri,
+                                                     default_external_id=question_default_external_id)
                                     .make_element())
 
     # task element

@@ -1467,7 +1467,7 @@
                 ]
               },
               {
-                "key": "publicationOfData",
+                "key": "publicationOfDataDescription",
                 "text": {
                   "en": "How and where do you publish the dataset?"
                 },
@@ -1628,7 +1628,7 @@
                 ]
               },
               {
-                "key": "archivingOfData",
+                "key": "archivingOfDataDescription",
                 "text": {
                   "en": "How and where do you archive the dataset?"
                 },

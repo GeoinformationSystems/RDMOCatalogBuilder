@@ -1036,10 +1036,10 @@
     <dc:comment/>
     <parent dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/publicationPhase/publishData"/>
   </attribute>
-  <attribute dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/publicationPhase/publishData/publicationOfData">
+  <attribute dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/publicationPhase/publishData/publicationOfDataDescription">
     <uri_prefix>https://geokur.geo.tu-dresden.de/terms</uri_prefix>
-    <key>publicationOfData</key>
-    <path>qa/publicationPhase/publishData/publicationOfData</path>
+    <key>publicationOfDataDescription</key>
+    <path>qa/publicationPhase/publishData/publicationOfDataDescription</path>
     <dc:comment/>
     <parent dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/publicationPhase/publishData"/>
   </attribute>
@@ -1141,10 +1141,10 @@
     <dc:comment/>
     <parent dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/publicationPhase/publishData/archivingPhase"/>
   </attribute>
-  <attribute dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/publicationPhase/publishData/archivingPhase/archiveData/archivingOfData">
+  <attribute dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/publicationPhase/publishData/archivingPhase/archiveData/archivingOfDataDescription">
     <uri_prefix>https://geokur.geo.tu-dresden.de/terms</uri_prefix>
-    <key>archivingOfData</key>
-    <path>qa/publicationPhase/publishData/archivingPhase/archiveData/archivingOfData</path>
+    <key>archivingOfDataDescription</key>
+    <path>qa/publicationPhase/publishData/archivingPhase/archiveData/archivingOfDataDescription</path>
     <dc:comment/>
     <parent dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/publicationPhase/publishData/archivingPhase/archiveData"/>
   </attribute>
