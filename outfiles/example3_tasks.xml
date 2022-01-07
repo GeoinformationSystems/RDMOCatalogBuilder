@@ -4,10 +4,10 @@
     <uri_prefix>https://example.org/terms3</uri_prefix>
     <key>task1</key>
     <dc:comment/>
-    <title lang="de">Aufgabe 1</title>
-    <text lang="de">Aufgabe 1 wird jetzt korrekt angezeigt</text>
     <title lang="en">Task 1</title>
     <text lang="en">Task 1 is properly shown now.</text>
+    <title lang="de">Aufgabe 1</title>
+    <text lang="de">Aufgabe 1 wird jetzt korrekt angezeigt</text>
     <start_attribute/>
     <end_attribute/>
     <days_before/>
@@ -20,10 +20,10 @@
     <uri_prefix>https://example.org/terms3</uri_prefix>
     <key>task2</key>
     <dc:comment/>
-    <title lang="de">Aufgabe 2</title>
-    <text lang="de">Aufgabe 2 wird jetzt korrekt angezeigt. Bitte Fragenset 6 erreichbar machen.</text>
     <title lang="en">Task 2</title>
     <text lang="en">Task 2 is properly shown now. Please make questionset 6 accessible.</text>
+    <title lang="de">Aufgabe 2</title>
+    <text lang="de">Aufgabe 2 wird jetzt korrekt angezeigt. Bitte Fragenset 6 erreichbar machen.</text>
     <start_attribute/>
     <end_attribute/>
     <days_before/>

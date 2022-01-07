@@ -29,14 +29,14 @@
     <section dc:uri="https://example.org/terms3/questions/example3/section1"/>
     <is_collection>False</is_collection>
     <order>0</order>
-    <title lang="de">Bedingungsdefinitionen: Fragenset 1</title>
-    <help lang="de">Hier werden Bedingungen formuliert, die darüber entscheiden, ob eines der nächsten Fragensets erlaubt ist.&lt;br&gt;Alle erlaubten elemente für Katalog, Sektion, Fragenset und Frage können &lt;a href="https://rdmo.readthedocs.io/en/latest/management/index.html"&gt;hier&lt;/a&gt; nachgelesen werden.</help>
-    <verbose_name lang="de"/>
-    <verbose_name_plural lang="de"/>
     <title lang="en">Define Conditions: Questionset 1</title>
     <help lang="en">Here are various conditions upon which the decision is made whether one of the next questionsets is allowed.&lt;br&gt;All possible elements for catalog, section, questionset, and question entry are taken from &lt;a href="https://rdmo.readthedocs.io/en/latest/management/index.html"&gt;here&lt;/a&gt;.</help>
     <verbose_name lang="en"/>
     <verbose_name_plural lang="en"/>
+    <title lang="de">Bedingungsdefinitionen: Fragenset 1</title>
+    <help lang="de">Hier werden Bedingungen formuliert, die darüber entscheiden, ob eines der nächsten Fragensets erlaubt ist.&lt;br&gt;Alle erlaubten elemente für Katalog, Sektion, Fragenset und Frage können &lt;a href="https://rdmo.readthedocs.io/en/latest/management/index.html"&gt;hier&lt;/a&gt; nachgelesen werden.</help>
+    <verbose_name lang="de"/>
+    <verbose_name_plural lang="de"/>
     <conditions/>
   </questionset>
   <question dc:uri="https://example.org/terms3/questions/example3/section1/questionset1/question1">
@@ -47,23 +47,29 @@
     <attribute dc:uri="https://example.org/terms3/domain/example3/section1/questionset1/question1"/>
     <questionset dc:uri="https://example.org/terms3/questions/example3/section1/questionset1"/>
     <is_collection>False</is_collection>
+    <is_optional>False</is_optional>
     <order>0</order>
-    <help lang="de"/>
-    <text lang="de">Darf das Fragenset 2 angewählt werden?</text>
-    <verbose_name lang="de"/>
-    <verbose_name_plural lang="de"/>
     <help lang="en"/>
     <text lang="en">Is the questionset 2 allowed to be reached?</text>
+    <default_text lang="en"/>
     <verbose_name lang="en"/>
     <verbose_name_plural lang="en"/>
+    <help lang="de"/>
+    <text lang="de">Darf das Fragenset 2 angewählt werden?</text>
+    <default_text lang="de"/>
+    <verbose_name lang="de"/>
+    <verbose_name_plural lang="de"/>
     <widget_type>yesno</widget_type>
     <value_type>boolean</value_type>
     <maximum/>
     <minimum/>
     <step/>
     <unit/>
+    <width/>
     <optionsets/>
+    <default_option/>
     <conditions/>
+    <default_external_id/>
   </question>
   <question dc:uri="https://example.org/terms3/questions/example3/section1/questionset1/question2">
     <uri_prefix>https://example.org/terms3</uri_prefix>
@@ -73,23 +79,29 @@
     <attribute dc:uri="https://example.org/terms3/domain/example3/section1/questionset1/question2"/>
     <questionset dc:uri="https://example.org/terms3/questions/example3/section1/questionset1"/>
     <is_collection>False</is_collection>
+    <is_optional>False</is_optional>
     <order>1</order>
-    <help lang="de"/>
-    <text lang="de">Fragenset 3 darf angewählt werden, wenn in diesem Textfeld etwas geschrieben ist.</text>
-    <verbose_name lang="de"/>
-    <verbose_name_plural lang="de"/>
     <help lang="en"/>
     <text lang="en">Questionset 3 can be reached, if something is written into the textarea.</text>
+    <default_text lang="en"/>
     <verbose_name lang="en"/>
     <verbose_name_plural lang="en"/>
+    <help lang="de"/>
+    <text lang="de">Fragenset 3 darf angewählt werden, wenn in diesem Textfeld etwas geschrieben ist.</text>
+    <default_text lang="de"/>
+    <verbose_name lang="de"/>
+    <verbose_name_plural lang="de"/>
     <widget_type>textarea</widget_type>
     <value_type>text</value_type>
     <maximum/>
     <minimum/>
     <step/>
     <unit/>
+    <width/>
     <optionsets/>
+    <default_option/>
     <conditions/>
+    <default_external_id/>
   </question>
   <question dc:uri="https://example.org/terms3/questions/example3/section1/questionset1/question3">
     <uri_prefix>https://example.org/terms3</uri_prefix>
@@ -99,25 +111,31 @@
     <attribute dc:uri="https://example.org/terms3/domain/example3/section1/questionset1/question3"/>
     <questionset dc:uri="https://example.org/terms3/questions/example3/section1/questionset1"/>
     <is_collection>False</is_collection>
+    <is_optional>False</is_optional>
     <order>2</order>
-    <help lang="de"/>
-    <text lang="de">Fragenset 4 kann erreicht werden, wenn die richtige Option ausgewählt ist.</text>
-    <verbose_name lang="de"/>
-    <verbose_name_plural lang="de"/>
     <help lang="en"/>
     <text lang="en">Questionset 4 can be reached, if the appropriate option is chosen.</text>
+    <default_text lang="en"/>
     <verbose_name lang="en"/>
     <verbose_name_plural lang="en"/>
+    <help lang="de"/>
+    <text lang="de">Fragenset 4 kann erreicht werden, wenn die richtige Option ausgewählt ist.</text>
+    <default_text lang="de"/>
+    <verbose_name lang="de"/>
+    <verbose_name_plural lang="de"/>
     <widget_type>select</widget_type>
     <value_type>option</value_type>
     <maximum/>
     <minimum/>
     <step/>
     <unit/>
+    <width/>
     <optionsets>
       <optionset dc:uri="https://example.org/terms3/options/optionsetConditional"/>
     </optionsets>
+    <default_option/>
     <conditions/>
+    <default_external_id/>
   </question>
   <questionset dc:uri="https://example.org/terms3/questions/example3/section1/questionset2">
     <uri_prefix>https://example.org/terms3</uri_prefix>
@@ -128,14 +146,14 @@
     <section dc:uri="https://example.org/terms3/questions/example3/section1"/>
     <is_collection>False</is_collection>
     <order>1</order>
-    <title lang="de">Fragenset 2</title>
-    <help lang="de">Dieses Fragenset wird nur dann erreicht, wenn die Kondition in Fragenset 1 wahr ist.</help>
-    <verbose_name lang="de"/>
-    <verbose_name_plural lang="de"/>
     <title lang="en">Questionset 2</title>
     <help lang="en">This questionset is only reached via true condition in questionset 1.</help>
     <verbose_name lang="en"/>
     <verbose_name_plural lang="en"/>
+    <title lang="de">Fragenset 2</title>
+    <help lang="de">Dieses Fragenset wird nur dann erreicht, wenn die Kondition in Fragenset 1 wahr ist.</help>
+    <verbose_name lang="de"/>
+    <verbose_name_plural lang="de"/>
     <conditions>
       <condition dc:uri="https://example.org/terms3/conditions/questionset2Allowed"/>
     </conditions>
@@ -148,23 +166,29 @@
     <attribute dc:uri="https://example.org/terms3/domain/example3/section1/questionset2/question1"/>
     <questionset dc:uri="https://example.org/terms3/questions/example3/section1/questionset2"/>
     <is_collection>False</is_collection>
+    <is_optional>False</is_optional>
     <order>0</order>
-    <help lang="de"/>
-    <text lang="de">Dieses Fragenset mit dieser Frage ist jetzt erreichbar.</text>
-    <verbose_name lang="de"/>
-    <verbose_name_plural lang="de"/>
     <help lang="en"/>
     <text lang="en">This questionset with this question is reached.</text>
+    <default_text lang="en"/>
     <verbose_name lang="en"/>
     <verbose_name_plural lang="en"/>
+    <help lang="de"/>
+    <text lang="de">Dieses Fragenset mit dieser Frage ist jetzt erreichbar.</text>
+    <default_text lang="de"/>
+    <verbose_name lang="de"/>
+    <verbose_name_plural lang="de"/>
     <widget_type>text</widget_type>
     <value_type>text</value_type>
     <maximum/>
     <minimum/>
     <step/>
     <unit/>
+    <width/>
     <optionsets/>
+    <default_option/>
     <conditions/>
+    <default_external_id/>
   </question>
   <questionset dc:uri="https://example.org/terms3/questions/example3/section1/questionset3">
     <uri_prefix>https://example.org/terms3</uri_prefix>
@@ -175,14 +199,14 @@
     <section dc:uri="https://example.org/terms3/questions/example3/section1"/>
     <is_collection>False</is_collection>
     <order>2</order>
-    <title lang="de">Fragenset 3</title>
-    <help lang="de">Dieses Fragenset wird nur dann erreicht, wenn die zweite Kondition in Fragenset 1 wahr ist.</help>
-    <verbose_name lang="de"/>
-    <verbose_name_plural lang="de"/>
     <title lang="en">Questionset 3</title>
     <help lang="en">This questionset is only reached via true second condition in questionset 1.</help>
     <verbose_name lang="en"/>
     <verbose_name_plural lang="en"/>
+    <title lang="de">Fragenset 3</title>
+    <help lang="de">Dieses Fragenset wird nur dann erreicht, wenn die zweite Kondition in Fragenset 1 wahr ist.</help>
+    <verbose_name lang="de"/>
+    <verbose_name_plural lang="de"/>
     <conditions>
       <condition dc:uri="https://example.org/terms3/conditions/questionset3Allowed"/>
     </conditions>
@@ -195,23 +219,29 @@
     <attribute dc:uri="https://example.org/terms3/domain/example3/section1/questionset3/question1"/>
     <questionset dc:uri="https://example.org/terms3/questions/example3/section1/questionset3"/>
     <is_collection>False</is_collection>
+    <is_optional>False</is_optional>
     <order>0</order>
-    <help lang="de"/>
-    <text lang="de">Dieses Fragenset mit dieser Frage ist jetzt erreichbar.</text>
-    <verbose_name lang="de"/>
-    <verbose_name_plural lang="de"/>
     <help lang="en"/>
     <text lang="en">This questionset with this question is reached.</text>
+    <default_text lang="en"/>
     <verbose_name lang="en"/>
     <verbose_name_plural lang="en"/>
+    <help lang="de"/>
+    <text lang="de">Dieses Fragenset mit dieser Frage ist jetzt erreichbar.</text>
+    <default_text lang="de"/>
+    <verbose_name lang="de"/>
+    <verbose_name_plural lang="de"/>
     <widget_type>text</widget_type>
     <value_type>text</value_type>
     <maximum/>
     <minimum/>
     <step/>
     <unit/>
+    <width/>
     <optionsets/>
+    <default_option/>
     <conditions/>
+    <default_external_id/>
   </question>
   <questionset dc:uri="https://example.org/terms3/questions/example3/section1/questionset4">
     <uri_prefix>https://example.org/terms3</uri_prefix>
@@ -222,14 +252,14 @@
     <section dc:uri="https://example.org/terms3/questions/example3/section1"/>
     <is_collection>False</is_collection>
     <order>3</order>
-    <title lang="de">Fragenset 4</title>
-    <help lang="de">Dieses Fragenset wird nur dann erreicht, wenn die dritte Kondition in Fragenset 1 wahr ist.</help>
-    <verbose_name lang="de"/>
-    <verbose_name_plural lang="de"/>
     <title lang="en">Questionset 4</title>
     <help lang="en">This questionset is only reached via true third condition in questionset 1.</help>
     <verbose_name lang="en"/>
     <verbose_name_plural lang="en"/>
+    <title lang="de">Fragenset 4</title>
+    <help lang="de">Dieses Fragenset wird nur dann erreicht, wenn die dritte Kondition in Fragenset 1 wahr ist.</help>
+    <verbose_name lang="de"/>
+    <verbose_name_plural lang="de"/>
     <conditions>
       <condition dc:uri="https://example.org/terms3/conditions/questionset4Allowed"/>
     </conditions>
@@ -242,23 +272,29 @@
     <attribute dc:uri="https://example.org/terms3/domain/example3/section1/questionset4/question1"/>
     <questionset dc:uri="https://example.org/terms3/questions/example3/section1/questionset4"/>
     <is_collection>False</is_collection>
+    <is_optional>False</is_optional>
     <order>0</order>
-    <help lang="de"/>
-    <text lang="de">Dieses Fragenset mit dieser Frage ist jetzt erreichbar.</text>
-    <verbose_name lang="de"/>
-    <verbose_name_plural lang="de"/>
     <help lang="en"/>
     <text lang="en">This questionset with this question is reached.</text>
+    <default_text lang="en"/>
     <verbose_name lang="en"/>
     <verbose_name_plural lang="en"/>
+    <help lang="de"/>
+    <text lang="de">Dieses Fragenset mit dieser Frage ist jetzt erreichbar.</text>
+    <default_text lang="de"/>
+    <verbose_name lang="de"/>
+    <verbose_name_plural lang="de"/>
     <widget_type>text</widget_type>
     <value_type>text</value_type>
     <maximum/>
     <minimum/>
     <step/>
     <unit/>
+    <width/>
     <optionsets/>
+    <default_option/>
     <conditions/>
+    <default_external_id/>
   </question>
   <section dc:uri="https://example.org/terms3/questions/example3/section2">
     <uri_prefix>https://example.org/terms3</uri_prefix>
@@ -279,14 +315,14 @@
     <section dc:uri="https://example.org/terms3/questions/example3/section2"/>
     <is_collection>False</is_collection>
     <order>0</order>
-    <title lang="de">Bedingungsdefinitionen: Fragenset 5</title>
-    <help lang="de">Hier werden Bedingungen formuliert, die darüber entscheiden, ob Aufgaben erscheinen.</help>
-    <verbose_name lang="de"/>
-    <verbose_name_plural lang="de"/>
     <title lang="en">Define Conditions: Questionset 5</title>
     <help lang="en">Here are various conditions upon which the decision is made whether specific tasks are shown.</help>
     <verbose_name lang="en"/>
     <verbose_name_plural lang="en"/>
+    <title lang="de">Bedingungsdefinitionen: Fragenset 5</title>
+    <help lang="de">Hier werden Bedingungen formuliert, die darüber entscheiden, ob Aufgaben erscheinen.</help>
+    <verbose_name lang="de"/>
+    <verbose_name_plural lang="de"/>
     <conditions/>
   </questionset>
   <question dc:uri="https://example.org/terms3/questions/example3/section2/questionset5/question1">
@@ -297,23 +333,29 @@
     <attribute dc:uri="https://example.org/terms3/domain/example3/section2/questionset5/question1"/>
     <questionset dc:uri="https://example.org/terms3/questions/example3/section2/questionset5"/>
     <is_collection>False</is_collection>
+    <is_optional>False</is_optional>
     <order>0</order>
-    <help lang="de"/>
-    <text lang="de">Soll Aufgabe 1 gezeigt werden?</text>
-    <verbose_name lang="de"/>
-    <verbose_name_plural lang="de"/>
     <help lang="en"/>
     <text lang="en">Shall task 1 be shown?</text>
+    <default_text lang="en"/>
     <verbose_name lang="en"/>
     <verbose_name_plural lang="en"/>
+    <help lang="de"/>
+    <text lang="de">Soll Aufgabe 1 gezeigt werden?</text>
+    <default_text lang="de"/>
+    <verbose_name lang="de"/>
+    <verbose_name_plural lang="de"/>
     <widget_type>yesno</widget_type>
     <value_type>boolean</value_type>
     <maximum/>
     <minimum/>
     <step/>
     <unit/>
+    <width/>
     <optionsets/>
+    <default_option/>
     <conditions/>
+    <default_external_id/>
   </question>
   <question dc:uri="https://example.org/terms3/questions/example3/section2/questionset5/question2">
     <uri_prefix>https://example.org/terms3</uri_prefix>
@@ -323,23 +365,29 @@
     <attribute dc:uri="https://example.org/terms3/domain/example3/section2/questionset5/question2"/>
     <questionset dc:uri="https://example.org/terms3/questions/example3/section2/questionset5"/>
     <is_collection>False</is_collection>
+    <is_optional>False</is_optional>
     <order>1</order>
-    <help lang="de">Mitunter möchte der Autor eines Kataloges eine Aufgabe und die Erreichbarkeit eines Fragensets miteinander verbinden. Oftmals sind die Bedingungen dafür entgegengesetzt. Daher müssen in diesem Fall zwei Bedingungen definiert werden.</help>
-    <text lang="de">Ist das Fragenset 6 erlaubt? Wenn nicht, wird Aufgabe 2 angezeigt.</text>
-    <verbose_name lang="de"/>
-    <verbose_name_plural lang="de"/>
     <help lang="en">Sometimes the author of the catalog wants to connect a task and the accessibility of a particular questionset. Often the conditions are contrary. This can be overcome if two conditions are given.</help>
     <text lang="en">Is questionset 6 accessible? If not task 2 is shown.</text>
+    <default_text lang="en"/>
     <verbose_name lang="en"/>
     <verbose_name_plural lang="en"/>
+    <help lang="de">Mitunter möchte der Autor eines Kataloges eine Aufgabe und die Erreichbarkeit eines Fragensets miteinander verbinden. Oftmals sind die Bedingungen dafür entgegengesetzt. Daher müssen in diesem Fall zwei Bedingungen definiert werden.</help>
+    <text lang="de">Ist das Fragenset 6 erlaubt? Wenn nicht, wird Aufgabe 2 angezeigt.</text>
+    <default_text lang="de"/>
+    <verbose_name lang="de"/>
+    <verbose_name_plural lang="de"/>
     <widget_type>yesno</widget_type>
     <value_type>boolean</value_type>
     <maximum/>
     <minimum/>
     <step/>
     <unit/>
+    <width/>
     <optionsets/>
+    <default_option/>
     <conditions/>
+    <default_external_id/>
   </question>
   <questionset dc:uri="https://example.org/terms3/questions/example3/section2/questionset6">
     <uri_prefix>https://example.org/terms3</uri_prefix>
@@ -350,14 +398,14 @@
     <section dc:uri="https://example.org/terms3/questions/example3/section2"/>
     <is_collection>False</is_collection>
     <order>1</order>
-    <title lang="de">Fragenset 6</title>
-    <help lang="de">Dieses Fragenset wird nur dann erreicht, wenn die zweite Kondition in Fragenset 5 wahr ist.</help>
-    <verbose_name lang="de"/>
-    <verbose_name_plural lang="de"/>
     <title lang="en">Questionset 6</title>
     <help lang="en">This questionset is only reached via true second condition in questionset 5.</help>
     <verbose_name lang="en"/>
     <verbose_name_plural lang="en"/>
+    <title lang="de">Fragenset 6</title>
+    <help lang="de">Dieses Fragenset wird nur dann erreicht, wenn die zweite Kondition in Fragenset 5 wahr ist.</help>
+    <verbose_name lang="de"/>
+    <verbose_name_plural lang="de"/>
     <conditions>
       <condition dc:uri="https://example.org/terms3/conditions/questionset6Allowed"/>
     </conditions>
@@ -370,22 +418,28 @@
     <attribute dc:uri="https://example.org/terms3/domain/example3/section2/questionset6/question1"/>
     <questionset dc:uri="https://example.org/terms3/questions/example3/section2/questionset6"/>
     <is_collection>False</is_collection>
+    <is_optional>False</is_optional>
     <order>0</order>
-    <help lang="de"/>
-    <text lang="de">Dieses Fragenset mit dieser Frage ist jetzt erreichbar.</text>
-    <verbose_name lang="de"/>
-    <verbose_name_plural lang="de"/>
     <help lang="en"/>
     <text lang="en">This questionset with this question is reached.</text>
+    <default_text lang="en"/>
     <verbose_name lang="en"/>
     <verbose_name_plural lang="en"/>
+    <help lang="de"/>
+    <text lang="de">Dieses Fragenset mit dieser Frage ist jetzt erreichbar.</text>
+    <default_text lang="de"/>
+    <verbose_name lang="de"/>
+    <verbose_name_plural lang="de"/>
     <widget_type>text</widget_type>
     <value_type>text</value_type>
     <maximum/>
     <minimum/>
     <step/>
     <unit/>
+    <width/>
     <optionsets/>
+    <default_option/>
     <conditions/>
+    <default_external_id/>
   </question>
 </rdmo>

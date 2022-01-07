@@ -283,7 +283,7 @@
     <uri_prefix>https://geokur.geo.tu-dresden.de/terms</uri_prefix>
     <key>cp_enrich_metadata</key>
     <dc:comment>Enrich metadata</dc:comment>
-    <source dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/collectionPhase/collectData/collectionPhase/metadataEnriching/enrichMetadataYesNo"/>
+    <source dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/collectionPhase/metadataEnriching/enrichMetadataYesNo"/>
     <relation>eq</relation>
     <target_text>1</target_text>
     <target_option/>
@@ -292,7 +292,7 @@
     <uri_prefix>https://geokur.geo.tu-dresden.de/terms</uri_prefix>
     <key>cp_quality_control_decision</key>
     <dc:comment>Recommendation on quality control</dc:comment>
-    <source dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/collectionPhase/collectData/collectionPhase/qualityControl/qualityControlDecision"/>
+    <source dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/collectionPhase/qualityControl/qualityControlDecision"/>
     <relation>eq</relation>
     <target_text>1</target_text>
     <target_option/>
@@ -301,7 +301,7 @@
     <uri_prefix>https://geokur.geo.tu-dresden.de/terms</uri_prefix>
     <key>cp_data_maturity_evaluation</key>
     <dc:comment>Evaluation of data maturity against DM4processing</dc:comment>
-    <source dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/collectionPhase/collectData/collectionPhase/dataMaturityHandling/dataMaturityEvaluation"/>
+    <source dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/collectionPhase/dataMaturityHandling/dataMaturityEvaluation"/>
     <relation>eq</relation>
     <target_text>1</target_text>
     <target_option/>
@@ -310,7 +310,7 @@
     <uri_prefix>https://geokur.geo.tu-dresden.de/terms</uri_prefix>
     <key>cp_data_maturity_in_metadata</key>
     <dc:comment>Data maturity included in metadata</dc:comment>
-    <source dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/collectionPhase/collectData/collectionPhase/dataMaturityHandling/dataMaturityEvaluationInMetadata"/>
+    <source dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/collectionPhase/dataMaturityHandling/dataMaturityEvaluationInMetadata"/>
     <relation>eq</relation>
     <target_text>1</target_text>
     <target_option/>
@@ -319,7 +319,7 @@
     <uri_prefix>https://geokur.geo.tu-dresden.de/terms</uri_prefix>
     <key>cp_processing_not_allowed</key>
     <dc:comment>Data maturity or data quality indicators do not allow proceeding to processing phase</dc:comment>
-    <source dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/collectionPhase/collectData/collectionPhase/nextSteps/DMDQIndicators"/>
+    <source dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/collectionPhase/nextSteps/DMDQIndicators"/>
     <relation>eq</relation>
     <target_text/>
     <target_option>https://geokur.geo.tu-dresden.de/terms/options/criteria_after_collecting_phase/1</target_option>
@@ -328,7 +328,7 @@
     <uri_prefix>https://geokur.geo.tu-dresden.de/terms</uri_prefix>
     <key>cp_processing_allowed</key>
     <dc:comment>Proceeding to processing phase is allowed</dc:comment>
-    <source dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/collectionPhase/collectData/collectionPhase/nextSteps/DMDQIndicators"/>
+    <source dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/collectionPhase/nextSteps/DMDQIndicators"/>
     <relation>eq</relation>
     <target_text/>
     <target_option>https://geokur.geo.tu-dresden.de/terms/options/criteria_after_collecting_phase/2</target_option>
@@ -337,7 +337,7 @@
     <uri_prefix>https://geokur.geo.tu-dresden.de/terms</uri_prefix>
     <key>cp_publication_allowed</key>
     <dc:comment>Proceeding to publication phase is allowed</dc:comment>
-    <source dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/collectionPhase/collectData/collectionPhase/nextSteps/DMDQIndicators"/>
+    <source dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/collectionPhase/nextSteps/DMDQIndicators"/>
     <relation>eq</relation>
     <target_text/>
     <target_option>https://geokur.geo.tu-dresden.de/terms/options/criteria_after_collecting_phase/3</target_option>
@@ -346,7 +346,7 @@
     <uri_prefix>https://geokur.geo.tu-dresden.de/terms</uri_prefix>
     <key>pp_enrich_metadata</key>
     <dc:comment>Enrich metadata</dc:comment>
-    <source dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/processingPhase/processData/processingPhase/metadataEnriching/enrichMetadataYesNo"/>
+    <source dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/processingPhase/metadataEnriching/enrichMetadataYesNo"/>
     <relation>eq</relation>
     <target_text>1</target_text>
     <target_option/>
@@ -355,7 +355,7 @@
     <uri_prefix>https://geokur.geo.tu-dresden.de/terms</uri_prefix>
     <key>pp_quality_control_decision</key>
     <dc:comment>Recommendation on quality control</dc:comment>
-    <source dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/processingPhase/processData/processingPhase/qualityControl/qualityControlDecision"/>
+    <source dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/processingPhase/qualityControl/qualityControlDecision"/>
     <relation>eq</relation>
     <target_text>1</target_text>
     <target_option/>
@@ -364,7 +364,7 @@
     <uri_prefix>https://geokur.geo.tu-dresden.de/terms</uri_prefix>
     <key>pp_data_maturity_evaluation</key>
     <dc:comment>Evaluation of data maturity against DM4analysis</dc:comment>
-    <source dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/processingPhase/processData/processingPhase/dataMaturityHandling/dataMaturityEvaluation"/>
+    <source dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/processingPhase/dataMaturityHandling/dataMaturityEvaluation"/>
     <relation>eq</relation>
     <target_text>1</target_text>
     <target_option/>
@@ -373,7 +373,7 @@
     <uri_prefix>https://geokur.geo.tu-dresden.de/terms</uri_prefix>
     <key>pp_analysis_not_allowed</key>
     <dc:comment>Data maturity or data quality indicators do not allow proceeding to analysis phase</dc:comment>
-    <source dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/processingPhase/processData/processingPhase/nextSteps/DMDQIndicators"/>
+    <source dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/processingPhase/nextSteps/DMDQIndicators"/>
     <relation>eq</relation>
     <target_text/>
     <target_option>https://geokur.geo.tu-dresden.de/terms/options/criteria_after_processing_phase/1</target_option>
@@ -382,7 +382,7 @@
     <uri_prefix>https://geokur.geo.tu-dresden.de/terms</uri_prefix>
     <key>pp_analysis_allowed</key>
     <dc:comment>Proceeding to analysis phase is allowed</dc:comment>
-    <source dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/processingPhase/processData/processingPhase/nextSteps/DMDQIndicators"/>
+    <source dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/processingPhase/nextSteps/DMDQIndicators"/>
     <relation>eq</relation>
     <target_text/>
     <target_option>https://geokur.geo.tu-dresden.de/terms/options/criteria_after_processing_phase/2</target_option>
@@ -391,7 +391,7 @@
     <uri_prefix>https://geokur.geo.tu-dresden.de/terms</uri_prefix>
     <key>ap_quality_control_decision</key>
     <dc:comment>Recommendation on quality control</dc:comment>
-    <source dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/processingPhase/processData/analysisPhase/qualityControl/qualityControlDecision"/>
+    <source dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/analysisPhase/qualityControl/qualityControlDecision"/>
     <relation>eq</relation>
     <target_text>1</target_text>
     <target_option/>
@@ -400,7 +400,7 @@
     <uri_prefix>https://geokur.geo.tu-dresden.de/terms</uri_prefix>
     <key>ap_data_maturity_evaluation</key>
     <dc:comment>Evaluation of data maturity against DM4publication</dc:comment>
-    <source dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/processingPhase/processData/analysisPhase/dataMaturityHandling/dataMaturityEvaluation"/>
+    <source dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/analysisPhase/dataMaturityHandling/dataMaturityEvaluation"/>
     <relation>eq</relation>
     <target_text>1</target_text>
     <target_option/>
@@ -409,7 +409,7 @@
     <uri_prefix>https://geokur.geo.tu-dresden.de/terms</uri_prefix>
     <key>ap_publication_not_allowed</key>
     <dc:comment>Data maturity or data quality indicators do not allow proceeding to publication phase</dc:comment>
-    <source dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/processingPhase/processData/analysisPhase/nextSteps/DMDQIndicators"/>
+    <source dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/analysisPhase/nextSteps/DMDQIndicators"/>
     <relation>eq</relation>
     <target_text/>
     <target_option>https://geokur.geo.tu-dresden.de/terms/options/criteria_after_analysis_phase/1</target_option>
@@ -418,7 +418,7 @@
     <uri_prefix>https://geokur.geo.tu-dresden.de/terms</uri_prefix>
     <key>ap_publication_allowed</key>
     <dc:comment>Proceeding to publication phase is allowed</dc:comment>
-    <source dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/processingPhase/processData/analysisPhase/nextSteps/DMDQIndicators"/>
+    <source dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/analysisPhase/nextSteps/DMDQIndicators"/>
     <relation>eq</relation>
     <target_text/>
     <target_option>https://geokur.geo.tu-dresden.de/terms/options/criteria_after_analysis_phase/2</target_option>
@@ -445,7 +445,7 @@
     <uri_prefix>https://geokur.geo.tu-dresden.de/terms</uri_prefix>
     <key>pup_archiving_not_allowed</key>
     <dc:comment>Data maturity or data quality indicators do not allow proceeding to archiving phase</dc:comment>
-    <source dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/publicationPhase/publishData/publicationPhase/nextSteps/DMDQIndicators"/>
+    <source dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/publicationPhase/nextSteps/DMDQIndicators"/>
     <relation>eq</relation>
     <target_text/>
     <target_option>https://geokur.geo.tu-dresden.de/terms/options/criteria_after_publication_phase/1</target_option>
@@ -454,7 +454,7 @@
     <uri_prefix>https://geokur.geo.tu-dresden.de/terms</uri_prefix>
     <key>pup_archiving_allowed</key>
     <dc:comment>Proceeding to archiving phase is allowed</dc:comment>
-    <source dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/publicationPhase/publishData/publicationPhase/nextSteps/DMDQIndicators"/>
+    <source dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/publicationPhase/nextSteps/DMDQIndicators"/>
     <relation>eq</relation>
     <target_text/>
     <target_option>https://geokur.geo.tu-dresden.de/terms/options/criteria_after_publication_phase/2</target_option>
@@ -463,7 +463,7 @@
     <uri_prefix>https://geokur.geo.tu-dresden.de/terms</uri_prefix>
     <key>arp_open4archiving_assured</key>
     <dc:comment>Open4archiving has to be assured in order to archive the dataset.</dc:comment>
-    <source dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/publicationPhase/publishData/archivingPhase/archiveData/open4archiving"/>
+    <source dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/archivingPhase/archiveData/open4archiving"/>
     <relation>eq</relation>
     <target_text>1</target_text>
     <target_option/>
@@ -472,7 +472,7 @@
     <uri_prefix>https://geokur.geo.tu-dresden.de/terms</uri_prefix>
     <key>arp_data_not_archived</key>
     <dc:comment>The dataset is not archived yet</dc:comment>
-    <source dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/publicationPhase/publishData/archivingPhase/archiveData/archivingOfData"/>
+    <source dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/archivingPhase/archiveData/archivingOfData"/>
     <relation>eq</relation>
     <target_text>0</target_text>
     <target_option/>

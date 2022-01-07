@@ -387,22 +387,8 @@ def create_catalog(catalog_file):
                     # here an attribute with suffix /collection_name/id is added
                     collection_name = questionset["collection_name"]
                     if collection_name not in collection_name_uri:
-                        collection_name_first_mentioned = True
-                        tmp_key = "id"
-                        tmp_uri = questionset_attribute_uri + "/" + tmp_key
-                        tmp_path = questionset_attribute_path + "/" + tmp_key
-                        domain_root.append(Domain.Attribute(ns=ns,
-                                                            uri=tmp_uri,
-                                                            uri_prefix=uri_prefix,
-                                                            key=tmp_key,
-                                                            path=tmp_path,
-                                                            parent=questionset_attribute_uri)
-                                           .make_element())
-
                         collection_name_path[collection_name] = questionset_attribute_path
                         collection_name_uri[collection_name] = questionset_attribute_uri
-                    else:
-                        collection_name_first_mentioned = False
 
                     questionset_attribute = collection_name_uri[collection_name]
                 else:
@@ -522,43 +508,10 @@ def create_catalog(catalog_file):
                 else:
                     question_default_external_id = None
 
-                if questionset_is_collection and not collection_name_first_mentioned:
-                    # the question attribute must be under the collection attribute
-                    # -> inclusion of section, questionset, question
-                    # add section
-                    attribute_tmp_key = section_key
-                    attribute_tmp_uri = collection_name_uri[collection_name] + "/" + attribute_tmp_key
-                    attribute_tmp_path = collection_name_path[collection_name] + "/" + attribute_tmp_key
-                    attribute_tmp_parent = collection_name_uri[collection_name]
-                    domain_root.append(Domain.Attribute(ns=ns,
-                                                        uri=attribute_tmp_uri,
-                                                        uri_prefix=uri_prefix,
-                                                        key=attribute_tmp_key,
-                                                        path=attribute_tmp_path,
-                                                        parent=attribute_tmp_parent)
-                                       .make_element())
-                    # add questionset
-                    attribute_tmp_key = questionset_key
-                    attribute_tmp_uri = attribute_tmp_uri + "/" + attribute_tmp_key
-                    attribute_tmp_path = attribute_tmp_path + "/" + attribute_tmp_key
-                    attribute_tmp_parent = attribute_tmp_parent + "/" + section_key
-                    domain_root.append(Domain.Attribute(ns=ns,
-                                                        uri=attribute_tmp_uri,
-                                                        uri_prefix=uri_prefix,
-                                                        key=attribute_tmp_key,
-                                                        path=attribute_tmp_path,
-                                                        parent=attribute_tmp_parent)
-                                       .make_element())
-                    # add question
-                    question_attribute_key = question_key
-                    question_attribute_uri = attribute_tmp_uri + "/" + question_attribute_key
-                    question_attribute_path = attribute_tmp_path + "/" + question_attribute_key
-                    question_attribute_parent = attribute_tmp_parent + "/" + questionset_key
-                else:
-                    question_attribute_key = question_key
-                    question_attribute_uri = questionset_attribute_uri + "/" + question_attribute_key
-                    question_attribute_path = questionset_attribute_path + "/" + question_attribute_key
-                    question_attribute_parent = questionset_attribute_uri
+                question_attribute_key = question_key
+                question_attribute_uri = questionset_attribute_uri + "/" + question_attribute_key
+                question_attribute_path = questionset_attribute_path + "/" + question_attribute_key
+                question_attribute_parent = questionset_attribute_uri
 
                 domain_root.append(Domain.Attribute(ns=ns,
                                                     uri=question_attribute_uri,
