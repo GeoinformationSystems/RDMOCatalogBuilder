@@ -32,7 +32,7 @@
                   "en": "Define license for Open4usage."
                 },
                 "help": {
-                  "en": "Define license demands of collected input datasets for further usage.<br>*Open4usage defines the openness criteria for usage of data."
+                  "en": "Define license demands of collected input datasets for further usage.<br>Open4usage defines the openness criteria for usage of data."
                 },
                 "widget_type": "textarea",
                 "value_type": "text",
@@ -50,7 +50,7 @@
                   "en": "Define necessary Berners-Lee five stars for Open4usage."
                 },
                 "help": {
-                  "en": "Define Tim Berners-Lee five stars deployment scheme for open data (see <a href=\"https://5stardata.info/en/\">https://5stardata.info/en/</a>).<br>*Open4usage defines the openness criteria for usage of data."
+                  "en": "Define Tim Berners-Lee five stars deployment scheme for open data (see <a href=\"https://5stardata.info/en/\">https://5stardata.info/en/</a>).<br>Open4usage defines the openness criteria for usage of data."
                 },
                 "widget_type": "radio",
                 "value_type": "option",
@@ -118,6 +118,7 @@
                 "help": {
                   "en": "Define the data quality level/thresholds for usage of collected input datasets."
                 },
+                "is_collection": "true",
                 "widget_type": "textarea",
                 "value_type": "text",
                 "condition": "pr_open4usage_definition_filled",
@@ -153,6 +154,7 @@
                 "help": {
                   "en": "Define the data maturity level/thresholds for processing the datasets"
                 },
+                "is_collection": "true",
                 "widget_type": "textarea",
                 "value_type": "text",
                 "condition_definition": [
@@ -176,6 +178,7 @@
                 "help": {
                   "en": "Define the data quality level/thresholds for processing datasets."
                 },
+                "is_collection": "true",
                 "widget_type": "textarea",
                 "value_type": "text",
                 "condition_definition": [
@@ -199,6 +202,7 @@
                 "help": {
                   "en": "Define the data maturity level/thresholds for analysing the datasets"
                 },
+                "is_collection": "true",
                 "widget_type": "textarea",
                 "value_type": "text",
                 "condition_definition": [
@@ -222,6 +226,7 @@
                 "help": {
                   "en": "Define the data quality level/thresholds for analysing datasets."
                 },
+                "is_collection": "true",
                 "widget_type": "textarea",
                 "value_type": "text",
                 "condition_definition": [
@@ -256,6 +261,7 @@
                 "help": {
                   "en": "Define the data maturity level/thresholds for publishing the datasets"
                 },
+                "is_collection": "true",
                 "widget_type": "textarea",
                 "value_type": "text",
                 "condition_definition": [
@@ -279,6 +285,7 @@
                 "help": {
                   "en": "Define the data quality level/thresholds for publishing datasets."
                 },
+                "is_collection": "true",
                 "widget_type": "textarea",
                 "value_type": "text",
                 "condition_definition": [
@@ -300,7 +307,7 @@
                   "en": "Define license for Open4publication."
                 },
                 "help": {
-                  "en": "Define license demands of dataset publication.<br>*Open4publication defines the openness criteria for publishing of data."
+                  "en": "Define license demands of dataset publication.<br>Open4publication defines the openness criteria for publishing of data."
                 },
                 "widget_type": "textarea",
                 "value_type": "text",
@@ -318,7 +325,7 @@
                   "en": "Define necessary Berners-Lee five stars for Open4publication."
                 },
                 "help": {
-                  "en": "Define Tim Berners-Lee five stars deployment scheme for open data (see <a href=\"https://5stardata.info/en/\">https://5stardata.info/en/</a>).<br>*Open4publication defines the openness criteria for publishing of data."
+                  "en": "Define Tim Berners-Lee five stars deployment scheme for open data (see <a href=\"https://5stardata.info/en/\">https://5stardata.info/en/</a>).<br>Open4publication defines the openness criteria for publishing of data."
                 },
                 "widget_type": "radio",
                 "value_type": "option",
@@ -347,6 +354,7 @@
                 "help": {
                   "en": "Define the data maturity level/thresholds for archiving the datasets"
                 },
+                "is_collection": "true",
                 "widget_type": "textarea",
                 "value_type": "text",
                 "condition_definition": [
@@ -370,6 +378,7 @@
                 "help": {
                   "en": "Define the data quality level/thresholds for archiving datasets."
                 },
+                "is_collection": "true",
                 "widget_type": "textarea",
                 "value_type": "text",
                 "condition_definition": [
@@ -391,7 +400,7 @@
                   "en": "Define license for Open4archiving."
                 },
                 "help": {
-                  "en": "Define license demands of dataset archiving.<br>*Open4archiving defines the openness criteria for archiving of data."
+                  "en": "Define license demands of dataset archiving.<br>Open4archiving defines the openness criteria for archiving of data."
                 },
                 "widget_type": "textarea",
                 "value_type": "text",
@@ -409,7 +418,7 @@
                   "en": "Define necessary Berners-Lee five stars for Open4archiving."
                 },
                 "help": {
-                  "en": "Define Tim Berners-Lee five stars deployment scheme for open data (see <a href=\"https://5stardata.info/en/\">https://5stardata.info/en/</a>).<br>*Open4archiving defines the openness criteria for archiving of data."
+                  "en": "Define Tim Berners-Lee five stars deployment scheme for open data (see <a href=\"https://5stardata.info/en/\">https://5stardata.info/en/</a>).<br>Open4archiving defines the openness criteria for archiving of data."
                 },
                 "widget_type": "radio",
                 "value_type": "option",
@@ -464,8 +473,9 @@
                   "en": "How and where do you collect data?"
                 },
                 "help": {
-                  "en": "Describe the sources of collected data. Possible sources are repositories, governmental authorities, project partners, or own measurements/observations."
+                  "en": "Describe the sources of collected data. Possible sources are repositories, public authorities, project partners, or own measurements/observations."
                 },
+                "is_collection": "true",
                 "widget_type": "textarea",
                 "value_type": "text",
                 "condition_definition": [
@@ -625,6 +635,7 @@
                 "help": {
                   "en": "Describe the additional metadata fields and/or data quality measures that have to be included in order to fulfil project needs. The DQ4processing is an appropriate guideline here."
                 },
+                "is_collection": "true",
                 "widget_type": "textarea",
                 "value_type": "text",
                 "condition": "cp_enrich_metadata"
@@ -676,6 +687,7 @@
                 "help": {
                   "en": "A quality control can consist of different methods depending on data type, potential usage, target community. DQ4processing is an appropriate guideline here."
                 },
+                "is_collection": "true",
                 "widget_type": "textarea",
                 "value_type": "text",
                 "condition": "cp_quality_control_decision"
@@ -688,6 +700,7 @@
                 "help": {
                   "en": "Fitness for purpose (utility) and fitness for use (warranty) depict important goals of a dataset to be potentially reused."
                 },
+                "is_collection": "true",
                 "widget_type": "textarea",
                 "value_type": "text",
                 "condition": "cp_quality_control_decision"
@@ -697,6 +710,7 @@
                 "text": {
                   "en": "Describe the results of the evaluation of fitness for purpose/use."
                 },
+                "is_collection": "true",
                 "widget_type": "textarea",
                 "value_type": "text",
                 "condition": "cp_quality_control_decision"
@@ -882,6 +896,7 @@
                 "help": {
                   "en": "Describe the model workflow you create/develop. The single steps depending on the supposed granularity should be mentioned here. Also include the used input datasets according to the collection phase here."
                 },
+                "is_collection": "true",
                 "widget_type": "textarea",
                 "value_type": "text"
               },
@@ -954,6 +969,7 @@
                 "help": {
                   "en": "Describe the additional metadata fields and/or data quality measures that have to be included in order to fulfil project needs. The DQ4analysis is an appropriate guideline here."
                 },
+                "is_collection": "true",
                 "widget_type": "textarea",
                 "value_type": "text",
                 "condition": "pp_enrich_metadata"
@@ -1005,6 +1021,7 @@
                 "help": {
                   "en": "A quality control can consist of different methods depending on data type, potential usage, target community. DQ4analysis is an appropriate guideline here."
                 },
+                "is_collection": "true",
                 "widget_type": "textarea",
                 "value_type": "text",
                 "condition": "pp_quality_control_decision"
@@ -1017,6 +1034,7 @@
                 "help": {
                   "en": "Fitness for analysis examines the potential usage of this dataset in further steps in the data life cycle."
                 },
+                "is_collection": "true",
                 "widget_type": "textarea",
                 "value_type": "text",
                 "condition": "pp_quality_control_decision"
@@ -1026,6 +1044,7 @@
                 "text": {
                   "en": "Describe the results of the evaluation of fitness for purpose/use."
                 },
+                "is_collection": "true",
                 "widget_type": "textarea",
                 "value_type": "text",
                 "condition": "pp_quality_control_decision"
@@ -1178,6 +1197,7 @@
                 "help": {
                   "en": "Describe the planned analysis of the dataset. The analysis shall examine the data in depth. This is a reasonable basis for further usage of the data."
                 },
+                "is_collection": "true",
                 "widget_type": "textarea",
                 "value_type": "text"
               }
@@ -1209,6 +1229,7 @@
                 "help": {
                   "en": "The evaluation of the fitness for purpose/use is an important step in the analysis phase. "
                 },
+                "is_collection": "true",
                 "widget_type": "textarea",
                 "value_type": "text"
               },
@@ -1270,6 +1291,7 @@
                 "help": {
                   "en": "A quality control can consist of different methods depending on data type, potential usage, target community. DQ4publication is an appropriate guideline here."
                 },
+                "is_collection": "true",
                 "widget_type": "textarea",
                 "value_type": "text",
                 "condition": "ap_quality_control_decision"
@@ -1282,6 +1304,7 @@
                 "help": {
                   "en": "Fitness for publication examines the potential usage of this dataset in further steps in the data life cycle."
                 },
+                "is_collection": "true",
                 "widget_type": "textarea",
                 "value_type": "text",
                 "condition": "ap_quality_control_decision"
@@ -1291,6 +1314,7 @@
                 "text": {
                   "en": "Describe the results of the evaluation of fitness for purpose/use."
                 },
+                "is_collection": "true",
                 "widget_type": "textarea",
                 "value_type": "text",
                 "condition": "ap_quality_control_decision"
@@ -1474,6 +1498,7 @@
                 "help": {
                   "en": "The way of publication defines necessary metadata fields and file formats."
                 },
+                "is_collection": "true",
                 "widget_type": "textarea",
                 "value_type": "text",
                 "condition": "pup_open4publication_assured"
@@ -1486,6 +1511,7 @@
                 "help": {
                   "en": "Publication of datasets in repositories often leads to repository-specific metadata elements."
                 },
+                "is_collection": "true",
                 "widget_type": "textarea",
                 "value_type": "text",
                 "condition": "pup_open4publication_assured"
@@ -1635,6 +1661,7 @@
                 "help": {
                   "en": "The way of archiving defines necessary metadata fields and file formats."
                 },
+                "is_collection": "true",
                 "widget_type": "textarea",
                 "value_type": "text",
                 "condition": "arp_open4archiving_assured"
@@ -1647,6 +1674,7 @@
                 "help": {
                   "en": "Archiving of datasets in repositories often leads to repository-specific metadata elements."
                 },
+                "is_collection": "true",
                 "widget_type": "textarea",
                 "value_type": "text",
                 "condition": "arp_open4archiving_assured"

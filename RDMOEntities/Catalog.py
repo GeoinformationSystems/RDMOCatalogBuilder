@@ -140,7 +140,7 @@ class Questionset(RDMOEntities):
         self.comment = comment
         self.attribute = attribute
         self.section = section
-        self.is_collection = str(is_collection)
+        self.is_collection = make_first_upper(str(is_collection))
         self.order = order
         self.title_dict = title_dict
         self.help_dict = help_dict
@@ -258,10 +258,10 @@ class Question(RDMOEntities):
         self.comment = comment
         self.attribute = attribute
         self.questionset = questionset
-        self.is_collection = str(is_collection)
-        self.is_optional = str(is_optional)
+        self.is_collection = make_first_upper(str(is_collection))
+        self.is_optional = make_first_upper(str(is_optional))
         if order:
-            self.order = str(order)
+            self.order = make_first_upper(str(order))
         else:
             self.order = order
         self.help_dict = help_dict
@@ -377,3 +377,14 @@ class Question(RDMOEntities):
         etree.SubElement(question, "default_external_id").text = self.default_external_id
 
         return question
+
+
+def make_first_upper(in_string):
+    """
+    Change first character in string into upper case
+
+    :param in_string: original string
+    :return: changed string
+    """
+
+    return in_string[0].upper() + in_string[1:]

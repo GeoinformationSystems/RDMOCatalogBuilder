@@ -41,7 +41,7 @@
     <is_collection>False</is_collection>
     <is_optional>False</is_optional>
     <order>0</order>
-    <help lang="en">Define license demands of collected input datasets for further usage.&lt;br&gt;*Open4usage defines the openness criteria for usage of data.</help>
+    <help lang="en">Define license demands of collected input datasets for further usage.&lt;br&gt;Open4usage defines the openness criteria for usage of data.</help>
     <text lang="en">Define license for Open4usage.</text>
     <default_text lang="en"/>
     <verbose_name lang="en"/>
@@ -68,7 +68,7 @@
     <is_collection>False</is_collection>
     <is_optional>False</is_optional>
     <order>1</order>
-    <help lang="en">Define Tim Berners-Lee five stars deployment scheme for open data (see &lt;a href="https://5stardata.info/en/"&gt;https://5stardata.info/en/&lt;/a&gt;).&lt;br&gt;*Open4usage defines the openness criteria for usage of data.</help>
+    <help lang="en">Define Tim Berners-Lee five stars deployment scheme for open data (see &lt;a href="https://5stardata.info/en/"&gt;https://5stardata.info/en/&lt;/a&gt;).&lt;br&gt;Open4usage defines the openness criteria for usage of data.</help>
     <text lang="en">Define necessary Berners-Lee five stars for Open4usage.</text>
     <default_text lang="en"/>
     <verbose_name lang="en"/>
@@ -96,7 +96,7 @@
     <dc:comment/>
     <attribute dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/prerequisites/data_provider_definitions/dq4usage"/>
     <questionset dc:uri="https://geokur.geo.tu-dresden.de/terms/questions/qa/prerequisites/data_provider_definitions"/>
-    <is_collection>False</is_collection>
+    <is_collection>True</is_collection>
     <is_optional>False</is_optional>
     <order>2</order>
     <help lang="en">Define the data quality level/thresholds for usage of collected input datasets.</help>
@@ -140,7 +140,7 @@
     <dc:comment/>
     <attribute dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/prerequisites/data_curator_definitions/dm4processing"/>
     <questionset dc:uri="https://geokur.geo.tu-dresden.de/terms/questions/qa/prerequisites/data_curator_definitions"/>
-    <is_collection>False</is_collection>
+    <is_collection>True</is_collection>
     <is_optional>False</is_optional>
     <order>0</order>
     <help lang="en">Define the data maturity level/thresholds for processing the datasets</help>
@@ -167,7 +167,7 @@
     <dc:comment/>
     <attribute dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/prerequisites/data_curator_definitions/dq4processing"/>
     <questionset dc:uri="https://geokur.geo.tu-dresden.de/terms/questions/qa/prerequisites/data_curator_definitions"/>
-    <is_collection>False</is_collection>
+    <is_collection>True</is_collection>
     <is_optional>False</is_optional>
     <order>1</order>
     <help lang="en">Define the data quality level/thresholds for processing datasets.</help>
@@ -194,7 +194,7 @@
     <dc:comment/>
     <attribute dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/prerequisites/data_curator_definitions/dm4analysis"/>
     <questionset dc:uri="https://geokur.geo.tu-dresden.de/terms/questions/qa/prerequisites/data_curator_definitions"/>
-    <is_collection>False</is_collection>
+    <is_collection>True</is_collection>
     <is_optional>False</is_optional>
     <order>2</order>
     <help lang="en">Define the data maturity level/thresholds for analysing the datasets</help>
@@ -221,7 +221,7 @@
     <dc:comment/>
     <attribute dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/prerequisites/data_curator_definitions/dq4analysis"/>
     <questionset dc:uri="https://geokur.geo.tu-dresden.de/terms/questions/qa/prerequisites/data_curator_definitions"/>
-    <is_collection>False</is_collection>
+    <is_collection>True</is_collection>
     <is_optional>False</is_optional>
     <order>3</order>
     <help lang="en">Define the data quality level/thresholds for analysing datasets.</help>
@@ -263,7 +263,7 @@
     <dc:comment/>
     <attribute dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/prerequisites/data_publisher_definitions/dm4publication"/>
     <questionset dc:uri="https://geokur.geo.tu-dresden.de/terms/questions/qa/prerequisites/data_publisher_definitions"/>
-    <is_collection>False</is_collection>
+    <is_collection>True</is_collection>
     <is_optional>False</is_optional>
     <order>0</order>
     <help lang="en">Define the data maturity level/thresholds for publishing the datasets</help>
@@ -290,7 +290,7 @@
     <dc:comment/>
     <attribute dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/prerequisites/data_publisher_definitions/dq4publication"/>
     <questionset dc:uri="https://geokur.geo.tu-dresden.de/terms/questions/qa/prerequisites/data_publisher_definitions"/>
-    <is_collection>False</is_collection>
+    <is_collection>True</is_collection>
     <is_optional>False</is_optional>
     <order>1</order>
     <help lang="en">Define the data quality level/thresholds for publishing datasets.</help>
@@ -320,7 +320,7 @@
     <is_collection>False</is_collection>
     <is_optional>False</is_optional>
     <order>2</order>
-    <help lang="en">Define license demands of dataset publication.&lt;br&gt;*Open4publication defines the openness criteria for publishing of data.</help>
+    <help lang="en">Define license demands of dataset publication.&lt;br&gt;Open4publication defines the openness criteria for publishing of data.</help>
     <text lang="en">Define license for Open4publication.</text>
     <default_text lang="en"/>
     <verbose_name lang="en"/>
@@ -347,7 +347,7 @@
     <is_collection>False</is_collection>
     <is_optional>False</is_optional>
     <order>3</order>
-    <help lang="en">Define Tim Berners-Lee five stars deployment scheme for open data (see &lt;a href="https://5stardata.info/en/"&gt;https://5stardata.info/en/&lt;/a&gt;).&lt;br&gt;*Open4publication defines the openness criteria for publishing of data.</help>
+    <help lang="en">Define Tim Berners-Lee five stars deployment scheme for open data (see &lt;a href="https://5stardata.info/en/"&gt;https://5stardata.info/en/&lt;/a&gt;).&lt;br&gt;Open4publication defines the openness criteria for publishing of data.</help>
     <text lang="en">Define necessary Berners-Lee five stars for Open4publication.</text>
     <default_text lang="en"/>
     <verbose_name lang="en"/>
@@ -375,7 +375,7 @@
     <dc:comment/>
     <attribute dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/prerequisites/data_publisher_definitions/dm4archiving"/>
     <questionset dc:uri="https://geokur.geo.tu-dresden.de/terms/questions/qa/prerequisites/data_publisher_definitions"/>
-    <is_collection>False</is_collection>
+    <is_collection>True</is_collection>
     <is_optional>False</is_optional>
     <order>4</order>
     <help lang="en">Define the data maturity level/thresholds for archiving the datasets</help>
@@ -402,7 +402,7 @@
     <dc:comment/>
     <attribute dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/prerequisites/data_publisher_definitions/dq4archiving"/>
     <questionset dc:uri="https://geokur.geo.tu-dresden.de/terms/questions/qa/prerequisites/data_publisher_definitions"/>
-    <is_collection>False</is_collection>
+    <is_collection>True</is_collection>
     <is_optional>False</is_optional>
     <order>5</order>
     <help lang="en">Define the data quality level/thresholds for archiving datasets.</help>
@@ -432,7 +432,7 @@
     <is_collection>False</is_collection>
     <is_optional>False</is_optional>
     <order>6</order>
-    <help lang="en">Define license demands of dataset archiving.&lt;br&gt;*Open4archiving defines the openness criteria for archiving of data.</help>
+    <help lang="en">Define license demands of dataset archiving.&lt;br&gt;Open4archiving defines the openness criteria for archiving of data.</help>
     <text lang="en">Define license for Open4archiving.</text>
     <default_text lang="en"/>
     <verbose_name lang="en"/>
@@ -459,7 +459,7 @@
     <is_collection>False</is_collection>
     <is_optional>False</is_optional>
     <order>7</order>
-    <help lang="en">Define Tim Berners-Lee five stars deployment scheme for open data (see &lt;a href="https://5stardata.info/en/"&gt;https://5stardata.info/en/&lt;/a&gt;).&lt;br&gt;*Open4archiving defines the openness criteria for archiving of data.</help>
+    <help lang="en">Define Tim Berners-Lee five stars deployment scheme for open data (see &lt;a href="https://5stardata.info/en/"&gt;https://5stardata.info/en/&lt;/a&gt;).&lt;br&gt;Open4archiving defines the openness criteria for archiving of data.</help>
     <text lang="en">Define necessary Berners-Lee five stars for Open4archiving.</text>
     <default_text lang="en"/>
     <verbose_name lang="en"/>
@@ -513,10 +513,10 @@
     <dc:comment/>
     <attribute dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/collectionPhase/collectData/collectionOfData"/>
     <questionset dc:uri="https://geokur.geo.tu-dresden.de/terms/questions/qa/collectionPhase/collectData"/>
-    <is_collection>False</is_collection>
+    <is_collection>True</is_collection>
     <is_optional>False</is_optional>
     <order>0</order>
-    <help lang="en">Describe the sources of collected data. Possible sources are repositories, governmental authorities, project partners, or own measurements/observations.</help>
+    <help lang="en">Describe the sources of collected data. Possible sources are repositories, public authorities, project partners, or own measurements/observations.</help>
     <text lang="en">How and where do you collect data?</text>
     <default_text lang="en"/>
     <verbose_name lang="en"/>
@@ -740,7 +740,7 @@
     <dc:comment/>
     <attribute dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/collectionPhase/metadataEnriching/enrichMetadata"/>
     <questionset dc:uri="https://geokur.geo.tu-dresden.de/terms/questions/qa/collectionPhase/metadataEnriching"/>
-    <is_collection>False</is_collection>
+    <is_collection>True</is_collection>
     <is_optional>False</is_optional>
     <order>1</order>
     <help lang="en">Describe the additional metadata fields and/or data quality measures that have to be included in order to fulfil project needs. The DQ4processing is an appropriate guideline here.</help>
@@ -813,7 +813,7 @@
     <dc:comment/>
     <attribute dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/collectionPhase/qualityControl/qualityControlMethod"/>
     <questionset dc:uri="https://geokur.geo.tu-dresden.de/terms/questions/qa/collectionPhase/qualityControl"/>
-    <is_collection>False</is_collection>
+    <is_collection>True</is_collection>
     <is_optional>False</is_optional>
     <order>1</order>
     <help lang="en">A quality control can consist of different methods depending on data type, potential usage, target community. DQ4processing is an appropriate guideline here.</help>
@@ -842,7 +842,7 @@
     <dc:comment/>
     <attribute dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/collectionPhase/qualityControl/evaluateFitnessForPurposeMethod"/>
     <questionset dc:uri="https://geokur.geo.tu-dresden.de/terms/questions/qa/collectionPhase/qualityControl"/>
-    <is_collection>False</is_collection>
+    <is_collection>True</is_collection>
     <is_optional>False</is_optional>
     <order>2</order>
     <help lang="en">Fitness for purpose (utility) and fitness for use (warranty) depict important goals of a dataset to be potentially reused.</help>
@@ -871,7 +871,7 @@
     <dc:comment/>
     <attribute dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/collectionPhase/qualityControl/evaluateFitnessForPurposeResult"/>
     <questionset dc:uri="https://geokur.geo.tu-dresden.de/terms/questions/qa/collectionPhase/qualityControl"/>
-    <is_collection>False</is_collection>
+    <is_collection>True</is_collection>
     <is_optional>False</is_optional>
     <order>3</order>
     <help lang="en"/>
@@ -1074,7 +1074,7 @@
     <dc:comment/>
     <attribute dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/processingPhase/processData/processingOfData"/>
     <questionset dc:uri="https://geokur.geo.tu-dresden.de/terms/questions/qa/processingPhase/processData"/>
-    <is_collection>False</is_collection>
+    <is_collection>True</is_collection>
     <is_optional>False</is_optional>
     <order>0</order>
     <help lang="en">Describe the model workflow you create/develop. The single steps depending on the supposed granularity should be mentioned here. Also include the used input datasets according to the collection phase here.</help>
@@ -1199,7 +1199,7 @@
     <dc:comment/>
     <attribute dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/processingPhase/metadataEnriching/enrichMetadata"/>
     <questionset dc:uri="https://geokur.geo.tu-dresden.de/terms/questions/qa/processingPhase/metadataEnriching"/>
-    <is_collection>False</is_collection>
+    <is_collection>True</is_collection>
     <is_optional>False</is_optional>
     <order>1</order>
     <help lang="en">Describe the additional metadata fields and/or data quality measures that have to be included in order to fulfil project needs. The DQ4analysis is an appropriate guideline here.</help>
@@ -1272,7 +1272,7 @@
     <dc:comment/>
     <attribute dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/processingPhase/qualityControl/qualityControlMethod"/>
     <questionset dc:uri="https://geokur.geo.tu-dresden.de/terms/questions/qa/processingPhase/qualityControl"/>
-    <is_collection>False</is_collection>
+    <is_collection>True</is_collection>
     <is_optional>False</is_optional>
     <order>1</order>
     <help lang="en">A quality control can consist of different methods depending on data type, potential usage, target community. DQ4analysis is an appropriate guideline here.</help>
@@ -1301,7 +1301,7 @@
     <dc:comment/>
     <attribute dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/processingPhase/qualityControl/evaluateFitnessForAnalysis"/>
     <questionset dc:uri="https://geokur.geo.tu-dresden.de/terms/questions/qa/processingPhase/qualityControl"/>
-    <is_collection>False</is_collection>
+    <is_collection>True</is_collection>
     <is_optional>False</is_optional>
     <order>2</order>
     <help lang="en">Fitness for analysis examines the potential usage of this dataset in further steps in the data life cycle.</help>
@@ -1330,7 +1330,7 @@
     <dc:comment/>
     <attribute dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/processingPhase/qualityControl/evaluateFitnessForPurposeResult"/>
     <questionset dc:uri="https://geokur.geo.tu-dresden.de/terms/questions/qa/processingPhase/qualityControl"/>
-    <is_collection>False</is_collection>
+    <is_collection>True</is_collection>
     <is_optional>False</is_optional>
     <order>3</order>
     <help lang="en"/>
@@ -1504,7 +1504,7 @@
     <dc:comment/>
     <attribute dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/analysisPhase/analyseData/analysisOfData"/>
     <questionset dc:uri="https://geokur.geo.tu-dresden.de/terms/questions/qa/analysisPhase/analyseData"/>
-    <is_collection>False</is_collection>
+    <is_collection>True</is_collection>
     <is_optional>False</is_optional>
     <order>0</order>
     <help lang="en">Describe the planned analysis of the dataset. The analysis shall examine the data in depth. This is a reasonable basis for further usage of the data.</help>
@@ -1548,7 +1548,7 @@
     <dc:comment/>
     <attribute dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/analysisPhase/evaluateFitnessForPurpose/evaluateFitnessForPurpose"/>
     <questionset dc:uri="https://geokur.geo.tu-dresden.de/terms/questions/qa/analysisPhase/evaluateFitnessForPurpose"/>
-    <is_collection>False</is_collection>
+    <is_collection>True</is_collection>
     <is_optional>False</is_optional>
     <order>0</order>
     <help lang="en">The evaluation of the fitness for purpose/use is an important step in the analysis phase. </help>
@@ -1646,7 +1646,7 @@
     <dc:comment/>
     <attribute dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/analysisPhase/qualityControl/qualityControlMethod"/>
     <questionset dc:uri="https://geokur.geo.tu-dresden.de/terms/questions/qa/analysisPhase/qualityControl"/>
-    <is_collection>False</is_collection>
+    <is_collection>True</is_collection>
     <is_optional>False</is_optional>
     <order>1</order>
     <help lang="en">A quality control can consist of different methods depending on data type, potential usage, target community. DQ4publication is an appropriate guideline here.</help>
@@ -1675,7 +1675,7 @@
     <dc:comment/>
     <attribute dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/analysisPhase/qualityControl/evaluateFitnessForPublication"/>
     <questionset dc:uri="https://geokur.geo.tu-dresden.de/terms/questions/qa/analysisPhase/qualityControl"/>
-    <is_collection>False</is_collection>
+    <is_collection>True</is_collection>
     <is_optional>False</is_optional>
     <order>2</order>
     <help lang="en">Fitness for publication examines the potential usage of this dataset in further steps in the data life cycle.</help>
@@ -1704,7 +1704,7 @@
     <dc:comment/>
     <attribute dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/analysisPhase/qualityControl/evaluateFitnessForPurposeResult"/>
     <questionset dc:uri="https://geokur.geo.tu-dresden.de/terms/questions/qa/analysisPhase/qualityControl"/>
-    <is_collection>False</is_collection>
+    <is_collection>True</is_collection>
     <is_optional>False</is_optional>
     <order>3</order>
     <help lang="en"/>
@@ -1935,7 +1935,7 @@
     <dc:comment/>
     <attribute dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/publicationPhase/publishData/publicationOfDataDescription"/>
     <questionset dc:uri="https://geokur.geo.tu-dresden.de/terms/questions/qa/publicationPhase/publishData"/>
-    <is_collection>False</is_collection>
+    <is_collection>True</is_collection>
     <is_optional>False</is_optional>
     <order>1</order>
     <help lang="en">The way of publication defines necessary metadata fields and file formats.</help>
@@ -1964,7 +1964,7 @@
     <dc:comment/>
     <attribute dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/publicationPhase/publishData/metadataAdaptionYesno"/>
     <questionset dc:uri="https://geokur.geo.tu-dresden.de/terms/questions/qa/publicationPhase/publishData"/>
-    <is_collection>False</is_collection>
+    <is_collection>True</is_collection>
     <is_optional>False</is_optional>
     <order>2</order>
     <help lang="en">Publication of datasets in repositories often leads to repository-specific metadata elements.</help>
@@ -2151,7 +2151,7 @@
     <dc:comment/>
     <attribute dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/archivingPhase/archiveData/archivingOfDataDescription"/>
     <questionset dc:uri="https://geokur.geo.tu-dresden.de/terms/questions/qa/archivingPhase/archiveData"/>
-    <is_collection>False</is_collection>
+    <is_collection>True</is_collection>
     <is_optional>False</is_optional>
     <order>1</order>
     <help lang="en">The way of archiving defines necessary metadata fields and file formats.</help>
@@ -2180,7 +2180,7 @@
     <dc:comment/>
     <attribute dc:uri="https://geokur.geo.tu-dresden.de/terms/domain/qa/archivingPhase/archiveData/metadataAdaptionYesno"/>
     <questionset dc:uri="https://geokur.geo.tu-dresden.de/terms/questions/qa/archivingPhase/archiveData"/>
-    <is_collection>False</is_collection>
+    <is_collection>True</is_collection>
     <is_optional>False</is_optional>
     <order>2</order>
     <help lang="en">Archiving of datasets in repositories often leads to repository-specific metadata elements.</help>
