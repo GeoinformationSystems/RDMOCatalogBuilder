@@ -455,7 +455,7 @@
               "en": "Data Provider: Collect Data"
             },
             "help": {
-              "en": "The collection of data is the first step in the data life cycle. Please specify one or multiple datasets to be collected. A dataset is not necessarily one file only. It is possible and advised to aggregate similar types of input data if they share general properties (e.g. source, license)"
+              "en": "The collection of data is described in the first phase of the data life cycle. Please specify one or multiple datasets that will be (potentially) collected. A dataset can include several files with common characteristics, such as sources or license."
             },
             "is_collection": "True",
             "collection_name": "collection_phase_datasets",
@@ -473,7 +473,7 @@
                   "en": "How and where do you collect data?"
                 },
                 "help": {
-                  "en": "Describe the sources of collected data. Possible sources are repositories, public authorities, project partners, or own measurements/observations."
+                  "en": "Please describe the sources of the collected data by referencing the related repository or data provider."
                 },
                 "is_collection": "true",
                 "widget_type": "textarea",
@@ -489,10 +489,10 @@
               {
                 "key": "collectionOfDataOpenness",
                 "text": {
-                  "en": "Is the openness for data usage according to Open4usage criteria ensured?"
+                  "en": "Did you ensure the openness for data usage according to the Open4usage criteria?"
                 },
                 "help": {
-                  "en": "The collected dataset must be usable as defined in Open4usage. If the license does not allow usage, the dataset must be omitted."
+                  "en": "The collected dataset has to be usable as defined in Open4usage. If the license does not allow usage, you should use another dataset with a proper license."
                 },
                 "widget_type": "yesno",
                 "value_type": "boolean",
@@ -508,10 +508,10 @@
               {
                 "key": "collectionOfDataDataQuality",
                 "text": {
-                  "en": "Is the data quality for data usage ensured?"
+                  "en": "Did you ensure the data quality for data usage?"
                 },
                 "help": {
-                  "en": "The quality of the dataset must fulfil DQ4usage criteria. If the quality is not sufficient, the dataset must be omitted."
+                  "en": "The quality of the dataset has to fulfil DQ4usage criteria. If the quality does not meet the requirement, or is not described in such way that can be used to evaluate, the dataset must be omitted."
                 },
                 "widget_type": "yesno",
                 "value_type": "boolean",
@@ -532,7 +532,7 @@
                   "en": "Is metadata available?"
                 },
                 "help": {
-                  "en": "If metadata (data about data) is available, it can be used to a better understanding of the dataset. often it is crucial for further usage of the dataset."
+                  "en": "Metadata are core for the evaluation and interpretation of a dataset."
                 },
                 "widget_type": "yesno",
                 "value_type": "boolean",
