@@ -31,9 +31,14 @@ The following contents for RDMO are produced as xml files:
 - conditions
 - tasks
 
-## Known Limits/Bugs
+## Known Limitations/Bugs
 Per json file only one catalog is allowed. Currently, RDMOCatalogBuilder implements the catalog features of RDMO
-1.6.1. Missing is "Option: Provider".
+1.8 except the following:
+
+- Catalog: Groups (only available via GUI)
+- Catalog: Sites
+- Option: Provider (dynamic options only usable via plugin)
+- Task: Sites
 
 ## License
 The RDMOCatalogBuilder is licensed under Apache-2.0. You may obtain a copy of the License at

@@ -125,6 +125,7 @@ class Questionset(RDMOEntities):
                  comment=None,
                  attribute=None,
                  section=None,
+                 questionset=None,
                  is_collection=None,
                  order=None,
                  title_dict=None,
@@ -140,6 +141,7 @@ class Questionset(RDMOEntities):
         self.comment = comment
         self.attribute = attribute
         self.section = section
+        self.questionset = questionset
         self.is_collection = make_first_upper(str(is_collection))
         self.order = order
         self.title_dict = title_dict
@@ -170,6 +172,10 @@ class Questionset(RDMOEntities):
             etree.SubElement(questionset, "section", {self.ns + "uri": self.section})
         else:
             etree.SubElement(questionset, "section")
+        if self.questionset:
+            etree.SubElement(questionset, "questionset", {self.ns + "uri": self.questionset})
+        else:
+            etree.SubElement(questionset, "questionset")
         etree.SubElement(questionset, "is_collection").text = self.is_collection
         if self.order is not None:
             etree.SubElement(questionset, "order").text = str(self.order)

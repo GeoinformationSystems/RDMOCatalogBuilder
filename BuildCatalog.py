@@ -336,6 +336,10 @@ def create_catalog(catalog_file):
                 questionset_comment = questionset["comment"]
             else:
                 questionset_comment = None
+            if "questionset" in questionset:
+                questionset_connected = questionset["questionset"]
+            else:
+                questionset_connected = None
             if "is_collection" in questionset:
                 questionset_is_collection = questionset["is_collection"]
             else:
@@ -405,6 +409,7 @@ def create_catalog(catalog_file):
                                                     comment=questionset_comment,
                                                     attribute=questionset_attribute,
                                                     section=section_uri,
+                                                    questionset=questionset_connected,
                                                     is_collection=questionset_is_collection,
                                                     order=ct_questionset,
                                                     title_dict=questionset_title,
