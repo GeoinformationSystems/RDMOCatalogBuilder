@@ -70,7 +70,7 @@ languages. The RDMO instance must be set up for using the languages. A minimal e
     "title": {
       "en": "titleEnglish",
       "de": "titleGerman"
-    }
+    },
     "section": [
       {
         "key": "sectionName",
@@ -104,7 +104,7 @@ collection for both questionsets in the RDMO questionnaire.
       "collection_name": "collectionName",
       "question": [
         {
-          ...
+          "required_keys_here": "..."
         }
       ]
     }
@@ -203,10 +203,7 @@ A question with "condition" can also define (multiple) conditions to be used els
             }
           }
         ]
-      }
-
-
-
+      },
       "condition_definition": [
         {
           "key": "question1Is2",
@@ -231,7 +228,7 @@ below shows an example task.
 ```json
 {
   "catalog": {
-    ...
+    "required_keys_here": "..."
   },
   "task": [
     {
