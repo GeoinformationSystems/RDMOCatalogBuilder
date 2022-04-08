@@ -589,7 +589,7 @@ def control_create_catalog(catalog_file):
     [prefix_outfile]_[content].xml
     with [content] as questions, domain, options, conditions, tasks
 
-    :param catalog_file: JSON file with questionaire
+    :param catalog_file: JSON file with questionnaire
     """
 
     rdmo_element_set = create_catalog(catalog_file)
