@@ -1625,7 +1625,7 @@
               "en": "The archiving of data is the fifth step in the data life cycle. The same datasets are used for publication and archiving phases. A dataset is not necessarily one file only. It is possible and advised to aggregate similar types of data to be publication and/or archived if they share general properties (e.g. topic, type)"
             },
             "is_collection": "True",
-            "collection_name": "publication_phase_datasets",
+            "collection_name": "archiving_phase_datasets",
             "verbose_name": {
               "en": "dataset"
             },
